@@ -16,6 +16,12 @@
   const timelineFill = document.getElementById('timeline-fill');
   const cursos = document.querySelectorAll('.plan__curso[data-creditos]');
   const statNumeros = document.querySelectorAll('.plan__stat-numero');
+  const modalOverlay = document.getElementById('modal-overlay');
+  const modalCerrar = document.getElementById('modal-cerrar');
+  const modalSemestre = document.getElementById('modal-semestre');
+  const modalNombre = document.getElementById('modal-nombre');
+  const modalCreditos = document.getElementById('modal-creditos');
+  const modalRequisitoValor = document.getElementById('modal-requisito-valor');
 
   // --- CARGAR PROGRESO GUARDADO ---
   function cargarProgreso() {
@@ -136,6 +142,35 @@
     });
   }
 
+  // --- MODAL ---
+  function abrirModal(curso) {
+    const nombre = curso.querySelector('.plan__curso-nombre').textContent;
+    const creditos = curso.dataset.creditos;
+    const requisito = curso.dataset.requisito;
+    const semestre = curso.closest('.plan__semestre').dataset.semestre;
+
+    // Romanos
+    const romanos = ['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII'];
+
+    modalSemestre.textContent = 'SEMESTRE ' + romanos[parseInt(semestre, 10) - 1];
+    modalNombre.textContent = nombre;
+    modalCreditos.textContent = creditos + ' créditos';
+
+    if (requisito) {
+      modalRequisitoValor.textContent = 'Haber aprobado ' + requisito;
+      modalRequisitoValor.classList.remove('vacio');
+    } else {
+      modalRequisitoValor.textContent = 'Sin requisito previo';
+      modalRequisitoValor.classList.add('vacio');
+    }
+
+    modalOverlay.classList.add('activo');
+  }
+
+  function cerrarModal() {
+    modalOverlay.classList.remove('activo');
+  }
+
   // --- INICIALIZAR ---
   function init() {
     const avance = cargarProgreso();
@@ -153,6 +188,21 @@
       curso.addEventListener('click', function () {
         toggleCurso(curso, avance);
       });
+
+      // Doble click → modal
+      curso.addEventListener('dblclick', function (e) {
+        e.preventDefault();
+        abrirModal(curso);
+      });
+    });
+
+    // Cerrar modal
+    modalCerrar.addEventListener('click', cerrarModal);
+    modalOverlay.addEventListener('click', function (e) {
+      if (e.target === modalOverlay) cerrarModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') cerrarModal();
     });
 
     // Calcular y mostrar progreso inicial
