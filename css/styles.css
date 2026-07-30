@@ -284,7 +284,7 @@
 .plan__cursos {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 0.6rem;
   flex: 1;
 }
 
@@ -292,16 +292,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.6rem;
+  gap: 0.5rem;
   background: #fff;
   border: 1px solid #e0ddd4;
   border-radius: 10px;
-  padding: 0.7rem 1rem;
-  min-width: 160px;
+  padding: 0.6rem 0.8rem;
+  min-width: 0;
   max-width: 220px;
-  flex: 1 1 160px;
+  flex: 1 1 0;
   transition: all 0.25s ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .plan__curso:hover {
@@ -322,18 +323,22 @@
 }
 
 .plan__curso-creditos {
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: #8a9a8a;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .plan__curso-nombre {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: #2c3e2c;
-  line-height: 1.25;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* --- CHECK BUTTON --- */
