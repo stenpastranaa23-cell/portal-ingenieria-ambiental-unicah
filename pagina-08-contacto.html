@@ -7,6 +7,120 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <h1 class="contacto__titulo">Contacto</h1>  
+    <!-- Apertura: logo institucional + nombre de la universidad -->
+    <section class="contacto__hero">
+        <img class="contacto__logo" src="media/logo-unicah.svg" alt="Escudo UNICAH">
+        <div class="contacto__hero-texto">
+            <h1 class="contacto__titulo">Universidad Católica de Honduras (UNICAH)</h1>
+            <p class="contacto__tagline">Da el siguiente paso en tu formación como ingeniero ambiental.</p>
+        </div>
+    </section>
+
+    <!-- Llamados a la acción -->
+    <section class="contacto__cta">
+        <a class="contacto__cta-link contacto__cta-link--matricula" href="https://registro.app.unicah.net/#/registrarcuenta" target="_blank" rel="noopener">
+            Matricúlate en UNICAH
+        </a>
+        <a class="contacto__cta-link contacto__cta-link--instagram" href="https://www.instagram.com/ambientalunicah/" target="_blank" rel="noopener">
+            Síguenos en Instagram
+        </a>
+    </section>
+
+    <img class="contacto__promo" src="media/promo-ing-ambiental.jpg"
+        alt="Afiche Ingeniería Ambiental UNICAH - Tu momento, tu futuro" loading="lazy">
+
+    <!-- Ubicación del campus -->
+    <div class="contacto__contenido">
+        <section class="contacto__ubicacion">
+            <h2 class="contacto__ubicacion-titulo">Visítanos</h2>
+            <p class="contacto__ubicacion-texto">
+                Contamos con 11 campus a nivel nacional. Comunícate con nosotros y le asesoraremos para elegir el plan que mejor se ajuste a sus necesidades.
+            </p>
+            <p class="contacto__asistencia-general">
+                Línea general: <a href="tel:+50498000004">+504 9800-0004</a><br>
+                Correo: <a href="mailto:admisiones@unicah.edu">admisiones@unicah.edu</a>
+            </p>
+            <ul class="contacto__lista-asistencia">
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">Sagrado Corazón de Jesús (Tegucigalpa)</span>
+                    <a class="contacto__campus-tel" href="tel:+50495000132">9500-0132</a>
+                </li>
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">San Pedro y San Pablo (San Pedro Sula)</span>
+                    <a class="contacto__campus-tel" href="tel:+50495000229">9500-0229</a>
+                </li>
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">Jesús Sacramentado (Siguatepeque)</span>
+                    <a class="contacto__campus-tel" href="tel:+50498000246">9800-0246</a>
+                </li>
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">San Jorge (Olanchito)</span>
+                    <a class="contacto__campus-tel" href="tel:+50498000225">9800-0225</a>
+                </li>
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">San Isidro (La Ceiba)</span>
+                    <a class="contacto__campus-tel" href="tel:+50495000346">9500-0346</a>
+                </li>
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">Santa Rosa de Lima (Santa Rosa de Copán)</span>
+                    <a class="contacto__campus-tel" href="tel:+50498007670">9800-7670</a>
+                </li>
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">Santa Clara (Juticalpa)</span>
+                    <a class="contacto__campus-tel" href="tel:+50495000159">9500-0159</a>
+                </li>
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">Espiritual El Tabor (Valle de Ángeles)</span>
+                    <a class="contacto__campus-tel" href="tel:+50495000160">9500-0160</a>
+                </li>
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">Santiago Apóstol (Danlí)</span>
+                    <a class="contacto__campus-tel" href="tel:+50495000038">9500-0038</a>
+                </li>
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">Dios Espíritu Santo (Choluteca)</span>
+                    <a class="contacto__campus-tel" href="tel:+50495000180">9500-0180</a>
+                </li>
+                <li class="contacto__campus">
+                    <span class="contacto__campus-nombre">San Juan Bautista (Trujillo)</span>
+                    <a class="contacto__campus-tel" href="tel:+50495000291">9500-0291</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Preguntas rápidas antes de matricularte (datos tomados del afiche oficial) -->
+    <section class="contacto__faq">
+        <h2 class="contacto__faq-titulo">Preguntas rápidas</h2>
+        <details class="contacto__faq-item">
+            <summary class="contacto__faq-pregunta">¿Cuánto dura la carrera?</summary>
+            <p class="contacto__faq-respuesta">4 años.</p>
+        </details>
+        <details class="contacto__faq-item">
+            <summary class="contacto__faq-pregunta">¿Cuántas clases tiene el plan de estudio?</summary>
+            <p class="contacto__faq-respuesta">60 clases en total.</p>
+        </details>
+        <details class="contacto__faq-item">
+            <summary class="contacto__faq-pregunta">¿Qué áreas puedo desarrollar como Ingeniero Ambiental?</summary>
+            <p class="contacto__faq-respuesta">
+                Seguridad y Salud Ambiental, Ecología, Industrial, Mitigación, Prevención,
+                Recursos Naturales y Organismos Internacionales.
+            </p>
+        </details>
+        <details class="contacto__faq-item">
+            <summary class="contacto__faq-pregunta">¿Cómo realizo la matrícula?</summary>
+            <p class="contacto__faq-respuesta">
+                Directo desde
+                <a href="https://registro.app.unicah.net/#/registrarcuenta" target="_blank" rel="noopener">registro.app.unicah.net</a>,
+                o llamando al campus más cercano (ver la lista arriba en "Visítanos").
+            </p>
+        </details>
+    </section>
+
+    <footer class="contacto__footer">
+        <p class="contacto__footer-texto">
+            &copy; 2026 Facultad de Ingeniería Ambiental - UNICAH. Todos los derechos reservados.
+        </p>
+    </footer>
 </body>
 </html>

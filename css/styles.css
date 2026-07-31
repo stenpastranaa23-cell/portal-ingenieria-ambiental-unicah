@@ -56,9 +56,259 @@
 
 /* ============ PÁGINA 8 - CONTACTO ============ */
 /* Dueño: Diego */
+.contacto__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background-color: #04024d;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.contacto__logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.contacto__hero-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
 .contacto__titulo {
-   font-size: 2.5rem;
-  color:green;
+  font-size: 1.3rem;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.contacto__tagline {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.contacto__promo {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 1rem auto 0;
+  border-radius: 12px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.contacto__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.contacto__cta-link {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.contacto__cta-link:hover {
+  transform: translateY(-3px);
+}
+
+.contacto__cta-link--matricula {
+  background-color: #04024d;
+}
+
+.contacto__cta-link--instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.contacto__contenido {
+  padding: 0 1rem;
+}
+
+.contacto__ubicacion {
+  padding: 1rem 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.contacto__ubicacion-titulo {
+  font-size: 1.2rem;
+  color: #04024d;
+}
+
+.contacto__asistencia-general {
+  margin: 0.5rem 0 1.25rem;
+  font-weight: bold;
+}
+
+.contacto__asistencia-general a {
+  color: #04024d;
+}
+
+.contacto__lista-asistencia {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contacto__campus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.contacto__campus-nombre {
+  min-width: 0;
+  font-size: 0.85rem;
+}
+
+.contacto__campus-tel {
+  font-weight: bold;
+  color: #04024d;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.contacto__campus-tel:hover {
+  text-decoration: underline;
+}
+
+.contacto__faq {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.contacto__faq-titulo {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #04024d;
+}
+
+.contacto__faq-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.contacto__faq-pregunta {
+  cursor: pointer;
+  font-weight: bold;
+  color: #04024d;
+}
+
+.contacto__faq-respuesta {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.contacto__footer {
+  margin-top: 2rem;
+  padding: 1.25rem 1rem;
+  background-color: #04024d;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.contacto__footer-texto {
+  margin: 0;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+/* --- Tablet: 720px en adelante --- */
+@media (min-width: 720px) {
+  .contacto__titulo {
+    font-size: 1.7rem;
+  }
+
+  .contacto__hero {
+    padding: 2rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .contacto__logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .contacto__tagline {
+    font-size: 1.2rem;
+  }
+
+  .contacto__promo {
+    max-width: 340px;
+  }
+
+  .contacto__cta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .contacto__cta-link {
+    width: auto;
+  }
+
+  .contacto__ubicacion-titulo {
+    font-size: 1.35rem;
+  }
+}
+
+/* --- Desktop: 1025px en adelante --- */
+@media (min-width: 1025px) {
+  .contacto__titulo {
+    font-size: 2rem;
+  }
+
+  .contacto__hero {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2.5rem 2rem;
+  }
+
+  .contacto__tagline {
+    font-size: 1.35rem;
+  }
+
+  .contacto__contenido {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
 }
 
 
