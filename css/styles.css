@@ -247,10 +247,58 @@
 
 /* --- CONTENEDOR DE SEMESTRES --- */
 .plan__contenedor {
+  position: relative;
   max-width: 1100px;
   margin: 0 auto;
   padding: 1rem 1.5rem 4rem;
   background: #f9f7f2;
+}
+
+/* --- SVG LÍNEAS --- */
+.plan__lineas-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+.plan__linea-requisito {
+  fill: none;
+  stroke: #2ecc71;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
+}
+
+.plan__linea-requisito.animando {
+  animation: dibujar-linea 0.6s ease forwards;
+}
+
+.plan__linea-requisito.ocultando {
+  animation: borrar-linea 0.3s ease forwards;
+}
+
+@keyframes dibujar-linea {
+  from {
+    stroke-dashoffset: var(--lungime);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes borrar-linea {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 /* --- SEMESTRE --- */
@@ -259,6 +307,8 @@
   gap: 1.5rem;
   padding: 1.8rem 0;
   border-bottom: 1px solid #e8e5dc;
+  position: relative;
+  z-index: 1;
 }
 
 .plan__semestre:last-child {
@@ -303,6 +353,8 @@
   transition: all 0.25s ease;
   cursor: pointer;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .plan__curso:hover {
