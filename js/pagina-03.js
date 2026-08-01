@@ -1,6 +1,6 @@
 /**
- * Página 3 - Plan de Estudio
- * Interactividad: progreso, stats, timeline, modal, líneas de requisitos
+ * Pagina 3 - Plan de Estudio
+ * Interactividad: progreso, stats, timeline, modal, lineas de requisitos
  */
 
 (function () {
@@ -25,7 +25,7 @@
   var svgLineas = document.getElementById('lineas-svg');
   var contenedor = document.querySelector('.plan__contenedor');
 
-  // --- MAPA INVERSO: nombre-del-curso → [cursos que lo requieren] ---
+  // --- MAPA INVERSO: nombre-del-curso -> [cursos que lo requieren] ---
   function construirMapaDependientes() {
     var mapa = {};
     cursos.forEach(function (curso) {
@@ -60,7 +60,7 @@
     }
   }
 
-  // --- CALCULAR CRÉDITOS COMPLETADOS ---
+  // --- CALCULAR CREDITOS COMPLETADOS ---
   function calcularCreditosCompletados(avance) {
     var total = 0;
     cursos.forEach(function (curso) {
@@ -114,7 +114,7 @@
   }
 
   // =========================================================
-  // --- LÍNEAS DE REQUISITOS ---
+  // --- LINEAS DE REQUISITOS ---
   // =========================================================
 
   // Obtener bordes de un curso relativa al contenedor
@@ -126,100 +126,71 @@
       right: cursoRect.right - contenedorRect.left + contenedor.scrollLeft,
       top: cursoRect.top - contenedorRect.top + contenedor.scrollTop,
       bottom: cursoRect.bottom - contenedorRect.top + contenedor.scrollTop,
+      centerX: (cursoRect.left + cursoRect.width / 2) - contenedorRect.left + contenedor.scrollLeft,
       centerY: (cursoRect.top + cursoRect.height / 2) - contenedorRect.top + contenedor.scrollTop
     };
   }
 
-  // Obtener el borde derecho del contenedor de cursos de un semestre
-  function obtenerBordeDerechoSemestre(curso) {
-    var seccion = curso.closest('.plan__semestre');
-    var cursosContainer = seccion.querySelector('.plan__cursos');
-    var contenedorRect = contenedor.getBoundingClientRect();
-    var cursosRect = cursosContainer.getBoundingClientRect();
-    return cursosRect.right - contenedorRect.left + contenedor.scrollLeft;
-  }
-
-  // Obtener el espacio entre semestres (centro del border-bottom)
-  function obtenerEspacioSemestre(seccionA, seccionB) {
-    var contenedorRect = contenedor.getBoundingClientRect();
-    var rectA = seccionA.getBoundingClientRect();
-    var rectB = seccionB.getBoundingClientRect();
-    // Centro exacto entre el final de A y el inicio de B
-    return (rectA.bottom + rectB.top) / 2 - contenedorRect.top + contenedor.scrollTop;
-  }
-
-  // Crear path tipo laberinto (orthogonal routing)
+  // Crear path tipo laberinto: sale por ABAJO del origen, entra por ARRIBA del destino
+  // Usa limites de semestre como zonas seguras para los segmentos horizontales
   function crearPathLaberinto(cursoOrigen, cursoDestino) {
     var origen = obtenerBordesCurso(cursoOrigen);
     var destino = obtenerBordesCurso(cursoDestino);
-    var seccionOrigen = cursoOrigen.closest('.plan__semestre');
-    var seccionDestino = cursoDestino.closest('.plan__semestre');
-    var numOrigen = parseInt(seccionOrigen.dataset.semestre, 10);
-    var numDestino = parseInt(seccionDestino.dataset.semestre, 10);
 
-    var puntos = [];
+    var salidaX = origen.centerX;
+    var salidaY = origen.bottom;
+    var entradaX = destino.centerX;
+    var entradaY = destino.top;
 
-    if (numOrigen === numDestino) {
-      // Misma fila: salir por la derecha del origen, bajar, subir, entrar por la derecha del destino
-      var salidaX = origen.right + 12;
-      var bordeDerecho = obtenerBordeDerechoSemestre(cursoOrigen);
-      var viaX = Math.max(bordeDerecho + 15, Math.max(origen.right, destino.right) + 25);
-      var viaY = Math.max(origen.bottom, destino.bottom) + 18;
+    var canalX = 68;
 
-      puntos.push(origen.right, origen.centerY);
-      puntos.push(salidaX, origen.centerY);
-      puntos.push(viaX, origen.centerY);
-      puntos.push(viaX, viaY);
-      puntos.push(viaX, destino.centerY);
-      puntos.push(destino.right + 12, destino.centerY);
-      puntos.push(destino.right, destino.centerY);
-    } else {
-      // Filas diferentes: salir derecha → bajar por el borde derecho → entrar al destino
-      var salidaX2 = origen.right + 12;
-      var bordeDerecho2 = obtenerBordeDerechoSemestre(cursoOrigen);
-      var viaX2 = Math.max(bordeDerecho2 + 15, origen.right + 25);
+    // Verificar si estan en la misma columna
+    var mismaColumna = Math.abs(salidaX - entradaX) < 50;
 
-      // Espacio vertical entre semestres
-      var espacioY;
-      if (numDestino > numOrigen) {
-        // Bajar: usar el espacio justo después del semestre origen
-        var semestreSiguiente = document.querySelector('.plan__semestre[data-semestre="' + (numOrigen + 1) + '"]');
-        if (semestreSiguiente) {
-          espacioY = obtenerEspacioSemestre(seccionOrigen, semestreSiguiente);
-        } else {
-          espacioY = (origen.bottom + destino.top) / 2;
-        }
-      } else {
-        // Subir: usar el espacio justo antes del semestre origen
-        var semestreAnterior = document.querySelector('.plan__semestre[data-semestre="' + (numOrigen - 1) + '"]');
-        if (semestreAnterior) {
-          espacioY = obtenerEspacioSemestre(semestreAnterior, seccionOrigen);
-        } else {
-          espacioY = (origen.top + destino.bottom) / 2;
-        }
-      }
+    // Obtener numeros de semestre
+    var semOrigen = parseInt(cursoOrigen.closest('.plan__semestre').dataset.semestre, 10);
+    var semDestino = parseInt(cursoDestino.closest('.plan__semestre').dataset.semestre, 10);
 
-      // Punto de entrada al destino
-      var entradaX = destino.right + 12;
-
-      puntos.push(origen.right, origen.centerY);
-      puntos.push(salidaX2, origen.centerY);
-      puntos.push(viaX2, origen.centerY);
-      puntos.push(viaX2, espacioY);
-      puntos.push(entradaX, espacioY);
-      puntos.push(entradaX, destino.centerY);
-      puntos.push(destino.right, destino.centerY);
+    // Misma columna Y semestres adyacentes (sin cursos en entre) -> linea recta
+    if (mismaColumna && Math.abs(semDestino - semOrigen) <= 1) {
+      return 'M ' + salidaX + ' ' + salidaY +
+             ' L ' + entradaX + ' ' + entradaY;
     }
 
-    // Construir path M ... L ... L ...
-    var d = 'M ' + puntos[0] + ' ' + puntos[1];
-    for (var i = 2; i < puntos.length; i += 2) {
-      d += ' L ' + puntos[i] + ' ' + puntos[i + 1];
+    // Todos los demas casos -> rodear por el canal izquierdo
+    var contenedorRect = contenedor.getBoundingClientRect();
+
+    // Limite inferior del semestre origen (debajo de todas sus tarjetas)
+    var semOrigenEl = cursoOrigen.closest('.plan__semestre');
+    var semOrigenRect = semOrigenEl.getBoundingClientRect();
+    var ySeguroOrigen = semOrigenRect.bottom - contenedorRect.top + contenedor.scrollTop + 8;
+
+    // Limite superior del semestre destino (arriba de todas sus tarjetas)
+    var semDestinoEl = cursoDestino.closest('.plan__semestre');
+    var semDestinoRect = semDestinoEl.getBoundingClientRect();
+    var ySeguroDestino = semDestinoRect.top - contenedorRect.top + contenedor.scrollTop - 8;
+
+    // Mismo semestre o limites cruzados -> usar zona debajo de las tarjetas
+    if (ySeguroOrigen >= ySeguroDestino) {
+      var viaY = Math.max(salidaY, entradaY) + 35;
+      return 'M ' + salidaX + ' ' + salidaY +
+             ' L ' + salidaX + ' ' + viaY +
+             ' L ' + canalX + ' ' + viaY +
+             ' L ' + canalX + ' ' + (viaY + 30) +
+             ' L ' + entradaX + ' ' + (viaY + 30) +
+             ' L ' + entradaX + ' ' + entradaY;
     }
-    return d;
+
+    // Ruta: bajar del origen -> zona segura -> canal -> zona segura -> destino
+    return 'M ' + salidaX + ' ' + salidaY +
+           ' L ' + salidaX + ' ' + ySeguroOrigen +
+           ' L ' + canalX + ' ' + ySeguroOrigen +
+           ' L ' + canalX + ' ' + ySeguroDestino +
+           ' L ' + entradaX + ' ' + ySeguroDestino +
+           ' L ' + entradaX + ' ' + entradaY;
   }
 
-  // Dibujar línea para un curso completado
+  // Dibujar linea para un curso completado
   function dibujarLineasCurso(cursoOrigen, animar) {
     var nombreOrigen = cursoOrigen.querySelector('.plan__curso-nombre').textContent;
     var dependientes = mapaDependientes[nombreOrigen];
@@ -253,7 +224,7 @@
     });
   }
 
-  // Eliminar líneas de un curso
+  // Eliminar lineas de un curso
   function eliminarLineasCurso(nombreCurso) {
     var lineas = svgLineas.querySelectorAll('[data-desde="' + nombreCurso + '"]');
     lineas.forEach(function (linea) {
@@ -265,14 +236,14 @@
     });
   }
 
-  // Redibujar TODAS las líneas (para resize)
+  // Redibujar TODAS las lineas (para resize)
   function redibujarTodasLasLineas(avance) {
     // Limpiar SVG
     while (svgLineas.childNodes.length > 1) {
       svgLineas.removeChild(svgLineas.lastChild);
     }
 
-    // Dibujar líneas de todos los cursos completados
+    // Dibujar lineas de todos los cursos completados
     cursos.forEach(function (curso) {
       var nombre = curso.querySelector('.plan__curso-nombre').textContent;
       var semestre = curso.closest('.plan__semestre').dataset.semestre;
@@ -306,7 +277,7 @@
     actualizarTimeline(avance);
   }
 
-  // --- ANIMAR NÚMEROS DE STATS ---
+  // --- ANIMAR NUMEROS DE STATS ---
   function animarStats() {
     statNumeros.forEach(function (el) {
       var objetivo = parseInt(el.dataset.objetivo, 10);
@@ -338,7 +309,7 @@
 
     modalSemestre.textContent = 'SEMESTRE ' + romanos[parseInt(semestre, 10) - 1];
     modalNombre.textContent = nombre;
-    modalCreditos.textContent = creditos + ' créditos';
+    modalCreditos.textContent = creditos + ' creditos';
 
     if (requisito) {
       modalRequisitoValor.textContent = 'Haber aprobado ' + requisito;
@@ -373,7 +344,7 @@
         toggleCurso(curso, avance);
       });
 
-      // Doble click → modal
+      // Doble click -> modal
       curso.addEventListener('dblclick', function (e) {
         e.preventDefault();
         abrirModal(curso);
@@ -397,7 +368,7 @@
     // Actualizar timeline con progreso guardado
     actualizarTimeline(avance);
 
-    // Dibujar líneas iniciales (sin animación, desde localStorage)
+    // Dibujar lineas iniciales (sin animacion, desde localStorage)
     redibujarTodasLasLineas(avance);
 
     // Animar stats al cargar
@@ -414,7 +385,7 @@
       });
     });
 
-    // Redibujar líneas en resize
+    // Redibujar lineas en resize
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
@@ -424,7 +395,7 @@
     });
   }
 
-  // Ejecutar cuando el DOM esté listo
+  // Ejecutar cuando el DOM este listo
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
