@@ -24,6 +24,14 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #f5f5f5;
+}
+
+body.plan__page {
+  background: #f9f7f2;
+}
+
 /* --- HERO SECTION --- */
 .plan__hero {
   position: relative;
@@ -78,7 +86,6 @@
   justify-content: center;
   gap: 4rem;
   padding: 3.5rem 2rem 2rem;
-  background: #f9f7f2;
 }
 
 .plan__stat {
@@ -109,7 +116,6 @@
   max-width: 700px;
   margin: 0 auto;
   padding: 1.5rem 2rem 2.5rem;
-  background: #f9f7f2;
 }
 
 .plan__progreso-instruccion {
@@ -164,7 +170,6 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem 0.5rem;
-  background: #f9f7f2;
 }
 
 .plan__timeline-track {
@@ -251,7 +256,6 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 1rem 1.5rem 4rem;
-  background: #f9f7f2;
 }
 
 /* --- SVG LÍNEAS --- */
@@ -268,7 +272,6 @@
 
 .plan__linea-requisito {
   fill: none;
-  stroke: #2ecc71;
   stroke-width: 2.5;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -328,6 +331,7 @@
   color: #1a3a2a;
   margin: 0;
   line-height: 1;
+  transform: translateX(-12px);
 }
 
 /* --- CURSOS GRID --- */
@@ -346,9 +350,9 @@
   background: #fff;
   border: 1px solid #e0ddd4;
   border-radius: 10px;
-  padding: 0.6rem 0.8rem;
+  padding: 0.7rem 1rem;
   min-width: 0;
-  max-width: 220px;
+  max-width: 260px;
   flex: 1 1 0;
   transition: all 0.25s ease;
   cursor: pointer;
@@ -388,9 +392,6 @@
   font-weight: 600;
   color: #2c3e2c;
   line-height: 1.2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 /* --- CHECK BUTTON --- */

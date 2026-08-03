@@ -41,6 +41,48 @@
 
   var mapaDependientes = construirMapaDependientes();
 
+  // --- PALETA DE COLORES PARA LINEAS ---
+  var COLORES = [
+    '#2ecc71', '#e74c3c', '#3498db', '#f39c12', '#9b59b6',
+    '#1abc9c', '#e67e22', '#2c3e50', '#e91e63', '#00bcd4',
+    '#8bc34a', '#ff5722', '#607d8b', '#795548', '#4caf50',
+    '#ff9800', '#673ab7', '#009688', '#cddc39', '#ff4081'
+  ];
+
+  // Colores explicitos para lineas especificas (cursoOrigen -> color)
+  var COLORES_ESPECIALES = {
+    'Cálculo II': '#3498db',
+    'Ética Profesional': '#3498db'
+  };
+
+  function colorDeCurso(nombre) {
+    if (COLORES_ESPECIALES[nombre]) return COLORES_ESPECIALES[nombre];
+    var hash = 0;
+    for (var i = 0; i < nombre.length; i++) {
+      hash = nombre.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return COLORES[Math.abs(hash) % COLORES.length];
+  }
+
+  // Crear marcadores de flecha por cada color
+  function crearMarcadoresColores() {
+    var svg = svgLineas;
+    COLORES.forEach(function (color, i) {
+      var marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+      marker.setAttribute('id', 'flecha-' + i);
+      marker.setAttribute('markerWidth', '10');
+      marker.setAttribute('markerHeight', '7');
+      marker.setAttribute('refX', '9');
+      marker.setAttribute('refY', '3.5');
+      marker.setAttribute('orient', 'auto');
+      var polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+      polygon.setAttribute('points', '0 0, 10 3.5, 0 7');
+      polygon.setAttribute('fill', color);
+      marker.appendChild(polygon);
+      svg.appendChild(marker);
+    });
+  }
+
   // --- CARGAR PROGRESO GUARDADO ---
   function cargarProgreso() {
     try {
@@ -132,7 +174,6 @@
   }
 
   // Crear path tipo laberinto: sale por ABAJO del origen, entra por ARRIBA del destino
-  // Usa limites de semestre como zonas seguras para los segmentos horizontales
   function crearPathLaberinto(cursoOrigen, cursoDestino) {
     var origen = obtenerBordesCurso(cursoOrigen);
     var destino = obtenerBordesCurso(cursoDestino);
@@ -142,50 +183,39 @@
     var entradaX = destino.centerX;
     var entradaY = destino.top;
 
-    var canalX = 68;
-
-    // Verificar si estan en la misma columna
-    var mismaColumna = Math.abs(salidaX - entradaX) < 50;
-
     // Obtener numeros de semestre
     var semOrigen = parseInt(cursoOrigen.closest('.plan__semestre').dataset.semestre, 10);
     var semDestino = parseInt(cursoDestino.closest('.plan__semestre').dataset.semestre, 10);
+    var distSemestres = Math.abs(semDestino - semOrigen);
 
-    // Misma columna Y semestres adyacentes (sin cursos en entre) -> linea recta
-    if (mismaColumna && Math.abs(semDestino - semOrigen) <= 1) {
+    // Misma columna y adyacentes -> linea recta directa
+    if (Math.abs(salidaX - entradaX) < 15 && distSemestres <= 1) {
       return 'M ' + salidaX + ' ' + salidaY +
              ' L ' + entradaX + ' ' + entradaY;
     }
 
-    // Todos los demas casos -> rodear por el canal izquierdo
-    var contenedorRect = contenedor.getBoundingClientRect();
+    // Semestres cercanos (dist <= 1) -> ruta directa: bajar, mover, bajar
+    if (distSemestres <= 1) {
+      var mitadY = (salidaY + entradaY) / 2;
+      return 'M ' + salidaX + ' ' + salidaY +
+             ' L ' + salidaX + ' ' + mitadY +
+             ' L ' + entradaX + ' ' + mitadY +
+             ' L ' + entradaX + ' ' + entradaY;
+    }
 
-    // Limite inferior del semestre origen (debajo de todas sus tarjetas)
+    // Semestres lejanos (dist > 2) -> SIEMPRE por el margen izquierdo
+    var contenedorRect = contenedor.getBoundingClientRect();
     var semOrigenEl = cursoOrigen.closest('.plan__semestre');
     var semOrigenRect = semOrigenEl.getBoundingClientRect();
     var ySeguroOrigen = semOrigenRect.bottom - contenedorRect.top + contenedor.scrollTop + 8;
-
-    // Limite superior del semestre destino (arriba de todas sus tarjetas)
     var semDestinoEl = cursoDestino.closest('.plan__semestre');
     var semDestinoRect = semDestinoEl.getBoundingClientRect();
     var ySeguroDestino = semDestinoRect.top - contenedorRect.top + contenedor.scrollTop - 8;
-
-    // Mismo semestre o limites cruzados -> usar zona debajo de las tarjetas
-    if (ySeguroOrigen >= ySeguroDestino) {
-      var viaY = Math.max(salidaY, entradaY) + 35;
-      return 'M ' + salidaX + ' ' + salidaY +
-             ' L ' + salidaX + ' ' + viaY +
-             ' L ' + canalX + ' ' + viaY +
-             ' L ' + canalX + ' ' + (viaY + 30) +
-             ' L ' + entradaX + ' ' + (viaY + 30) +
-             ' L ' + entradaX + ' ' + entradaY;
-    }
-
-    // Ruta: bajar del origen -> zona segura -> canal -> zona segura -> destino
+    var margenX = 30;
     return 'M ' + salidaX + ' ' + salidaY +
            ' L ' + salidaX + ' ' + ySeguroOrigen +
-           ' L ' + canalX + ' ' + ySeguroOrigen +
-           ' L ' + canalX + ' ' + ySeguroDestino +
+           ' L ' + margenX + ' ' + ySeguroOrigen +
+           ' L ' + margenX + ' ' + ySeguroDestino +
            ' L ' + entradaX + ' ' + ySeguroDestino +
            ' L ' + entradaX + ' ' + entradaY;
   }
@@ -200,13 +230,16 @@
       if (cursoDestino === cursoOrigen) return;
 
       var pathD = crearPathLaberinto(cursoOrigen, cursoDestino);
+      var color = colorDeCurso(nombreOrigen);
+      var colorIdx = COLORES.indexOf(color);
 
       var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       path.setAttribute('d', pathD);
       path.setAttribute('class', 'plan__linea-requisito');
-      path.setAttribute('marker-end', 'url(#flecha)');
+      path.setAttribute('marker-end', 'url(#flecha-' + colorIdx + ')');
       path.setAttribute('data-desde', nombreOrigen);
       path.setAttribute('data-hacia', cursoDestino.querySelector('.plan__curso-nombre').textContent);
+      path.style.stroke = color;
 
       svgLineas.appendChild(path);
 
@@ -329,6 +362,9 @@
   // --- INICIALIZAR ---
   function init() {
     var avance = cargarProgreso();
+
+    // Crear marcadores de flecha con colores
+    crearMarcadoresColores();
 
     // Restaurar estado visual de cursos completados
     cursos.forEach(function (curso) {

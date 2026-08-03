@@ -6,7 +6,7 @@
     <title>Plan de Estudio - Ing. Ambiental | UNICAH</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="plan__page">
 
     <!-- HERO SECTION -->
     <section class="plan__hero">
@@ -70,11 +70,6 @@
     <main class="plan__contenedor">
         <!-- SVG overlay para líneas de requisitos -->
         <svg class="plan__lineas-svg" id="lineas-svg">
-            <defs>
-                <marker id="flecha" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#2ecc71" />
-                </marker>
-            </defs>
         </svg>
 
         <!-- SEMESTRE I -->
@@ -407,7 +402,7 @@
                 <h2 class="plan__semestre-numero">VII</h2>
             </div>
             <div class="plan__cursos">
-                <div class="plan__curso" data-creditos="3" data-requisito="">
+                <div class="plan__curso" data-creditos="3" data-requisito="Métodos y Técnicas de Investigación">
                     <div class="plan__curso-info">
                         <span class="plan__curso-creditos">CRÉDITOS: 3</span>
                         <span class="plan__curso-nombre">Electiva II</span>
@@ -434,7 +429,7 @@
                         <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </button>
                 </div>
-                <div class="plan__curso" data-creditos="3" data-requisito="">
+                <div class="plan__curso" data-creditos="3" data-requisito="Principios de Economía">
                     <div class="plan__curso-info">
                         <span class="plan__curso-creditos">CRÉDITOS: 3</span>
                         <span class="plan__curso-nombre">Economía Ambiental</span>
