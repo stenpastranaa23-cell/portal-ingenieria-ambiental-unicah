@@ -4,123 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <!-- Apertura: logo institucional + nombre de la universidad -->
-    <section class="contacto__hero">
-        <img class="contacto__logo" src="media/logo-unicah.svg" alt="Escudo UNICAH">
-        <div class="contacto__hero-texto">
-            <h1 class="contacto__titulo">Universidad Católica de Honduras (UNICAH)</h1>
-            <p class="contacto__tagline">Da el siguiente paso en tu formación como ingeniero ambiental.</p>
+
+    <section class="contacto__hero" style="background-image: url('media/campus-aereo.jpg');">
+        <div class="contacto__hero-capa">
+            <h1 class="contacto__hero-titulo">Contacto</h1>
+            <p class="contacto__hero-subtitulo">Escríbenos, con gusto te respondemos.</p>
         </div>
     </section>
 
-    <!-- Llamados a la acción -->
-    <section class="contacto__cta">
-        <a class="contacto__cta-link contacto__cta-link--matricula" href="https://registro.app.unicah.net/#/registrarcuenta" target="_blank" rel="noopener">
-            Matricúlate en UNICAH
-        </a>
-        <a class="contacto__cta-link contacto__cta-link--instagram" href="https://www.instagram.com/ambientalunicah/" target="_blank" rel="noopener">
-            Síguenos en Instagram
-        </a>
-    </section>
+    <section class="contacto__canales">
+        <div class="contacto__canales-texto">
+            <p class="contacto__eyebrow">Contáctanos directo</p>
+            <h2 class="contacto__canales-titulo">Elige el canal que prefieras — te respondemos ahí mismo.</h2>
 
-    <img class="contacto__promo" src="media/promo-ing-ambiental.jpg"
-        alt="Afiche Ingeniería Ambiental UNICAH - Tu momento, tu futuro" loading="lazy">
-
-    <!-- Ubicación del campus -->
-    <div class="contacto__contenido">
-        <section class="contacto__ubicacion">
-            <h2 class="contacto__ubicacion-titulo">Visítanos</h2>
-            <p class="contacto__ubicacion-texto">
-                Contamos con 11 campus a nivel nacional. Comunícate con nosotros y le asesoraremos para elegir el plan que mejor se ajuste a sus necesidades.
-            </p>
-            <p class="contacto__asistencia-general">
-                Línea general: <a href="tel:+50498000004">+504 9800-0004</a><br>
-                Correo: <a href="mailto:admisiones@unicah.edu">admisiones@unicah.edu</a>
-            </p>
-            <ul class="contacto__lista-asistencia">
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">Sagrado Corazón de Jesús (Tegucigalpa)</span>
-                    <a class="contacto__campus-tel" href="tel:+50495000132">9500-0132</a>
+            <ul class="contacto__lista-canales">
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link" href="https://wa.me/50495000315" target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--whatsapp">W</span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">WhatsApp — Decanato</span>
+                            <span class="contacto__canal-valor">Escríbele directo al Decano</span>
+                        </span>
+                    </a>
                 </li>
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">San Pedro y San Pablo (San Pedro Sula)</span>
-                    <a class="contacto__campus-tel" href="tel:+50495000229">9500-0229</a>
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link" href="https://www.instagram.com/ambientalunicah/" target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--instagram">Ig</span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">Instagram</span>
+                            <span class="contacto__canal-valor">@ambientalunicah</span>
+                        </span>
+                    </a>
                 </li>
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">Jesús Sacramentado (Siguatepeque)</span>
-                    <a class="contacto__campus-tel" href="tel:+50498000246">9800-0246</a>
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=admisiones@unicah.edu"
+                        target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--correo">@</span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">Correo</span>
+                            <span class="contacto__canal-valor">admisiones@unicah.edu</span>
+                        </span>
+                    </a>
                 </li>
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">San Jorge (Olanchito)</span>
-                    <a class="contacto__campus-tel" href="tel:+50498000225">9800-0225</a>
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link" href="https://www.unicah.edu/" target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--admisiones">U</span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">Admisiones — UNICAH</span>
+                            <span class="contacto__canal-valor">Registro y matrícula general</span>
+                        </span>
+                    </a>
                 </li>
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">San Isidro (La Ceiba)</span>
-                    <a class="contacto__campus-tel" href="tel:+50495000346">9500-0346</a>
-                </li>
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">Santa Rosa de Lima (Santa Rosa de Copán)</span>
-                    <a class="contacto__campus-tel" href="tel:+50498007670">9800-7670</a>
-                </li>
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">Santa Clara (Juticalpa)</span>
-                    <a class="contacto__campus-tel" href="tel:+50495000159">9500-0159</a>
-                </li>
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">Espiritual El Tabor (Valle de Ángeles)</span>
-                    <a class="contacto__campus-tel" href="tel:+50495000160">9500-0160</a>
-                </li>
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">Santiago Apóstol (Danlí)</span>
-                    <a class="contacto__campus-tel" href="tel:+50495000038">9500-0038</a>
-                </li>
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">Dios Espíritu Santo (Choluteca)</span>
-                    <a class="contacto__campus-tel" href="tel:+50495000180">9500-0180</a>
-                </li>
-                <li class="contacto__campus">
-                    <span class="contacto__campus-nombre">San Juan Bautista (Trujillo)</span>
-                    <a class="contacto__campus-tel" href="tel:+50495000291">9500-0291</a>
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=admisionescj@unicah.edu"
+                        target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--campus">R</span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">Admisiones — Campus Sagrado Corazón</span>
+                            <span class="contacto__canal-valor">admisionescj@unicah.edu</span>
+                        </span>
+                    </a>
                 </li>
             </ul>
-        </section>
-    </div>
+        </div>
 
-    <!-- Preguntas rápidas antes de matricularte (datos tomados del afiche oficial) -->
-    <section class="contacto__faq">
-        <h2 class="contacto__faq-titulo">Preguntas rápidas</h2>
-        <details class="contacto__faq-item">
-            <summary class="contacto__faq-pregunta">¿Cuánto dura la carrera?</summary>
-            <p class="contacto__faq-respuesta">4 años.</p>
-        </details>
-        <details class="contacto__faq-item">
-            <summary class="contacto__faq-pregunta">¿Cuántas clases tiene el plan de estudio?</summary>
-            <p class="contacto__faq-respuesta">60 clases en total.</p>
-        </details>
-        <details class="contacto__faq-item">
-            <summary class="contacto__faq-pregunta">¿Qué áreas puedo desarrollar como Ingeniero Ambiental?</summary>
-            <p class="contacto__faq-respuesta">
-                Seguridad y Salud Ambiental, Ecología, Industrial, Mitigación, Prevención,
-                Recursos Naturales y Organismos Internacionales.
-            </p>
-        </details>
-        <details class="contacto__faq-item">
-            <summary class="contacto__faq-pregunta">¿Cómo realizo la matrícula?</summary>
-            <p class="contacto__faq-respuesta">
-                Directo desde
-                <a href="https://registro.app.unicah.net/#/registrarcuenta" target="_blank" rel="noopener">registro.app.unicah.net</a>,
-                o llamando al campus más cercano (ver la lista arriba en "Visítanos").
-            </p>
-        </details>
+        <div class="contacto__galeria">
+            <button class="contacto__galeria-foto contacto__galeria-foto--1" type="button">
+                <img src="media/galeria/galeria-2.jpg" alt="Estudiantes de Ingeniería Ambiental leyendo en el campus">
+            </button>
+            <button class="contacto__galeria-foto contacto__galeria-foto--2" type="button">
+                <img src="media/galeria/galeria-1.jpg" alt="Grupo de estudiantes revisando material de estudio">
+            </button>
+            <button class="contacto__galeria-foto contacto__galeria-foto--3" type="button">
+                <img src="media/galeria/galeria-3.jpg" alt="Estudiantes con libros de la carrera en el campus">
+            </button>
+            <button class="contacto__galeria-foto contacto__galeria-foto--4" type="button">
+                <img src="media/galeria/galeria-4.jpg" alt="Grupo de estudiantes trabajando juntos en una laptop">
+            </button>
+        </div>
+    </section>
+
+    <section class="contacto__ubicacion">
+        <p class="contacto__eyebrow">Encuéntranos</p>
+        <h2 class="contacto__ubicacion-titulo">Campus Sagrado Corazón de Jesús</h2>
+
+        <div class="contacto__mapa">
+            <iframe
+                src="https://www.google.com/maps?q=UNICAH+Campus+Sagrado+Coraz%C3%B3n+de+Jes%C3%BAs,+Tegucigalpa,+Honduras&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación del Campus Sagrado Corazón de Jesús">
+            </iframe>
+        </div>
+        <p class="contacto__ubicacion-direccion">Cl. Los Alcaldes, Comayagüela, Tegucigalpa, Honduras</p>
+
+        <div class="contacto__horario">
+            <span class="contacto__horario-icono">H</span>
+            <p class="contacto__horario-texto">Horario de atención: lunes a viernes, 8:00 a.m. — 4:00 p.m.</p>
+        </div>
     </section>
 
     <footer class="contacto__footer">
-        <p class="contacto__footer-texto">
-            &copy; 2026 Facultad de Ingeniería Ambiental - UNICAH. Todos los derechos reservados.
-        </p>
+        <p class="contacto__footer-frase">Donde la ingeniería se convierte en territorio protegido.</p>
+        <p class="contacto__footer-texto">&copy; 2026 Facultad de Ingeniería Ambiental - UNICAH. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="js/contacto-galeria.js"></script>
 </body>
 </html>
