@@ -441,6 +441,73 @@
   cursor: pointer;
 }
 
+/* Dueño: Byron */
+.sumate-footer{
+  background:#241613;
+  color:#fff;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:5rem;
+
+  padding:5rem 8%;
+}
+
+/* Dueño: Byron */
+.sumate-footer figure{
+  margin:0;
+}
+
+/* Dueño: Byron */
+.sumate-footer img{
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Dueño: Byron */
+.sumate-footer section{
+  max-width:750px;
+}
+
+/* Dueño: Byron */
+.sumate-footer h2{
+  font-size:2.2rem;
+  line-height:1.2;
+  margin-bottom:2rem;
+}
+
+/* Dueño: Byron */
+.sumate-footer h3{
+  margin:0;
+}
+
+/* Dueño: Byron */
+.sumate-footer p{
+  color:#bfbfbf;
+  margin-bottom:1rem;
+}
+
+/* Dueño: Byron */
+.sumate-footer div{
+  display:flex;
+  flex-direction:column;
+}
+
+/* Dueño: Byron */
+.sumate-footer a{
+  color:#c58b18;
+  text-decoration:none;
+}
+
+/* Dueño: Byron */
+.sumate-footer a:hover{
+  text-decoration:underline;
+}
+
 /* ============ PÁGINA 10 - PREGUNTAS FRECUENTES ============ */
 /* Dueño: Byron */
 .preguntas__titulo {
