@@ -367,6 +367,80 @@
     overflow: hidden;
 }
 
+/* Dueño: Byron */
+.sumate-main .contact-section{
+  background: #f5eee4;
+  padding: 45px 8%;
+}
+
+/* Dueño: Byron */
+.sumate-main .contact-section h2{
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+
+/* Dueño: Byron */
+.sumate-main .form_A .row{
+  margin-bottom: 30px;
+}
+
+/* Dueño: Byron */
+.sumate-main .form_A label{
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Dueño: Byron */
+.sumate-main input{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #c8c0b5;
+  padding: 6px 0;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Dueño: Byron */
+.sumate-main select{
+  background: transparent;
+  border: 1px solid #bdb5aa;
+  padding: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Dueño: Byron */
+.sumate-main textarea{
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #c8c0b5;
+  padding: 12px 0;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Dueño: Byron */
+.sumate-main input,
+.sumate-main select,
+.sumate-main textarea{
+  width: 100%;
+}
+
+/* Dueño: Byron */
+.sumate-main .cta_content{
+  margin-top: 20px;
+}
+
+/* Dueño: Byron */
+.sumate-main button{
+  background: #ae7200;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* ============ PÁGINA 10 - PREGUNTAS FRECUENTES ============ */
 /* Dueño: Byron */
 .preguntas__titulo {
