@@ -107,6 +107,36 @@
   border-radius: 3px;
 }
 
+/* Dueño: Byron */
+.sumate-main .hero{
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+/* Dueño: Byron */
+.sumate-main .hero h1{
+  font-size: 75px;
+  line-height: 1.05;
+  font-weight: 400;
+  max-width: 900px;
+  color: #2d221d;
+}
+
+/* Dueño: Byron */
+.sumate-main .hero p{
+  font-size: 22px;
+  color: #55483f;
+  font-weight: bold;
+}
+
+/* Dueño: Byron */
+.suma{
+    color: #d6a34a;    
+}
+
 /* ============ PÁGINA 10 - PREGUNTAS FRECUENTES ============ */
 /* Dueño: Byron */
 .preguntas__titulo {
