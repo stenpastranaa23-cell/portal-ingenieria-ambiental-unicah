@@ -112,6 +112,85 @@
                 <div class="story-image"></div>
             </div>
         </section>
+
+       <section class="contact-section grid">
+            <div class="row">
+                <div class="offset-l-3">
+                    <h2>
+                        cuéntanos cómo quieres colaborar
+                    </h2>
+                </div>
+            </div>
+            <form
+                action=""
+                method="get"
+                class="grid form_A"
+                id="form-contact"
+                novalidate
+            >
+            <div class="row">
+                <label for="nombre" class="col-12 offset-l-3">
+                    Nombre
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="tu nombre"
+                    class="col-12 col-l-6 offset-l-3"
+                >
+            </div>
+
+            <div class="row">
+                <label for="email" class="col-12 offset-l-3">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="tu@correo.com"
+                    class="col-12 col-l-6 offset-l-3"
+                >
+            </div>
+
+            <div class="row">
+                <label for="area" class="col-12 offset-l-3">
+                    Área de interés
+                </label>
+
+                <select id="cmbInteres" name="cmbInteres" class="col-12 col-l-6 offset-l-3">
+                    <option>selecciona una opción</option>
+                        <option>Becas</option>
+                        <option>Equipo de laboratorio</option>
+                        <option>Alianzas</option>
+                    </select>
+                </div>  
+
+                <div class="row">
+                    <label for="mensaje" class="col-12 offset-l-3">
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        placeholder="cuéntanos más"
+                        class="col-12 col-l-6 offset-l-3"
+                    ></textarea>
+                </div>
+
+                <div class="row">
+                    <div class="cta_content offset-l-3">
+                        <button class="pill primary">
+                            Enviar propuesta
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </section>
     </main>
 </body>
 </html>
