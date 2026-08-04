@@ -1,14 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1 class="blog__titulo">Blog</h1>
-     <p>Contenido de prueba - Página 7</p>
-     <p>Segunda prueba para verificar atribución de commits</p>
+
+  <main id="blog-app" class="blog__app">
+
+    <section class="blog__view" data-view="list">
+
+    <header class="header-sitio">
+
+  <div class="header-sitio__badge">
+    <img class="header-sitio__badge-icon" src="img/Inicio/Logo Ambiental.png" alt="Logo Ingeniería Ambiental">
+    <span class="header-sitio__badge-text">INGENIERÍA AMBIENTAL · UNICAH</span>
+  </div>
+
+  <button class="header-sitio__menu-btn" id="btn-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-panel">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="menu-panel" id="menu-panel">
+    <div class="menu-panel__grupo">
+      <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+      <a href="index.html" class="menu-panel__link">Inicio</a>
+      <a href="pagina-02-carrera.html" class="menu-panel__link">Sobre la Carrera</a>
+      <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+      <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+    </div>
+
+    <div class="menu-panel__grupo">
+      <span class="menu-panel__categoria">COMUNIDAD</span>
+      <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link">Únete / Vida Estudiantil</a>
+      <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+    </div>
+
+    <div class="menu-panel__grupo">
+      <span class="menu-panel__categoria">RECURSOS</span>
+      <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+      <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+      <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+      <a href="pagina-10-faq.html" class="menu-panel__link">Preguntas Frecuentes</a>
+    </div>
+  </nav>
+
+</header>
+
+      <article class="blog__cover" data-goto="articulo-0">
+        <div class="blog__cover-media" style="background-image:url('https://picsum.photos/seed/cuenca-choluteca-cover/1400/1000')"></div>
+
+        <div class="blog__cover-seal">
+          <div class="blog__cover-seal-fill">Historia<br>de Portada</div>
+        </div>
+
+        <div class="blog__cover-content">
+          <span class="blog__tag blog__tag--egresados blog__tag--on-dark">Egresados</span>
+          <p class="blog__cover-quote">&ldquo;Entendí que no estaba salvando un río. Estaba devolviéndole a una comunidad entera el derecho a confiar en su propia agua.&rdquo;</p>
+
+          <div class="blog__cover-author">
+            <span class="blog__cover-avatar">
+              <img src="https://i.pravatar.cc/150?img=5" alt="María José Osorio">
+            </span>
+            <div>
+              <p class="blog__cover-author-name">María José Osorio</p>
+              <p class="blog__cover-author-role">Coordinadora Regional de Manejo de Cuencas</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bloque 3: vitrina animada va aquí -->
+
+    </section>
+
+  </main>
+
+  <script src="js/funciones-compartidas.js" defer></script>
+  <script src="js/pagina-07.js" defer></script>
 </body>
 </html>

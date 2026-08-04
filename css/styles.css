@@ -1,3 +1,137 @@
+/* ============================================
+   COMPARTIDO · HEADER Y MENÚ DE NAVEGACIÓN
+   Usado en las 11 páginas del portal
+   ============================================ */
+
+.header-sitio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  z-index: 10;
+}
+
+.header-sitio__badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;     
+  flex: 1;           
+}
+
+.header-sitio__badge-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.header-sitio__badge-text {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.header-sitio__menu-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;     
+}
+
+.header-sitio__menu-btn span {
+  width: 26px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* ---- Menú desplegable (panel) ---- */
+
+.menu-panel {
+  box-sizing: border-box; 
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  width: 340px;
+  max-width: min(340px, calc(100vw - 40px));
+  background: rgba(31, 43, 31, 0.97);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 20;
+}
+
+.menu-panel--abierto {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-panel__grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-panel__categoria {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #cba135;
+  text-transform: uppercase;
+}
+
+.menu-panel__link {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-panel__link:hover {
+  color: #cba135;
+}
+
+/* ---- Responsive: pantallas angostas (celular) ---- */
+
+@media (max-width: 480px) {
+  .header-sitio {
+    padding: 16px 20px;
+  }
+
+  .header-sitio__badge-text {
+    font-size: 11px;
+  }
+
+  .menu-panel {
+    top: 70px;
+    right: 20px;
+    padding: 22px;
+  }
+}
+
+
 /* ============ PÁGINA 1 - INICIO ============ */
 /* Dueño: Stefany */
 .inicio__titulo {
@@ -46,13 +180,197 @@
 }
 
 
-/* ============ PÁGINA 7 - BLOG ============ */
-/* Dueño: Eduin */
-.blog__titulo {
-  font-size: 2.5rem;
-  color:green;
+/* ============================================
+   PÁGINA 07 - BLOG
+   Dueño: Noel
+   ============================================ */
+
+.blog__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
 }
 
+.blog__badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 999px;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.blog__badge-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.blog__badge-text {
+  font-family: 'PT Serif', serif;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.blog__menu-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.blog__menu-btn span {
+  width: 26px;
+  height: 2px;
+  background: #fff;
+}
+
+/* -------- Historia de Portada -------- */
+
+.blog__cover {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.blog__cover-media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.blog__cover-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(31,43,31,0.05) 0%, rgba(31,43,31,0.35) 45%, rgba(20,26,18,0.92) 100%);
+}
+
+.blog__cover-seal {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  padding: 3px;
+  background-color: #cba135;
+  border: 2px solid #a3792f;
+  z-index: 2;
+}
+
+.blog__cover-seal-fill {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #1f2b1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #cba135;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.68rem;
+  line-height: 1.15;
+  padding: 8px;
+}
+
+.blog__cover-content {
+  position: relative;
+  z-index: 2;
+  padding: 44px 5vw 40px;
+  max-width: 760px;
+}
+
+.blog__cover-quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #faf7f0;
+  font-size: 2rem;
+  line-height: 1.28;
+  margin: 16px 0 26px;
+}
+
+.blog__cover-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.blog__cover-avatar {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  padding: 3px;
+  background-color: #cba135;
+  border: 2px solid #a3792f;
+}
+
+.blog__cover-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.blog__cover-author-name {
+  margin: 0;
+  color: #faf7f0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.blog__cover-author-role {
+  margin: 0;
+  color: #cba135;
+  font-size: 0.8rem;
+}
+
+/* -------- Etiqueta de categoría (reutilizada dentro del bloque blog) -------- */
+
+.blog__tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 3px;
+}
+
+.blog__tag--egresados    { background: rgba(31, 43, 31, 0.12); color: #1f2b1f; }
+.blog__tag--expediciones { background: rgba(61, 90, 66, 0.14); color: #3d5a42; }
+.blog__tag--vivencias    { background: rgba(203, 161, 53, 0.16); color: #a3792f; }
+
+.blog__tag--on-dark {
+  background: rgba(250, 247, 240, 0.14) !important;
+  color: #cba135 !important;
+}
+
+@media (max-width: 640px) {
+  .blog__cover-content { padding: 30px 5vw 30px; }
+  .blog__cover-quote { font-size: 1.5rem; }
+}
 
 /* ============ PÁGINA 8 - CONTACTO ============ */
 /* Dueño: Diego */
