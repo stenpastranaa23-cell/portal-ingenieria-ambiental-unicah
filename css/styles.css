@@ -125,6 +125,51 @@
   text-align:center;
 }
 
+/* Dueño: Byron */
+.faq-content{
+  width: 70%;
+  margin: 5rem auto;
+}
+
+/* Dueño: Byron */
+.faq-content h1{
+  margin-bottom: 4rem;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: normal;
+  color: #1f1f1f;
+}
+
+/* Dueño: Byron */
+.faq-section{
+  width: 100%;
+}
+
+/* Dueño: Byron */
+.faq-question{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #1f1f1f;
+  font-weight: bold;
+  padding: 1.5rem 0;
+  border-top: 1px solid #d8d8d8;
+  cursor: pointer;
+}
+
+/* Dueño: Byron */
+.faq-question span{
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #8c7a3e;
+}
+
+/* Dueño: Byron */
+.hidden{
+  display: none;
+}
 
 /* ============ PÁGINA 11 - DOCENTES ============ */
 /* Dueño: Stefany */
