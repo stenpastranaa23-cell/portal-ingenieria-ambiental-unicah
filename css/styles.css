@@ -1,3 +1,11 @@
+/* ============ RESET BASE (afecta a todas las páginas) ============ */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 /* ============ PÁGINA 1 - INICIO ============ */
 /* Dueño: Stefany */
 .inicio__titulo {
@@ -63,42 +71,144 @@
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: flex-end;
-  padding: 1.5rem 1rem;
-  box-shadow: inset 0 -120px 100px -40px rgba(0, 0, 0, 0.75);
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.contacto__hero--sin-foto {
-  background-color: #1c2b22;
+.contacto__hero-oscuro {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 10, 8, 0.72);
+}
+
+.contacto__hero-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
-.contacto__hero--sin-foto .contacto__hero-capa {
-  background-color: transparent;
-}
-
-.contacto__hero-capa {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1.25rem;
-  border-radius: 8px;
-  background-color: rgba(5, 10, 6, 0.7);
+.contacto__hero-marca {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.18);
   color: #fff;
+  text-decoration: none;
+  padding: 0.4rem 1rem 0.4rem 0.4rem;
+  border-radius: 30px;
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.contacto__hero-marca-logo {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.contacto__hero-menu {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.contacto__hero-menu span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.contacto__menu-desplegable {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  top: 4.5rem;
+  right: 1rem;
+  width: 220px;
+  max-width: calc(100% - 2rem);
+  max-height: calc(100% - 5.5rem);
+  overflow-y: auto;
+  background-color: rgba(28, 20, 12, 0.92);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contacto__menu-desplegable--abierto {
+  display: block;
+}
+
+.contacto__menu-categoria {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #c9a35a;
+  font-family: Arial, sans-serif;
+  margin: 1rem 0 0.4rem;
+}
+
+.contacto__menu-categoria:first-child {
+  margin-top: 0;
+}
+
+.contacto__menu-link {
+  display: block;
+  color: #f2ede2;
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+}
+
+.contacto__menu-link:hover {
+  text-decoration: underline;
+}
+
+.contacto__hero-texto {
+  position: relative;
+  z-index: 2;
   text-align: center;
+  padding: 1.5rem 1rem 2rem;
 }
 
 .contacto__hero-titulo {
   font-family: "Playfair Display", serif;
-  font-size: 2rem;
+  font-weight: 700;
+  font-size: 2.2rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  color: #fff;
   margin: 0 0 0.5rem;
 }
 
 .contacto__hero-subtitulo {
   font-family: "Playfair Display", serif;
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  color: #fff;
   margin: 0;
 }
 
@@ -107,7 +217,7 @@
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .contacto__eyebrow {
@@ -166,12 +276,21 @@
   font-family: Arial, sans-serif;
 }
 
+.contacto__canal-icono svg {
+  width: 18px;
+  height: 18px;
+}
+
 .contacto__canal-icono--whatsapp {
   background-color: #25d366;
 }
 
 .contacto__canal-icono--instagram {
   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.contacto__canal-icono--facebook {
+  background-color: #1877f2;
 }
 
 .contacto__canal-icono--correo {
@@ -209,42 +328,87 @@
 }
 
 .contacto__galeria {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  max-width: 460px;
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 400px;
   margin: 0 auto;
 }
 
 .contacto__galeria-foto {
-  border: none;
+  position: absolute;
+  border: 6px solid #fff;
   padding: 0;
-  background: none;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.25);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .contacto__galeria-foto img {
   display: block;
-  width: 100%;
-  height: 140px;
+  width: 170px;
+  height: 120px;
   object-fit: cover;
 }
 
-.contacto__galeria-foto--seleccionada {
-  position: relative;
+.contacto__galeria-foto--1 {
+  top: 0;
+  left: 0;
+  transform: rotate(-5deg);
+  z-index: 1;
+}
+
+.contacto__galeria-foto--2 {
+  top: 30px;
+  left: 120px;
+  transform: rotate(6deg);
   z-index: 2;
-  transform: scale(1.06);
-  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.contacto__galeria-foto--3 {
+  top: 200px;
+  left: 0;
+  transform: rotate(-4deg);
+  z-index: 1;
+}
+
+.contacto__galeria-foto--4 {
+  top: 235px;
+  left: 120px;
+  transform: rotate(5deg);
+  z-index: 2;
+}
+
+.contacto__galeria-foto--seleccionada {
+  transform: scale(1.1) rotate(0deg) !important;
+  z-index: 5 !important;
+  box-shadow: 6px 10px 22px rgba(0, 0, 0, 0.4);
+}
+
+.contacto__galeria-link {
+  position: absolute;
+  top: 320px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  z-index: 6;
+  background-color: #fff;
+  padding: 0.55rem 1.1rem;
+  border-radius: 30px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #1c2b22;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .contacto__ubicacion {
   padding: 2rem 1rem;
   text-align: center;
-  background-color: #fff;
+  background-color: #e9efe3;
   font-family: Arial, sans-serif;
 }
 
@@ -258,16 +422,10 @@
 
 .contacto__mapa {
   width: 100%;
+  height: 260px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
-}
-
-.contacto__mapa iframe {
-  width: 100%;
-  height: 260px;
-  border: 0;
-  display: block;
 }
 
 .contacto__ubicacion-direccion {
@@ -305,30 +463,47 @@
 
 .contacto__footer {
   margin-top: 0;
-  padding: 1.75rem 1rem;
-  background-color: #1c2b22;
-  text-align: center;
+  padding: 1.5rem 1rem;
+  background-color: #241c14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contacto__footer-logo {
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-color: #e9efe3;
+  -webkit-mask-image: url("../media/logo-unicah.svg");
+  mask-image: url("../media/logo-unicah.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.contacto__footer-separador {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(233, 239, 227, 0.35);
 }
 
 .contacto__footer-frase {
   font-family: "Playfair Display", serif;
   font-style: italic;
   color: #e9efe3;
-  margin: 0 0 0.5rem;
-  font-size: 1.05rem;
-}
-
-.contacto__footer-texto {
   margin: 0;
-  color: #aab5a4;
-  font-size: 0.75rem;
-  font-family: Arial, sans-serif;
+  font-size: 1rem;
 }
 
 @media (min-width: 720px) {
   .contacto__hero {
-    min-height: 340px;
-    padding: 2rem 1.5rem;
+    min-height: 320px;
   }
 
   .contacto__hero-titulo {
@@ -350,21 +525,45 @@
   }
 
   .contacto__galeria {
-    flex: 0 0 320px;
+    flex: 0 0 380px;
+    max-width: 380px;
+    height: 460px;
+  }
+
+  .contacto__galeria-foto img {
+    width: 200px;
+    height: 140px;
+  }
+
+  .contacto__galeria-foto--2,
+  .contacto__galeria-foto--4 {
+    left: 145px;
+  }
+
+  .contacto__galeria-foto--3 {
+    top: 230px;
+  }
+
+  .contacto__galeria-foto--4 {
+    top: 270px;
+  }
+
+  .contacto__galeria-link {
+    top: 360px;
   }
 
   .contacto__ubicacion-titulo {
     font-size: 1.7rem;
   }
 
-  .contacto__mapa iframe {
+  .contacto__mapa {
     height: 340px;
   }
 }
 
 @media (min-width: 1025px) {
   .contacto__hero {
-    min-height: 420px;
+    min-height: 380px;
   }
 
   .contacto__hero-titulo {
@@ -377,21 +576,14 @@
     gap: 3rem;
   }
 
-  .contacto__galeria {
-    flex: 0 0 380px;
-  }
-
   .contacto__ubicacion {
     padding: 3rem 2rem;
   }
 
   .contacto__mapa {
     max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .contacto__mapa iframe {
     height: 400px;
+    margin: 0 auto;
   }
 }
 
