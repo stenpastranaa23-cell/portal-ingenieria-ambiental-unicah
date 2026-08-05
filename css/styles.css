@@ -16,7 +16,7 @@ html, body {
 
 /* ============================================
    PÁGINA 01 - INICIO
-   Dueño: Stefany
+   Dueño: Noel
    ============================================ */
 
 .inicio__header {
@@ -588,18 +588,37 @@ html, body {
 
 @media (max-width: 480px) {
   .decano {
-    height: 460px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .decano__fondo {
+    position: static;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .decano__overlay {
+    display: none;
   }
 
   .decano__tarjeta {
+    position: static;
+    background: #1a2e1a;
+    backdrop-filter: none;
+    border-radius: 0;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    padding: 28px 20px;
   }
 
   .decano__perfil {
     width: 60px;
     height: 60px;
+    margin-bottom: 16px;
   }
 
   .decano__cita {
@@ -978,7 +997,7 @@ html, body {
 
 /* ============================================
    BLOQUE ALIADOS (Con quiénes trabajamos) - INICIO
-   Dueño: Stefany
+   Dueño: Noel
    ============================================ */
 
 .aliados {
@@ -1077,8 +1096,204 @@ html, body {
 }
 
 /* ============================================
-   PIE DE PÁGINA (compartido - candidato a extraer)
-   Dueño: Stefany
+   BLOQUE INSTAGRAM (Coverflow) - INICIO
+   Dueño: Noel
+   ============================================ */
+
+.instagram {
+  padding: 80px 40px;
+  background: #e8ede3;
+  overflow: hidden;
+}
+
+.instagram__encabezado {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.instagram__etiqueta {
+  display: block;
+  font-family: 'PT Serif', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #c98a4b;
+  margin-bottom: 10px;
+}
+
+.instagram__titulo {
+  font-family: 'Tangerine', cursive;
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: #1a2e1a;
+}
+
+.instagram__escenario {
+  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 560px;
+  perspective: 1400px;
+}
+
+.instagram__tarjeta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 340px;
+  height: 560px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+}
+
+.instagram__tarjeta iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+}
+
+.instagram__tarjeta--activa {
+  transform: translate(-50%, -50%) translateX(0) rotateY(0deg) scale(1);
+  z-index: 5;
+  opacity: 1;
+  filter: brightness(1);
+  pointer-events: auto;
+}
+
+.instagram__tarjeta--izq1 {
+  transform: translate(-50%, -50%) translateX(-290px) rotateY(35deg) scale(0.8);
+  z-index: 4;
+  opacity: 0.8;
+  filter: brightness(0.55);
+  pointer-events: none;
+}
+
+.instagram__tarjeta--izq2 {
+  transform: translate(-50%, -50%) translateX(-480px) rotateY(35deg) scale(0.62);
+  z-index: 3;
+  opacity: 0.5;
+  filter: brightness(0.45);
+  pointer-events: none;
+}
+
+.instagram__tarjeta--der1 {
+  transform: translate(-50%, -50%) translateX(290px) rotateY(-35deg) scale(0.8);
+  z-index: 4;
+  opacity: 0.8;
+  filter: brightness(0.55);
+  pointer-events: none;
+}
+
+.instagram__tarjeta--der2 {
+  transform: translate(-50%, -50%) translateX(480px) rotateY(-35deg) scale(0.62);
+  z-index: 3;
+  opacity: 0.5;
+  filter: brightness(0.45);
+  pointer-events: none;
+}
+
+.instagram__tarjeta--oculta {
+  transform: translate(-50%, -50%) translateX(0) scale(0.5);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.instagram__controles {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.instagram__flecha {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #1a2e1a;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.instagram__flecha:hover {
+  background: #2e4a2e;
+  transform: scale(1.1);
+}
+
+.instagram__cta-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.instagram__cta {
+  display: inline-block;
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #1a2e1a;
+  text-decoration: none;
+  border-bottom: 2px solid #c98a4b;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.instagram__cta:hover {
+  color: #c98a4b;
+}
+
+@media (max-width: 900px) {
+  .instagram__escenario {
+    height: 460px;
+  }
+
+  .instagram__tarjeta {
+    width: 260px;
+    height: 460px;
+  }
+
+  .instagram__tarjeta--izq1 { transform: translate(-50%, -50%) translateX(-220px) rotateY(35deg) scale(0.78); }
+  .instagram__tarjeta--izq2 { transform: translate(-50%, -50%) translateX(-360px) rotateY(35deg) scale(0.58); }
+  .instagram__tarjeta--der1 { transform: translate(-50%, -50%) translateX(220px) rotateY(-35deg) scale(0.78); }
+  .instagram__tarjeta--der2 { transform: translate(-50%, -50%) translateX(360px) rotateY(-35deg) scale(0.58); }
+}
+
+@media (max-width: 480px) {
+  .instagram {
+    padding: 50px 20px;
+  }
+
+  .instagram__titulo {
+    font-size: 2.4rem;
+  }
+
+  .instagram__escenario {
+    height: 360px;
+  }
+
+  .instagram__tarjeta {
+    width: 180px;
+    height: 360px;
+  }
+
+  .instagram__tarjeta--izq1 { transform: translate(-50%, -50%) translateX(-130px) rotateY(35deg) scale(0.75); }
+  .instagram__tarjeta--izq2 { display: none; }
+  .instagram__tarjeta--der1 { transform: translate(-50%, -50%) translateX(130px) rotateY(-35deg) scale(0.75); }
+  .instagram__tarjeta--der2 { display: none; }
+}
+
+/* ============================================
+   PIE DE PÁGINA 
+   Dueño: Noel
    ============================================ */
 
 .pie {
