@@ -1,12 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vida Estudiantil</title>
-    <link rel="stylesheet" href="../css/styles.css">    
+    <title>Vida Estudiantil - Ingeniería Ambiental | UNICAH</title>
+    <meta name="description" content="Vida estudiantil de Ingeniería Ambiental en UNICAH: giras de campo por curso, Semana Verde y la comunidad de la facultad.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1 class="vida__titulo">Vida Estudiantil</h1>
+
+    <header class="header-sitio">
+        <div class="header-sitio__badge">
+            <span class="header-sitio__badge-text">INGENIERÍA AMBIENTAL · UNICAH</span>
+        </div>
+        <button class="header-sitio__menu-btn" id="btn-menu" aria-label="Abrir menú"
+            aria-expanded="false" aria-controls="menu-panel">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="menu-panel" id="menu-panel">
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+                <a href="index.html" class="menu-panel__link">Inicio</a>
+                <a href="pagina-02-carrera.html" class="menu-panel__link">Sobre la Carrera</a>
+                <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+                <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+            </div>
+
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">COMUNIDAD</span>
+                <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link" aria-current="page">Únete / Vida Estudiantil</a>
+                <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+            </div>
+
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">RECURSOS</span>
+                <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+                <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+                <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+                <a href="pagina-10-preguntas.html" class="menu-panel__link">Preguntas Frecuentes</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="vida__hero">
+            <div class="vida__hero-contenido">
+                <h1 class="vida__titulo">Aquí no solo estudias, lo vives</h1>
+                <h2 class="vida__subtitulo-hero">
+                    Vida Estudiantil de <span class="vida__resaltado">Ingeniería Ambiental</span>
+                </h2>
+                <p class="vida__hero-texto">
+                    Entre giras de campo por curso y la Semana Verde, la vida de la carrera pasa
+                    tanto fuera del aula como dentro de ella.
+                </p>
+                <a href="#comunidad-ambiental" class="vida__cta-flecha">CONOCE LA COMUNIDAD ↓</a>
+            </div>
+        </section>
+
+        <section class="vida__intro" aria-labelledby="vida-intro-titulo">
+            <span class="vida__etiqueta">MÁS QUE UN AULA</span>
+            <h2 id="vida-intro-titulo" class="vida__subtitulo">Formación integral, no solo técnica</h2>
+            <p>
+                En UNICAH lo espiritual pesa tanto como lo académico. Ser estudiante de Ingeniería
+                Ambiental significa formarse como profesional técnico y, al mismo tiempo, como
+                parte de una comunidad que impulsa la vida cultural, deportiva y de fe dentro del
+                campus.
+            </p>
+        </section>
+
+        <section class="vida__giras" aria-labelledby="vida-giras-titulo">
+            <span class="vida__etiqueta">APRENDER EN EL CAMPO</span>
+            <h2 id="vida-giras-titulo" class="vida__subtitulo">Las clases que te sacan del aula</h2>
+            <p>
+                El plan de estudios combina teoría con laboratorios y prácticas de campo. Algunas
+                clases, en particular, siempre incluyen una gira como parte del curso:
+            </p>
+
+            <div class="vida__tarjetas">
+                <article class="vida__tarjeta">
+                    <h3 class="vida__tarjeta-titulo">Evaluación de Impacto Ambiental</h3>
+                    <p class="vida__tarjeta-texto">Análisis de proyectos reales y su efecto sobre el entorno, directamente en el sitio evaluado.</p>
+                </article>
+                <article class="vida__tarjeta">
+                    <h3 class="vida__tarjeta-titulo">Hidrogeología</h3>
+                    <p class="vida__tarjeta-texto">Estudio de fuentes de agua subterránea y su comportamiento en el terreno.</p>
+                </article>
+                <article class="vida__tarjeta">
+                    <h3 class="vida__tarjeta-titulo">Sanitaria 1</h3>
+                    <p class="vida__tarjeta-texto">Primer curso de la línea de ingeniería sanitaria, con salida de campo incluida.</p>
+                </article>
+                <article class="vida__tarjeta">
+                    <h3 class="vida__tarjeta-titulo">Sanitaria 2</h3>
+                    <p class="vida__tarjeta-texto">Continuación de la línea sanitaria, profundizando con otra gira propia del curso.</p>
+                </article>
+                <article class="vida__tarjeta">
+                    <h3 class="vida__tarjeta-titulo">Zoología</h3>
+                    <p class="vida__tarjeta-texto">Observación de fauna en su hábitat como parte de la evaluación del curso.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="vida__semana-verde" id="comunidad-ambiental" aria-labelledby="vida-semana-verde-titulo">
+            <span class="vida__etiqueta">EVENTO ANUAL DE LA FACULTAD</span>
+            <h2 id="vida-semana-verde-titulo" class="vida__subtitulo">Semana Verde</h2>
+            <p>
+                Cada año, la Facultad de Ingeniería Ambiental organiza la <strong>Semana Verde</strong>:
+                congresos, giras y actividades hechas por y para estudiantes de la carrera.
+            </p>
+
+            <div class="vida__redes">
+                <a href="https://www.instagram.com/ambientalunicah/" target="_blank" rel="noopener"
+                    class="vida__boton vida__boton--primario">
+                    Síguenos en Instagram — @ambientalunicah
+                </a>
+                <a href="mailto:Ingambientalscj@gmail.com" class="vida__boton vida__boton--secundario">
+                    Escríbenos: Ingambientalscj@gmail.com
+                </a>
+            </div>
+
+            <p class="vida__nota">
+                Además de la vida propia de la carrera, como estudiante de UNICAH también tienes
+                acceso a la Pastoral Universitaria y a los clubes generales de la universidad
+                (deportes, arte, tecnología) — abiertos a estudiantes de todas las carreras.
+            </p>
+        </section>
+
+        <section class="vida__testimonios" aria-labelledby="vida-testimonios-titulo">
+            <span class="vida__etiqueta">VOCES DE LA CARRERA</span>
+            <h2 id="vida-testimonios-titulo" class="vida__subtitulo">Lo que dicen los estudiantes</h2>
+
+            <blockquote class="vida__testimonio">
+                <p class="vida__testimonio-texto">
+                    "Las giras de Sanitaria y Evaluación de Impacto Ambiental son lo que más me ha
+                    marcado: ver un problema ambiental real cambia por completo cómo lo estudias en
+                    clase."
+                </p>
+                <footer class="vida__testimonio-autor">Estudiante de Ingeniería Ambiental, UNICAH</footer>
+            </blockquote>
+        </section>
+
+        <section class="vida__cta" aria-labelledby="vida-cta-titulo">
+            <h2 id="vida-cta-titulo" class="vida__subtitulo">¿Quieres vivir esta experiencia?</h2>
+            <div class="vida__cta-botones">
+                <a href="pagina-09-sumate.html" class="vida__boton vida__boton--primario">Súmate</a>
+                <a href="pagina-08-contacto.html" class="vida__boton vida__boton--secundario">Contáctanos</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <div class="pie__redes">
+            <a href="https://wa.me/50495000315" target="_blank" rel="noopener" class="pie__red" aria-label="WhatsApp">
+                WhatsApp
+            </a>
+            <a href="https://www.instagram.com/ambientalunicah/" target="_blank" rel="noopener" class="pie__red" aria-label="Instagram">
+                Instagram
+            </a>
+            <a href="https://www.unicah.edu/" target="_blank" rel="noopener" class="pie__red" aria-label="Sitio de UNICAH">
+                UNICAH
+            </a>
+        </div>
+    </footer>
+
 </body>
 </html>
