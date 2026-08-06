@@ -120,7 +120,7 @@ html, body {
 .faq-hero-panel .hero-call-to-action{
     position: absolute;
     top: 50%;
-    left: 30%;              /* En lugar del 50% */
+    left: 30%;
     transform: translate(-50%, -50%);
     width: 360px;
     padding: 2rem;
