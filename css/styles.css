@@ -304,9 +304,9 @@ html, body {
   linear-gradient(
     to bottom,
     #fff,
-    transparent
+    transparent 50%
   ),
-  url("https://picsum.photos/600/500");
+  url("../media/sumate-card-alianzas.jpeg");
 }
 
 /* Dueño: Byron */
