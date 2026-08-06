@@ -168,7 +168,7 @@ html, body {
   background-color: #30221b;
   border-radius: 30px;
   overflow: hidden;
-  min-height: 350px;
+  min-height: 450px;
 }
 
 /* Dueño: Byron */
@@ -196,7 +196,7 @@ html, body {
 /* Dueño: Byron */
 .sumate-main .card-becas h3{
   font-size: 42px;
-  font-weight: 400;
+  font-weight: bold;
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -215,10 +215,10 @@ html, body {
   background:
   linear-gradient(
       to right,
-      #30221b,
+      #30221b 0%,
       transparent
   ),
-  url("https://picsum.photos/600/500");
+  url("../media/sumate-card-becas.jpeg");
 
   background-size: cover;
   background-position: center;
