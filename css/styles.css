@@ -130,13 +130,13 @@ html, body {
   margin: auto;
   padding-top: 100px;
   padding-bottom: 50px;
+  font-weight: bold;
 }
 
 /* Dueño: Byron */
 .sumate-main .hero h1{
   font-size: 75px;
   line-height: 1.05;
-  font-weight: 400;
   max-width: 900px;
   color: #2d221d;
 }
@@ -145,7 +145,8 @@ html, body {
 .sumate-main .hero p{
   font-size: 22px;
   color: #55483f;
-  font-weight: bold;
+
+  margin-top: 1rem;
 }
 
 /* Dueño: Byron */
@@ -496,6 +497,10 @@ html, body {
   margin-bottom:2rem;
 }
 
+/* Dueño: Byron */
+.sumate-footer div{
+  gap: 0.5rem;
+}
 /* Dueño: Byron */
 .sumate-footer h3{
   margin:0;
