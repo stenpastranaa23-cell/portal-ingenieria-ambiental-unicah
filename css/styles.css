@@ -365,11 +365,20 @@ html, body {
     linear-gradient(
       to right,
       rgba(245, 238, 228, 1) 0%,
-      rgba(245, 238, 228, .75) 15%,
+      rgba(245, 238, 228, .75) 6%,
       rgba(245, 238, 228, 0) 40%
     ),
-    url("https://picsum.photos/600/500");
+    url("../media/sumate-story.jpeg");
     overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+
+  filter:
+    brightness(1.05)
+    contrast(1)
+    saturate(1.5)
+    sepia(1)
 }
 
 /* Dueño: Byron */
