@@ -4,6 +4,7 @@ html, body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  font-family: 'PT Serif', serif;
 }
 
 /* ============ PÁGINA 1 - INICIO ============ */
@@ -98,14 +99,16 @@ html, body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: #fff;
   text-decoration: none;
   padding: 0.4rem 1rem 0.4rem 0.4rem;
-  border-radius: 30px;
-  font-family: Arial, sans-serif;
+  border-radius: 999px;
+  font-family: 'PT Serif', serif;
   font-size: 0.7rem;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -164,9 +167,9 @@ html, body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.7rem;
-  font-weight: bold;
-  color: #c9a35a;
-  font-family: Arial, sans-serif;
+  font-weight: 700;
+  color: #c98a4b;
+  font-family: 'PT Serif', serif;
   margin: 1rem 0 0.4rem;
 }
 
@@ -178,7 +181,7 @@ html, body {
   display: block;
   color: #f2ede2;
   text-decoration: none;
-  font-family: "Playfair Display", serif;
+  font-family: 'PT Serif', serif;
   font-size: 0.95rem;
   padding: 0.3rem 0;
 }
@@ -195,7 +198,7 @@ html, body {
 }
 
 .contacto__hero-titulo {
-  font-family: "Playfair Display", serif;
+  font-family: 'PT Serif', serif;
   font-weight: 700;
   font-size: 2.2rem;
   letter-spacing: 0.05em;
@@ -205,7 +208,7 @@ html, body {
 }
 
 .contacto__hero-subtitulo {
-  font-family: "Playfair Display", serif;
+  font-family: 'PT Serif', serif;
   font-style: italic;
   font-size: 1.05rem;
   color: #fff;
@@ -213,8 +216,11 @@ html, body {
 }
 
 .contacto__canales {
-  background-color: #e9efe3;
+  background-color: #e8ede3;
   padding: 2rem 1rem;
+}
+
+.contacto__canales-inner {
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -224,16 +230,17 @@ html, body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
-  font-weight: bold;
-  color: #8a7a4a;
+  font-weight: 700;
+  color: #c98a4b;
   margin: 0 0 0.5rem;
-  font-family: Arial, sans-serif;
+  font-family: 'PT Serif', serif;
 }
 
 .contacto__canales-titulo {
-  font-family: "Playfair Display", serif;
-  font-size: 1.25rem;
-  color: #1c2b22;
+  font-family: 'Tangerine', cursive;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #1a2e1a;
   margin: 0 0 1.25rem;
 }
 
@@ -250,16 +257,18 @@ html, body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: #fff;
+  background-color: #f4f1ea;
+  border: 1px solid #d5dccb;
   padding: 0.75rem 1rem;
   border-radius: 10px;
   text-decoration: none;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.15s ease;
+  box-sizing: border-box;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .contacto__canal-link:hover {
   transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 .contacto__canal-icono {
@@ -271,9 +280,9 @@ html, body {
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 0.85rem;
-  font-family: Arial, sans-serif;
+  font-family: 'PT Serif', serif;
 }
 
 .contacto__canal-icono svg {
@@ -309,21 +318,21 @@ html, body {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'PT Serif', serif;
 }
 
 .contacto__canal-etiqueta {
   text-transform: uppercase;
   font-size: 0.65rem;
   letter-spacing: 0.05em;
-  font-weight: bold;
-  color: #8a7a4a;
+  font-weight: 700;
+  color: #c98a4b;
 }
 
 .contacto__canal-valor {
   font-size: 0.9rem;
-  font-weight: bold;
-  color: #1c2b22;
+  font-weight: 700;
+  color: #1a2e1a;
   overflow-wrap: anywhere;
 }
 
@@ -397,10 +406,10 @@ html, body {
   padding: 0.55rem 1.1rem;
   border-radius: 30px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-  font-family: "Playfair Display", serif;
-  font-style: italic;
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
   font-size: 0.85rem;
-  color: #1c2b22;
+  color: #1a2e1a;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -408,15 +417,15 @@ html, body {
 .contacto__ubicacion {
   padding: 2rem 1rem;
   text-align: center;
-  background-color: #e9efe3;
-  font-family: Arial, sans-serif;
+  background-color: #e8ede3;
+  font-family: 'PT Serif', serif;
 }
 
 .contacto__ubicacion-titulo {
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-size: 1.4rem;
-  color: #1c2b22;
+  font-family: 'Tangerine', cursive;
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: #1a2e1a;
   margin: 0 0 1.25rem;
 }
 
@@ -426,6 +435,51 @@ html, body {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contacto__mapa .leaflet-tile-pane {
+  filter: grayscale(55%) sepia(35%) hue-rotate(50deg) saturate(140%);
+}
+
+.contacto__mapa-marcador {
+  position: relative;
+}
+
+.contacto__mapa-marcador-punto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #c98a4b;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.contacto__mapa-marcador-anillo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(201, 138, 75, 0.6);
+  transform: translate(-50%, -50%);
+  animation: contactoMapaPulso 1.8s ease-out infinite;
+  z-index: 1;
+}
+
+@keyframes contactoMapaPulso {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3.5);
+    opacity: 0;
+  }
 }
 
 .contacto__ubicacion-direccion {
@@ -446,19 +500,20 @@ html, body {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid #8a7a4a;
-  color: #8a7a4a;
+  border: 1px solid #c98a4b;
+  color: #c98a4b;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-family: 'PT Serif', serif;
 }
 
 .contacto__horario-texto {
   margin: 0;
+  font-family: 'PT Serif', serif;
   font-style: italic;
-  color: #1c2b22;
+  color: #1a2e1a;
 }
 
 .contacto__footer {
@@ -494,8 +549,9 @@ html, body {
 }
 
 .contacto__footer-frase {
-  font-family: "Playfair Display", serif;
+  font-family: 'PT Serif', serif;
   font-style: italic;
+  font-weight: 700;
   color: #e9efe3;
   margin: 0;
   font-size: 1rem;
@@ -515,13 +571,20 @@ html, body {
   }
 
   .contacto__canales {
+    padding: 3rem 2rem;
+  }
+
+  .contacto__canales-inner {
     flex-direction: row;
     align-items: flex-start;
-    padding: 3rem 2rem;
   }
 
   .contacto__canales-texto {
     flex: 1;
+  }
+
+  .contacto__canales-titulo {
+    font-size: 3rem;
   }
 
   .contacto__galeria {
@@ -553,7 +616,7 @@ html, body {
   }
 
   .contacto__ubicacion-titulo {
-    font-size: 1.7rem;
+    font-size: 3.2rem;
   }
 
   .contacto__mapa {
@@ -570,7 +633,7 @@ html, body {
     font-size: 3rem;
   }
 
-  .contacto__canales {
+  .contacto__canales-inner {
     max-width: 1100px;
     margin: 0 auto;
     gap: 3rem;
