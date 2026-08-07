@@ -977,6 +977,7 @@ body.plan__page {
   font-weight: 700;
   transition: background 0.3s;
 }
+}
 
 .inicio__cta:hover {
   background: rgba(255,255,255,0.25);
