@@ -1,87 +1,336 @@
+/* ============================================
+   RESETEO GLOBAL (Elimina bordes blancos)
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #1a1206;
+}
+
 /* ============ PÁGINA 1 - INICIO ============ */
 /* Dueño: Stefany */
 .inicio__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 2 - SOBRE LA CARRERA ============ */
 /* Dueño: Fernando */
 .carrera__titulo {
- font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 3 - PLAN DE ESTUDIO ============ */
 /* Dueño: Kevin */
 .plan__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 4 - INSTALACIONES Y LABORATORIOS ============ */
 /* Dueño: Eduin */
 .instalaciones__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 5 - VIDA ESTUDIANTIL ============ */
 /* Dueño: Fernando */
 .vida__titulo {
- font-size: 2.5rem;
-  color:green;
-}
-
-
-/* ============ PÁGINA 6 - GALERÍA ============ */
-/* Dueño: Stefany */
-.galeria__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
 
+/* ============================================
+   ESTILOS COMPARTIDOS (Menú Desplegable)
+   ============================================ */
+
+.menu-panel {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  width: 340px;
+  max-width: calc(100% - 40px);
+  background: rgba(20, 25, 20, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 28px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.menu-panel--abierto {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu-panel__grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-panel__categoria {
+  font-family: 'PT Serif', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #c98a4b;
+  margin-bottom: 4px;
+}
+
+.menu-panel__link {
+  font-family: 'PT Serif', serif;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.menu-panel__link:hover {
+  color: #8bc34a;
+  padding-left: 6px;
+}
+
+@media (max-width: 480px) {
+  .menu-panel {
+    right: 20px;
+    top: 70px;
+    width: calc(100% - 40px);
+    padding: 20px;
+  }
+}
+
+/* ============================================
+   ESTILOS COMPARTIDOS (Pie de Página / Footer)
+   ============================================ */
+
+.pie {
+  background: #1a1206;
+  padding: 40px;
+  width: 100%;
+}
+
+.pie__redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.pie__red {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.pie__red:hover {
+  transform: scale(1.1);
+}
+
+.pie__red-icono {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .pie {
+    padding: 30px 20px;
+  }
+
+  .pie__red {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ============================================
+   PÁGINA 06 - GALERÍA ESTILO PINTEREST (masonry puro)
+   ============================================ */
+
+.galeria__header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #1a1206;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  border-bottom: 1px solid #2e2013;
+  width: 100%;
+}
+
+.galeria__logo-texto {
+  font-family: 'PT Serif', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #f4f1ea;
+}
+
+.galeria__header .inicio__menu-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.galeria__header .inicio__menu-btn span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #f4f1ea;
+}
+
+/* Masonry real: cada foto usa su ancho de columna y su alto natural */
+.galeria__grid {
+  column-count: 4;
+  column-gap: 8px;
+  width: 100%;
+  padding: 8px;
+  background-color: #1a1206;
+}
+
+.galeria__item {
+  width: 100%;
+  display: block;
+  margin-bottom: 8px;
+  break-inside: avoid;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.galeria__item:hover {
+  filter: brightness(0.85);
+}
+
+/* Lightbox (Visor de pantalla completa) */
+.galeria__lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.galeria__lightbox--abierto {
+  display: flex;
+}
+
+.galeria__lightbox-imagen {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+.galeria__lightbox-cerrar {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.galeria__lightbox-flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.galeria__lightbox-flecha--izq { left: 20px; }
+.galeria__lightbox-flecha--der { right: 20px; }
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 900px) {
+  .galeria__grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .galeria__grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .galeria__grid {
+    column-count: 1;
+  }
+}
 
 /* ============ PÁGINA 7 - BLOG ============ */
 /* Dueño: Eduin */
 .blog__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 8 - CONTACTO ============ */
 /* Dueño: Diego */
 .contacto__titulo {
-   font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 9 - SÚMATE ============ */
 /* Dueño: Byron */
 .sumate__titulo {
- font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 10 - PREGUNTAS FRECUENTES ============ */
 /* Dueño: Byron */
 .preguntas__titulo {
-   font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
-
 
 /* ============ PÁGINA 11 - DOCENTES ============ */
 /* Dueño: Stefany */
 .docentes__titulo {
- font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
