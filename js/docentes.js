@@ -36,39 +36,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Desechos Sólidos e Hidrogeología: el manejo de residuos y el estudio del agua subterránea."
             ]
         },
-        "juan-meza": {
-            nombre: "Juan Meza",
-            cargo: "Catedrático de SIG y Evaluación de Impacto Ambiental",
-            foto: "media/docentes/sig-mapa.svg",
-            bio: "Imparte Sistemas de Información Geográfica (SIG) y Evaluación de Impacto Ambiental I y II, herramientas clave para mapear el territorio y anticipar el efecto de los proyectos sobre el ambiente. El SIG permite representar y analizar información geográfica con precisión, mientras que la Evaluación de Impacto Ambiental es el proceso que identifica, previene y mitiga los efectos de un proyecto de construcción, minería o infraestructura antes de que se ejecute.",
-            cita: "Enseña a mapear el territorio y anticipar el efecto de los proyectos sobre el ambiente.",
-            pasiones: [
-                "SIG: la tecnología para mapear, analizar y visualizar información del territorio.",
-                "EIA I: cómo identificar los posibles impactos ambientales de un proyecto antes de ejecutarlo.",
-                "EIA II: la evaluación y el seguimiento de las medidas de mitigación una vez el proyecto está en marcha."
-            ]
-        },
         "thelma-cabrera": {
             nombre: "Thelma Cabrera",
             cargo: "Catedrática de Manejo de Contaminantes",
-            foto: "media/docentes/produccion-limpia.svg",
+            foto: "media/galeria-10.jpeg",
             bio: "Imparte manejo de contaminantes, producción limpia, planeación de proyectos y formulación y evaluación de proyectos, formando a los estudiantes para prevenir la contaminación desde el diseño mismo de los procesos. La producción limpia busca reducir residuos y emisiones desde el origen de un proceso industrial, en vez de tratarlos después, mientras que la formulación y evaluación de proyectos le da a los estudiantes las herramientas para planear soluciones ambientales técnica y financieramente viables.",
             cita: "Forma a los estudiantes para prevenir la contaminación desde el diseño mismo de los procesos.",
             pasiones: [
                 "Manejo de Contaminantes: cómo identificar, controlar y reducir la contaminación en sus distintas formas.",
                 "Producción Limpia: procesos industriales diseñados para generar menos residuos desde el inicio.",
                 "Formulación y Evaluación de Proyectos: cómo planear un proyecto ambiental viable, de principio a fin."
-            ]
-        },
-        "carol-elvir": {
-            nombre: "Carol Elvir",
-            cargo: "Catedrática de Economía Ambiental",
-            foto: "media/docentes/energia-solar.svg",
-            bio: "Enseña economía ambiental, además de energía y ambiente, mostrando cómo las decisiones económicas y energéticas impactan los recursos naturales del país. La economía ambiental estudia cómo asignar valor a los recursos naturales y cómo diseñar incentivos para su uso sostenible, mientras que energía y ambiente analiza el impacto de las distintas fuentes de energía — renovables y no renovables — sobre el entorno y la transición energética en Honduras.",
-            cita: "Muestra cómo las decisiones económicas y energéticas impactan los recursos naturales del país.",
-            pasiones: [
-                "Economía Ambiental: cómo valorar y proteger los recursos naturales desde una perspectiva económica.",
-                "Energía y Ambiente: el papel de las fuentes de energía, renovables y no renovables, en el impacto ambiental."
             ]
         },
         "mirtha-ferrari": {
