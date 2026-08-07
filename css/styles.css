@@ -137,7 +137,7 @@
 /* Dueño: Kevin */
 
 /* --- RESET y BASE --- */
-.plan__ {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -180,8 +180,8 @@ body.plan__page {
 }
 
 .plan__slide:nth-child(1) { background-position: center center; background-size: contain; }
-.plan__slide:nth-child(2) { background-position: center 15%; }
-.plan__slide:nth-child(3) { background-position: center 40%; }
+.plan__slide:nth-child(2) { background-position: center 25%; }
+.plan__slide:nth-child(3) { background-position: center 25%; }
 
 .plan__slide--activo {
   opacity: 1;
