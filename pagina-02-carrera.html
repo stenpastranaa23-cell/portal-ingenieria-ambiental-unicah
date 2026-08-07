@@ -9,27 +9,38 @@
 </head>
 <body>
 
-    <header class="carrera__header">
-        <nav class="carrera__nav">
-            <a href="index.html" class="carrera__logo">UNICAH · Ingeniería Ambiental</a>
+    <header class="header-sitio">
+        <div class="header-sitio__badge">
+            <img src="img/Inicio/Logo Ambiental.png" alt="Logo Ingeniería Ambiental" class="header-sitio__badge-icon">
+            <span class="header-sitio__badge-text">INGENIERÍA AMBIENTAL · UNICAH</span>
+        </div>
+        <button class="header-sitio__menu-btn" id="btn-menu" aria-label="Abrir menú"
+            aria-expanded="false" aria-controls="menu-panel">
+            <span></span><span></span><span></span>
+        </button>
 
-            <button class="carrera__nav-boton" type="button" aria-expanded="false" aria-controls="carrera-nav-lista">
-                Menú
-            </button>
+        <nav class="menu-panel" id="menu-panel">
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+                <a href="index.html" class="menu-panel__link">Inicio</a>
+                <a href="pagina-02-carrera.html" class="menu-panel__link" aria-current="page">Sobre la Carrera</a>
+                <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+                <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+            </div>
 
-            <ul class="carrera__nav-lista" id="carrera-nav-lista">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="pagina-02-carrera.html" aria-current="page">La Carrera</a></li>
-                <li><a href="pagina-03-plan-estudio.html">Plan de Estudio</a></li>
-                <li><a href="pagina-04-instalaciones.html">Instalaciones</a></li>
-                <li><a href="pagina-05-vida-estudiantil.html">Vida Estudiantil</a></li>
-                <li><a href="pagina-06-galeria.html">Galería</a></li>
-                <li><a href="pagina-07-blog.html">Blog</a></li>
-                <li><a href="pagina-08-contacto.html">Contacto</a></li>
-                <li><a href="pagina-09-sumate.html">Súmate</a></li>
-                <li><a href="pagina-10-preguntas.html">Preguntas Frecuentes</a></li>
-                <li><a href="pagina-11-docentes.html">Docentes</a></li>
-            </ul>
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">COMUNIDAD</span>
+                <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link">Únete / Vida Estudiantil</a>
+                <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+            </div>
+
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">RECURSOS</span>
+                <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+                <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+                <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+                <a href="pagina-10-preguntas.html" class="menu-panel__link">Preguntas Frecuentes</a>
+            </div>
         </nav>
     </header>
 
@@ -46,14 +57,14 @@
 
         <section class="carrera__que-es" aria-labelledby="carrera-que-es-titulo">
             <h2 id="carrera-que-es-titulo" class="carrera__subtitulo">¿Qué es la Ingeniería Ambiental?</h2>
-            <p>
+            <p class="carrera__que-es-texto">
                 Es la carrera encargada de estudiar, prevenir y resolver los problemas que la
                 actividad humana genera sobre el aire, el agua, el suelo y los ecosistemas.
                 El ingeniero ambiental diseña soluciones técnicas —desde sistemas de tratamiento
                 de agua hasta planes de gestión de residuos— y evalúa el impacto ambiental de
                 proyectos de construcción, industria y desarrollo urbano antes de que se ejecuten.
             </p>
-            <p>
+            <p class="carrera__que-es-texto">
                 En UNICAH, la carrera combina fundamentos de ingeniería con trabajo de campo real:
                 los estudiantes no solo aprenden la teoría en el aula, también visitan
                 laboratorios, plantas de tratamiento y zonas protegidas para entender el problema
@@ -63,7 +74,7 @@
 
         <section class="carrera__perfil" aria-labelledby="carrera-perfil-titulo">
             <h2 id="carrera-perfil-titulo" class="carrera__subtitulo">Perfil del Egresado</h2>
-            <p>Al graduarse, el ingeniero ambiental de UNICAH está preparado para:</p>
+            <p class="carrera__perfil-texto">Al graduarse, el ingeniero ambiental de UNICAH está preparado para:</p>
             <ul class="carrera__lista-competencias">
                 <li>Elaborar y evaluar Estudios de Impacto Ambiental (EIA) para proyectos públicos y privados.</li>
                 <li>Diseñar y supervisar sistemas de tratamiento de agua potable y aguas residuales.</li>
@@ -78,35 +89,36 @@
             <div class="carrera__tarjetas">
                 <article class="carrera__tarjeta">
                     <h3 class="carrera__tarjeta-titulo">Sector público</h3>
-                    <p>Secretaría de Energía, Recursos Naturales, Ambiente y Minas (MiAmbiente+), alcaldías municipales, ENEE, SANAA.</p>
+                    <p class="carrera__tarjeta-texto">Secretaría de Energía, Recursos Naturales, Ambiente y Minas (MiAmbiente+), alcaldías municipales, ENEE, SANAA.</p>
                 </article>
                 <article class="carrera__tarjeta">
                     <h3 class="carrera__tarjeta-titulo">Sector privado</h3>
-                    <p>Empresas de consultoría ambiental, agroindustria, minería, construcción y manufactura que necesitan cumplir normativa ambiental.</p>
+                    <p class="carrera__tarjeta-texto">Empresas de consultoría ambiental, agroindustria, minería, construcción y manufactura que necesitan cumplir normativa ambiental.</p>
                 </article>
                 <article class="carrera__tarjeta">
                     <h3 class="carrera__tarjeta-titulo">ONG y cooperación internacional</h3>
-                    <p>Organizaciones de conservación, proyectos de cooperación internacional y organismos multilaterales enfocados en sostenibilidad.</p>
+                    <p class="carrera__tarjeta-texto">Organizaciones de conservación, proyectos de cooperación internacional y organismos multilaterales enfocados en sostenibilidad.</p>
                 </article>
                 <article class="carrera__tarjeta">
                     <h3 class="carrera__tarjeta-titulo">Investigación y academia</h3>
-                    <p>Centros de investigación ambiental y docencia universitaria, con posibilidad de continuar estudios de posgrado.</p>
+                    <p class="carrera__tarjeta-texto">Centros de investigación ambiental y docencia universitaria, con posibilidad de continuar estudios de posgrado.</p>
                 </article>
             </div>
         </section>
 
         <section class="carrera__duracion" aria-labelledby="carrera-duracion-titulo">
             <h2 id="carrera-duracion-titulo" class="carrera__subtitulo">Duración y Modalidad</h2>
-            <p>
-                La carrera se cursa en aproximadamente <strong>5 años</strong> (10 períodos académicos),
-                bajo modalidad presencial con prácticas de laboratorio y giras de campo incluidas en
-                varias asignaturas.
+            <p class="carrera__duracion-texto">
+                La carrera se cursa en <strong>4 años</strong>, con 60 asignaturas distribuidas entre
+                Matemáticas, Ciencias Básicas, Ciencias de la Ingeniería, Diseño de la Ingeniería y
+                Formación Complementaria, bajo modalidad presencial con prácticas de laboratorio y
+                giras de campo incluidas en varias asignaturas.
             </p>
         </section>
 
         <section class="carrera__flujograma-aviso" aria-labelledby="carrera-flujograma-titulo">
             <h2 id="carrera-flujograma-titulo" class="carrera__subtitulo">¿Quieres ver el plan de estudio completo?</h2>
-            <p>
+            <p class="carrera__flujograma-texto">
                 El flujograma interactivo con todas las asignaturas, prerrequisitos y años de la
                 carrera está en la página de <a href="pagina-03-plan-estudio.html">Plan de Estudio</a>.
             </p>
@@ -123,10 +135,20 @@
 
     </main>
 
-    <footer class="carrera__footer">
-        <p>&copy; 2026 Facultad de Ingeniería Ambiental — UNICAH</p>
+    <footer class="pie">
+        <div class="pie__redes">
+            <a href="https://wa.me/50495000315" target="_blank" rel="noopener" class="pie__red" aria-label="WhatsApp">
+                <img src="img/Inicio/Logo de Wha.png" alt="WhatsApp" class="pie__red-icono">
+            </a>
+            <a href="https://www.instagram.com/ambientalunicah/" target="_blank" rel="noopener" class="pie__red" aria-label="Instagram">
+                <img src="img/Inicio/Instagram-Logo.png" alt="Instagram" class="pie__red-icono">
+            </a>
+            <a href="https://www.unicah.edu/" target="_blank" rel="noopener" class="pie__red" aria-label="Sitio de UNICAH">
+                <img src="img/Inicio/Logo Unicah.png" alt="UNICAH" class="pie__red-icono">
+            </a>
+        </div>
     </footer>
 
-    <!-- js/pagina-02.js se enlaza aquí en la fase de JavaScript -->
+    <script src="js/funciones-compartidas.js"></script>
 </body>
 </html>
