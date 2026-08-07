@@ -737,6 +737,8 @@ body.plan__page {
   .plan__progreso-barra-contenedor {
     flex-wrap: wrap;
   }
+}
+
 .inicio__cta {
   display: inline-block;
   font-family: 'PT Serif', serif;
@@ -1998,7 +2000,8 @@ body.plan__page {
     height: 30px;
     font-size: 1.1rem;
   }
-    
+}
+
     /* ============================================
       COMPARTIDO · HEADER Y MENÚ DE NAVEGACIÓN
       ============================================ */
