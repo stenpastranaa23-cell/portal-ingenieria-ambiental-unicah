@@ -2331,17 +2331,104 @@ body.plan__page {
   }
 
   .vida__intro {
-    max-width: 720px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 80px 40px;
     text-align: center;
   }
 
   .vida__intro-texto {
+    max-width: 700px;
+    margin: 0 auto;
     font-family: var(--vida-fuente-texto);
     font-size: 1rem;
     line-height: 1.6;
     color: var(--vida-texto-oscuro);
+  }
+
+  .vida__formacion-lista {
+    max-width: 1200px;
+    margin: 48px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .vida__formacion-fila {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .vida__formacion-fila--izquierda {
+    flex-direction: row-reverse;
+    transform: translateX(-60px);
+  }
+
+  .vida__formacion-fila--visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .vida__formacion-imagen {
+    width: 50%;
+    max-width: 560px;
+    height: 300px;
+    object-fit: cover;
+    background: #ffffff;
+    padding: 12px 12px 40px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .vida__formacion-fila--derecha .vida__formacion-imagen {
+    transform: rotate(1.5deg);
+  }
+
+  .vida__formacion-fila--izquierda .vida__formacion-imagen {
+    transform: rotate(-1.5deg);
+  }
+
+  .vida__formacion-imagen:hover {
+    transform: rotate(0deg);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+  }
+
+  .vida__formacion-texto {
+    flex: 1;
+  }
+
+  .vida__formacion-titulo {
+    font-family: var(--vida-fuente-texto);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--vida-verde-oscuro);
+    margin-bottom: 8px;
+  }
+
+  .vida__formacion-descripcion {
+    font-family: var(--vida-fuente-texto);
+    color: var(--vida-texto-muted);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .vida__formacion-fila,
+    .vida__formacion-fila--izquierda {
+      flex-direction: column;
+      transform: translateY(40px);
+    }
+
+    .vida__formacion-imagen {
+      width: 100%;
+      max-width: 100%;
+      height: 260px;
+      transform: rotate(0deg);
+    }
   }
 
   .vida__giras {
@@ -2566,6 +2653,23 @@ body.plan__page {
     .vida__cta-botones {
       flex-direction: column;
       align-items: stretch;
+    }
+
+    .vida__formacion-lista {
+      gap: 32px;
+    }
+
+    .vida__formacion-imagen {
+      height: 200px;
+      transform: rotate(0deg);
+    }
+
+    .vida__formacion-titulo {
+      font-size: 1.1rem;
+    }
+
+    .vida__formacion-descripcion {
+      font-size: 0.9rem;
     }
   }
 
