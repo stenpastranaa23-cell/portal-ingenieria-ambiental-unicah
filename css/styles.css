@@ -1,94 +1,100 @@
+
 /* ============ PÁGINA 1 - INICIO ============ */
 /* Dueño: Stefany */
 .inicio__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 2 - SOBRE LA CARRERA ============ */
 /* Dueño: Fernando */
 .carrera__titulo {
- font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 3 - PLAN DE ESTUDIO ============ */
 /* Dueño: Kevin */
 .plan__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 4 - INSTALACIONES Y LABORATORIOS ============ */
 /* Dueño: Eduin */
 .instalaciones__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 5 - VIDA ESTUDIANTIL ============ */
 /* Dueño: Fernando */
 .vida__titulo {
- font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 6 - GALERÍA ============ */
 /* Dueño: Stefany */
 .galeria__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 7 - BLOG ============ */
 /* Dueño: Eduin */
 .blog__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 8 - CONTACTO ============ */
 /* Dueño: Diego */
 .contacto__titulo {
-   font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 9 - SÚMATE ============ */
 /* Dueño: Byron */
 .sumate__titulo {
- font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 10 - PREGUNTAS FRECUENTES ============ */
 /* Dueño: Byron */
 .preguntas__titulo {
-   font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
 
-
-
-/* ============ PÁGINA 11 - DOCENTES ============ */
+/* ============================================
+   PÁGINA 11 - DOCENTES 
+   ============================================ */
 /* Dueño: Stefany */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 
 .docentes__nav {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   background-color: #e8ede3;
+  width: 100%;
 }
 
 .docentes__marca {
@@ -186,8 +192,9 @@
 .docentes__equipo {
   position: relative;
   background-color: #e8ede3;
-  padding: 2rem 1rem 3rem;
+  padding: 2rem 1.5rem 3rem;
   text-align: center;
+  width: 100%;
 }
 
 .docentes__eyebrow {
@@ -396,8 +403,9 @@
 
 .docentes__testimonios {
   background-color: #e8ede3;
-  padding: 2rem 1rem 3rem;
+  padding: 2rem 1.5rem 3rem;
   text-align: center;
+  width: 100%;
 }
 
 .docentes__testimonios-titulo {
@@ -467,6 +475,7 @@
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .docentes__footer-logo {
