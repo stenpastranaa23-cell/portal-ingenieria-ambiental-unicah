@@ -255,6 +255,11 @@ html, body {
   object-fit: cover;
   border-radius: 8px;
   display: block;
+  transition: transform 0.4s ease;
+}
+
+.docentes__tarjeta:hover .docentes__foto {
+  transform: scale(1.03);
 }
 
 .docentes__foto--logo {
@@ -287,6 +292,11 @@ html, body {
   font-weight: 700;
   font-size: 1.6rem;
   color: #1a2e1a;
+  transition: color 0.3s ease;
+}
+
+.docentes__tarjeta:hover .docentes__nombre {
+  color: #c98a4b;
 }
 
 .docentes__bio-corta {
@@ -432,6 +442,12 @@ html, body {
   border-radius: 12px;
   padding: 1.5rem;
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.docentes__testimonio:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
 }
 
 .docentes__testimonio-texto {
@@ -480,34 +496,40 @@ html, body {
   width: 100%;
 }
 
-.docentes__footer-logo {
-  display: block;
-  width: 26px;
-  height: 26px;
-  background-color: #e9efe3;
-  -webkit-mask-image: url("../media/logo-unicah.svg");
-  mask-image: url("../media/logo-unicah.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
+.docentes__footer-redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
-.docentes__footer-separador {
-  width: 1px;
-  height: 24px;
-  background-color: rgba(233, 239, 227, 0.35);
+.docentes__footer-red {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.docentes__footer-frase {
-  font-family: 'PT Serif', serif;
-  font-style: italic;
-  font-weight: 700;
-  color: #e9efe3;
-  margin: 0;
-  font-size: 1rem;
+.docentes__footer-red:hover {
+  transform: scale(1.1);
+}
+
+.docentes__footer-red-icono {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .docentes__footer-red {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 @media (min-width: 720px) {
