@@ -1,94 +1,93 @@
-/* ============ RESET BASE (afecta a todas las páginas) ============ */
+/* ============================================
+   RESETEO GLOBAL (ELIMINA BORDES BLANCOS)
+   ============================================ */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
   font-family: 'PT Serif', serif;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 /* ============ PÁGINA 1 - INICIO ============ */
 /* Dueño: Stefany */
 .inicio__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 2 - SOBRE LA CARRERA ============ */
 /* Dueño: Fernando */
 .carrera__titulo {
- font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 3 - PLAN DE ESTUDIO ============ */
 /* Dueño: Kevin */
 .plan__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 4 - INSTALACIONES Y LABORATORIOS ============ */
 /* Dueño: Eduin */
 .instalaciones__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 5 - VIDA ESTUDIANTIL ============ */
 /* Dueño: Fernando */
 .vida__titulo {
- font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 6 - GALERÍA ============ */
 /* Dueño: Stefany */
 .galeria__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 7 - BLOG ============ */
 /* Dueño: Eduin */
 .blog__titulo {
   font-size: 2.5rem;
-  color:green;
+  color: green;
 }
-
 
 /* ============ PÁGINA 8 - CONTACTO ============ */
 /* Dueño: Diego */
 .contacto__titulo {
-   font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 9 - SÚMATE ============ */
 /* Dueño: Byron */
 .sumate__titulo {
- font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
-
 
 /* ============ PÁGINA 10 - PREGUNTAS FRECUENTES ============ */
 /* Dueño: Byron */
 .preguntas__titulo {
-   font-size: 2.5rem;
-  color:green;
+  font-size: 2.5rem;
+  color: green;
 }
 
-
-
-/* ============ PÁGINA 11 - DOCENTES ============ */
+/* ============================================
+   PÁGINA 11 - DOCENTES (PANTALLA COMPLETA)
+   ============================================ */
 /* Dueño: Stefany */
 
 .docentes__hero {
@@ -251,8 +250,9 @@ html, body {
 .docentes__equipo {
   position: relative;
   background-color: #e8ede3;
-  padding: 2rem 1rem 3rem;
+  padding: 2rem 1.5rem 3rem;
   text-align: center;
+  width: 100%;
 }
 
 .docentes__eyebrow {
@@ -311,6 +311,11 @@ html, body {
   object-fit: cover;
   border-radius: 8px;
   display: block;
+  transition: transform 0.4s ease;
+}
+
+.docentes__tarjeta:hover .docentes__foto {
+  transform: scale(1.03);
 }
 
 .docentes__foto--logo {
@@ -351,6 +356,11 @@ html, body {
   font-weight: 700;
   font-size: 1.6rem;
   color: #1a2e1a;
+  transition: color 0.3s ease;
+}
+
+.docentes__tarjeta:hover .docentes__nombre {
+  color: #c98a4b;
 }
 
 .docentes__bio-corta {
@@ -469,8 +479,9 @@ html, body {
 
 .docentes__testimonios {
   background-color: #e8ede3;
-  padding: 2rem 1rem 3rem;
+  padding: 2rem 1.5rem 3rem;
   text-align: center;
+  width: 100%;
 }
 
 .docentes__testimonios-titulo {
@@ -495,6 +506,12 @@ html, body {
   border-radius: 12px;
   padding: 1.5rem;
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.docentes__testimonio:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
 }
 
 .docentes__testimonio-texto {
@@ -540,36 +557,43 @@ html, body {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
-.docentes__footer-logo {
-  display: block;
-  width: 26px;
-  height: 26px;
-  background-color: #e9efe3;
-  -webkit-mask-image: url("../media/logo-unicah.svg");
-  mask-image: url("../media/logo-unicah.svg");
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
+.docentes__footer-redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
-.docentes__footer-separador {
-  width: 1px;
-  height: 24px;
-  background-color: rgba(233, 239, 227, 0.35);
+.docentes__footer-red {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.docentes__footer-frase {
-  font-family: 'PT Serif', serif;
-  font-style: italic;
-  font-weight: 700;
-  color: #e9efe3;
-  margin: 0;
-  font-size: 1rem;
+.docentes__footer-red:hover {
+  transform: scale(1.1);
+}
+
+.docentes__footer-red-icono {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .docentes__footer-red {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 @media (min-width: 720px) {
