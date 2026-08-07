@@ -8,12 +8,59 @@
 </head>
 <body class="plan__page">
 
+    <!-- HEADER + MENU -->
+    <header class="header-sitio">
+        <div class="header-sitio__badge">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=64&q=80" alt="Logo" class="header-sitio__badge-icon">
+            <span class="header-sitio__badge-text">INGENIERÍA AMBIENTAL · UNICAH</span>
+        </div>
+        <button class="header-sitio__menu-btn" id="btn-menu" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="menu-panel" id="menu-panel">
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+                <a href="index.html" class="menu-panel__link">Inicio</a>
+                <a href="pagina-02-carrera.html" class="menu-panel__link">Sobre la Carrera</a>
+                <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+                <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+            </div>
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">COMUNIDAD</span>
+                <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link">Únete / Vida Estudiantil</a>
+                <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+            </div>
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">RECURSOS</span>
+                <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+                <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+                <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+                <a href="pagina-10-preguntas.html" class="menu-panel__link">Preguntas Frecuentes</a>
+            </div>
+        </nav>
+    </header>
+
     <!-- HERO SECTION -->
     <section class="plan__hero">
+        <div class="plan__carrusel" id="plan-carrusel">
+            <div class="plan__slide plan__slide--activo" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80')"></div>
+            <div class="plan__slide" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80')"></div>
+            <div class="plan__slide" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=80')"></div>
+        </div>
         <div class="plan__hero-overlay"></div>
         <div class="plan__hero-contenido">
             <h1 class="plan__hero-titulo">PLAN DE ESTUDIO</h1>
             <p class="plan__hero-subtitulo">61 clases · 13 semestres · 4 años para leer el territorio</p>
+        </div>
+        <div class="plan__controles">
+            <button class="plan__flecha plan__flecha--izq" id="plan-flecha-izq" aria-label="Anterior">‹</button>
+            <div class="plan__dots" id="plan-dots">
+                <span class="plan__dot plan__dot--activo" data-index="0"></span>
+                <span class="plan__dot" data-index="1"></span>
+                <span class="plan__dot" data-index="2"></span>
+            </div>
+            <button class="plan__flecha plan__flecha--der" id="plan-flecha-der" aria-label="Siguiente">›</button>
         </div>
     </section>
 
@@ -755,6 +802,8 @@
         </div>
     </div>
 
+    <!-- Scripts compartidos -->
+    <script src="js/funciones-compartidas.js"></script>
     <!-- Script de la página -->
     <script src="js/pagina-03.js"></script>
 </body>
