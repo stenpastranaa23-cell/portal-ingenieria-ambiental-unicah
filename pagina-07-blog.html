@@ -1,12 +1,412 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1 class="blog__titulo">Blog</h1>
+
+  <main id="blog-app" class="blog__app">
+
+    <section class="blog__view" data-view="list">
+
+      <header class="header-sitio">
+        <div class="header-sitio__badge">
+          <img src="img/Inicio/Logo Ambiental.png" alt="Logo Ingeniería Ambiental" class="header-sitio__badge-icon">
+          <span class="header-sitio__badge-text">INGENIERÍA AMBIENTAL · UNICAH</span>
+        </div>
+        <button class="header-sitio__menu-btn" id="btn-menu"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="menu-panel">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="menu-panel" id="menu-panel">
+          <div class="menu-panel__grupo">
+            <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+            <a href="index.html" class="menu-panel__link">Inicio</a>
+            <a href="pagina-02-carrera.html" class="menu-panel__link">Sobre la Carrera</a>
+            <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+            <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+          </div>
+          <div class="menu-panel__grupo">
+            <span class="menu-panel__categoria">COMUNIDAD</span>
+            <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link">Únete / Vida Estudiantil</a>
+            <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+          </div>
+          <div class="menu-panel__grupo">
+            <span class="menu-panel__categoria">RECURSOS</span>
+            <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+            <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+            <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+            <a href="pagina-10-preguntas.html" class="menu-panel__link">Preguntas Frecuentes</a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- BLOQUE 1a — PORTADA (artículo id 0, fija, clicable) -->
+      <section class="blog__portada" data-goto="articulo-0">
+        <img class="blog__portada-img" src="img/blog/portada-maria-jose.jpg" alt="Valle montañoso al atardecer">
+        <div class="blog__portada-degradado"></div>
+
+        <div class="blog__portada-contenido">
+          <span class="blog__etiqueta-base blog__etiqueta--egresados">EGRESADOS</span>
+          <blockquote class="blog__portada-cita">“Entendí que no estaba salvando un río. Estaba devolviéndole a una comunidad entera el derecho a confiar en su propia agua.”</blockquote>
+          <div class="blog__portada-autor">
+            <img class="blog__portada-autor-foto" src="img/blog/maria-jose-osorio.jpg" alt="María José Osorio">
+            <div class="blog__portada-autor-info">
+              <span class="blog__portada-autor-nombre">María José Osorio</span>
+              <span class="blog__portada-autor-rol">Coordinadora Regional de Manejo de Cuencas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE 1b — DESTACADAS (carrusel de 3 artículos distintos, con auto-rotación) -->
+<section class="blog__destacadas">
+
+  <article class="blog__destacada-slide blog__destacada-slide--activa"
+    data-destacada-slide
+    data-goto="articulo-2"
+    style="background-image: url('img/blog/destacada-rio-platano.jpg');"
+    aria-hidden="false">
+    <div class="blog__destacada-degradado"></div>
+    <div class="blog__destacada-texto">
+      <span class="blog__etiqueta-base blog__etiqueta--expediciones">EXPEDICIONES</span>
+      <h3 class="blog__destacada-titulo">Diez días en la Reserva del Río Plátano</h3>
+    </div>
+  </article>
+
+  <article class="blog__destacada-slide"
+    data-destacada-slide
+    data-goto="articulo-7"
+    style="background-image: url('img/blog/destacada-directora-sostenibilidad.jpg');"
+    aria-hidden="true">
+    <div class="blog__destacada-degradado"></div>
+    <div class="blog__destacada-texto">
+      <span class="blog__etiqueta-base blog__etiqueta--egresados">EGRESADOS</span>
+      <h3 class="blog__destacada-titulo">Directora de Sostenibilidad a los 28 años</h3>
+    </div>
+  </article>
+
+  <article class="blog__destacada-slide"
+    data-destacada-slide
+    data-goto="articulo-9"
+    style="background-image: url('img/blog/destacada-proyecto-final.jpg');"
+    aria-hidden="true">
+    <div class="blog__destacada-degradado"></div>
+    <div class="blog__destacada-texto">
+      <span class="blog__etiqueta-base blog__etiqueta--vivencias">VIVENCIAS UNIVERSITARIAS</span>
+      <h3 class="blog__destacada-titulo">El proyecto que casi no entregamos a tiempo</h3>
+    </div>
+  </article>
+
+  <div class="blog__destacada-dots" role="tablist" aria-label="Historias destacadas">
+    <button type="button" class="blog__destacada-dot blog__destacada-dot--activo" data-destacada-dot role="tab" aria-selected="true" aria-label="Ver destacada 1"></button>
+    <button type="button" class="blog__destacada-dot" data-destacada-dot role="tab" aria-selected="false" aria-label="Ver destacada 2"></button>
+    <button type="button" class="blog__destacada-dot" data-destacada-dot role="tab" aria-selected="false" aria-label="Ver destacada 3"></button>
+  </div>
+
+</section>
+
+   <!-- BLOQUE 2 — HISTORIAS RECIENTES (pestañas de filtro + tarjetas) -->
+<section class="blog__recientes">
+
+  <h2 class="blog__recientes-titulo">Historias recientes</h2>
+
+  <div class="blog__filtros" role="tablist" aria-label="Filtrar historias por categoría">
+    <button type="button" class="blog__filtro blog__filtro--activo" data-filtro="todas" role="tab" aria-selected="true">Todas</button>
+    <button type="button" class="blog__filtro" data-filtro="egresados" role="tab" aria-selected="false">Egresados</button>
+    <button type="button" class="blog__filtro" data-filtro="expediciones" role="tab" aria-selected="false">Expediciones</button>
+    <button type="button" class="blog__filtro" data-filtro="vivencias" role="tab" aria-selected="false">Vivencias U.</button>
+  </div>
+
+  <div class="blog__lista">
+
+    <article class="blog__tarjeta" data-categoria="egresados" data-goto="articulo-1">
+      <div class="blog__tarjeta-img" style="background-image: url('img/blog/tarjeta-choluteca.jpg');"></div>
+      <div class="blog__tarjeta-contenido">
+        <div class="blog__tarjeta-meta">
+          <span class="blog__etiqueta-base blog__etiqueta--egresados">EGRESADOS</span>
+          <span class="blog__tarjeta-fecha">hace 2 días</span>
+        </div>
+        <h3 class="blog__tarjeta-titulo">De las aulas a salvar el Río Choluteca</h3>
+        <p class="blog__tarjeta-resumen">Carlos volvió al mismo tramo del río donde hizo su práctica profesional, pero esta vez como el ingeniero a cargo de devolverle la vida.</p>
+        <span class="blog__tarjeta-link">Leer su historia »</span>
+      </div>
+    </article>
+
+    <article class="blog__tarjeta" data-categoria="expediciones" data-goto="articulo-2">
+      <div class="blog__tarjeta-img" style="background-image: url('img/blog/tarjeta-rio-platano.jpg');"></div>
+      <div class="blog__tarjeta-contenido">
+        <div class="blog__tarjeta-meta">
+          <span class="blog__etiqueta-base blog__etiqueta--expediciones">EXPEDICIONES</span>
+          <span class="blog__tarjeta-fecha">hace 4 días</span>
+        </div>
+        <h3 class="blog__tarjeta-titulo">Diez días en la Reserva del Río Plátano</h3>
+        <p class="blog__tarjeta-resumen">Sin señal, sin electricidad y con lluvia casi todos los días: así fue la expedición que Diana describe como la clase más importante de su carrera.</p>
+        <span class="blog__tarjeta-link">Leer su historia »</span>
+      </div>
+    </article>
+
+    <article class="blog__tarjeta" data-categoria="vivencias" data-goto="articulo-3">
+      <div class="blog__tarjeta-img" style="background-image: url('img/blog/tarjeta-huella-carbono.jpg');"></div>
+      <div class="blog__tarjeta-contenido">
+        <div class="blog__tarjeta-meta">
+          <span class="blog__etiqueta-base blog__etiqueta--vivencias">VIVENCIAS UNIVERSITARIAS</span>
+          <span class="blog__tarjeta-fecha">hace 6 días</span>
+        </div>
+        <h3 class="blog__tarjeta-titulo">La noche que no dormimos calculando huella de carbono</h3>
+        <p class="blog__tarjeta-resumen">Un proyecto final, cuatro estudiantes y una hoja de cálculo que se corrompió a las 2 a.m. Así se forjan las amistades en esta carrera.</p>
+        <span class="blog__tarjeta-link">Leer su historia »</span>
+      </div>
+    </article>
+
+    <article class="blog__tarjeta" data-categoria="egresados" data-goto="articulo-4">
+      <div class="blog__tarjeta-img" style="background-image: url('img/blog/tarjeta-reforestacion.jpg');"></div>
+      <div class="blog__tarjeta-contenido">
+        <div class="blog__tarjeta-meta">
+          <span class="blog__etiqueta-base blog__etiqueta--egresados">EGRESADOS</span>
+          <span class="blog__tarjeta-fecha">hace 1 semana</span>
+        </div>
+        <h3 class="blog__tarjeta-titulo">Reforestando el Corredor Biológico</h3>
+        <p class="blog__tarjeta-resumen">Roberto ha plantado más de 40,000 árboles desde que se graduó. Nos cuenta por qué todavía recuerda el nombre del primero.</p>
+        <span class="blog__tarjeta-link">Leer su historia »</span>
+      </div>
+    </article>
+
+    <article class="blog__tarjeta" data-categoria="expediciones" data-goto="articulo-5">
+      <div class="blog__tarjeta-img" style="background-image: url('img/blog/tarjeta-cayos-cochinos.jpg');"></div>
+      <div class="blog__tarjeta-contenido">
+        <div class="blog__tarjeta-meta">
+          <span class="blog__etiqueta-base blog__etiqueta--expediciones">EXPEDICIONES</span>
+          <span class="blog__tarjeta-fecha">hace 9 días</span>
+        </div>
+        <h3 class="blog__tarjeta-titulo">Buceando entre corales en Cayos Cochinos</h3>
+        <p class="blog__tarjeta-resumen">Su primera inmersión de investigación terminó con lágrimas dentro de la máscara de buceo. No eran de miedo.</p>
+        <span class="blog__tarjeta-link">Leer su historia »</span>
+      </div>
+    </article>
+
+  </div>
+</section>>
+
+    </section>
+
+    <!-- BLOQUE 3 — VISTA DE DETALLE (artículo 0: María José Osorio) -->
+<section class="blog__view" data-view="articulo-0">
+
+  <div class="blog__articulo-portada">
+    <img class="blog__articulo-portada-img" src="img/blog/portada-maria-jose.jpg" alt="Valle montañoso al atardecer">
+    <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+  </div>
+
+  <div class="blog__articulo-encabezado">
+    <span class="blog__etiqueta-base blog__etiqueta--egresados">EGRESADOS</span>
+    <h1 class="blog__articulo-titulo">El día que entendí para qué servía todo esto</h1>
+
+    <div class="blog__articulo-autor">
+      <img class="blog__articulo-autor-foto" src="img/blog/maria-jose-osorio.jpg" alt="">
+      <div class="blog__articulo-autor-info">
+        <span class="blog__articulo-autor-nombre">María José Osorio</span>
+        <span class="blog__articulo-autor-rol">Coordinadora Regional de Manejo de Cuencas</span>
+      </div>
+      <span class="blog__articulo-tiempo">6 min de lectura</span>
+    </div>
+  </div>
+
+  <div class="blog__articulo-cuerpo">
+    <p class="blog__articulo-dropcap">María José Osorio recuerda el día exacto en que la ingeniería ambiental dejó de ser una carrera y se convirtió en una vocación: parada frente a un comité de agua potable rural, explicando en términos sencillos por qué el color del agua había cambiado, vio a un señor mayor asentir con los ojos llenos de lágrimas. "Por fin alguien nos explica algo", le dijo.</p>
+  </div>
+
+  <div class="blog__articulo-dato">
+    <span class="blog__articulo-dato-num">12</span>
+    <div class="blog__articulo-dato-texto">
+      <span class="blog__articulo-dato-etiqueta">Dato ambiental global</span>
+      comunidades reciben hoy agua monitoreada directamente por el programa que ella coordina.
+    </div>
+  </div>
+
+  <div class="blog__articulo-cuerpo blog__articulo-cuerpo--cierre">
+    <p>Hoy coordina el manejo de doce microcuencas que abastecen a comunidades rurales del sur del país. Su trabajo mezcla ciencia, negociación comunitaria y una paciencia que, admite, no aprendió en ningún curso sino en el terreno. "UNICAH me dio las herramientas técnicas. La cuenca me enseñó a usarlas con humildad", dice, mirando el mismo tramo del río donde hizo su primer muestreo hace nueve años.</p>
+  </div>
+
+</section>
+
+<!-- ARTÍCULO 1 — Carlos Mejía -->
+<section class="blog__view" data-view="articulo-1">
+  <div class="blog__articulo-portada">
+    <img class="blog__articulo-portada-img" src="img/blog/portada-articulo-1.jpg" alt="Río Choluteca">
+    <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+  </div>
+  <div class="blog__articulo-encabezado">
+    <span class="blog__etiqueta-base blog__etiqueta--egresados">EGRESADOS</span>
+    <h1 class="blog__articulo-titulo">De las aulas a salvar el Río Choluteca</h1>
+    <div class="blog__articulo-autor">
+      <img class="blog__articulo-autor-foto" src="img/blog/avatar-articulo-1.jpg" alt="">
+      <div class="blog__articulo-autor-info">
+        <span class="blog__articulo-autor-nombre">Carlos Mejía</span>
+        <span class="blog__articulo-autor-rol">Egresado 2019 · Ingeniero de Calidad de Agua, SANAA</span>
+      </div>
+      <span class="blog__articulo-tiempo">5 min de lectura</span>
+    </div>
+  </div>
+  <div class="blog__articulo-cuerpo">
+    <p class="blog__articulo-dropcap">Carlos recuerda con exactitud la primera vez que metió las botas en el Río Choluteca durante su tercer año de carrera: el agua olía distinto a como la describían los libros. Esa tarde tomó una muestra, la etiquetó, y sin saberlo, definió el resto de su vida profesional.</p>
+  </div>
+  <div class="blog__articulo-dato">
+    <span class="blog__articulo-dato-num">80%</span>
+    <div class="blog__articulo-dato-texto">
+      <span class="blog__articulo-dato-etiqueta">Dato ambiental global</span>
+      de los ríos urbanos en Centroamérica reciben algún tipo de descarga sin tratar antes de llegar al mar.
+    </div>
+  </div>
+  <div class="blog__articulo-cuerpo blog__articulo-cuerpo--cierre">
+    <p>Hoy dirige un equipo que monitorea la calidad del agua en doce puntos de la cuenca. Dice que lo que aprendió en los laboratorios de UNICAH no fue solo a interpretar un análisis fisicoquímico, sino a no rendirse cuando los números no mejoran de un mes a otro. "Uno aprende a medir el progreso en años, no en semanas", cuenta, mientras revisa una nueva muestra que, esta vez, sí muestra mejoría.</p>
+  </div>
+</section>
+
+<!-- ARTÍCULO 2 — Diana Suyapa -->
+<section class="blog__view" data-view="articulo-2">
+  <div class="blog__articulo-portada">
+    <img class="blog__articulo-portada-img" src="img/blog/portada-articulo-2.jpg" alt="Reserva del Río Plátano">
+    <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+  </div>
+  <div class="blog__articulo-encabezado">
+    <span class="blog__etiqueta-base blog__etiqueta--expediciones">EXPEDICIONES</span>
+    <h1 class="blog__articulo-titulo">Diez días en la Reserva del Río Plátano</h1>
+    <div class="blog__articulo-autor">
+      <img class="blog__articulo-autor-foto" src="img/blog/avatar-articulo-2.jpg" alt="">
+      <div class="blog__articulo-autor-info">
+        <span class="blog__articulo-autor-nombre">Diana Suyapa</span>
+        <span class="blog__articulo-autor-rol">Estudiante de 5to año</span>
+      </div>
+      <span class="blog__articulo-tiempo">6 min de lectura</span>
+    </div>
+  </div>
+  <div class="blog__articulo-cuerpo">
+    <p class="blog__articulo-dropcap">Diana no había dormido en una hamaca antes de este viaje. Tampoco había cargado un GPS satelital ni tomado muestras de sedimento bajo lluvia constante. La expedición de campo de su quinto año la llevó, junto a ocho compañeros, a diez días dentro de la Reserva del Río Plátano documentando cambios en la cobertura boscosa.</p>
+  </div>
+  <div class="blog__articulo-dato">
+    <span class="blog__articulo-dato-num">5,250 km²</span>
+    <div class="blog__articulo-dato-texto">
+      <span class="blog__articulo-dato-etiqueta">Dato ambiental global</span>
+      protege la Reserva de la Biósfera del Río Plátano, Patrimonio de la Humanidad por la UNESCO.
+    </div>
+  </div>
+  <div class="blog__articulo-cuerpo blog__articulo-cuerpo--cierre">
+    <p>Lo que más recuerda no es el cansancio, sino las noches: sentados alrededor de una fogata, su profesor les pedía que describieran en voz alta todo lo que habían escuchado ese día en la selva. "Ahí entendí que un ecosistema no se estudia, se escucha", dice. Volvió a Tegucigalpa con las botas destruidas y, según ella, con la carrera clara por primera vez.</p>
+  </div>
+</section>
+
+<!-- ARTÍCULO 3 — Ana Lucía Paz -->
+<section class="blog__view" data-view="articulo-3">
+  <div class="blog__articulo-portada">
+    <img class="blog__articulo-portada-img" src="img/blog/portada-articulo-3.jpg" alt="Laboratorio de noche">
+    <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+  </div>
+  <div class="blog__articulo-encabezado">
+    <span class="blog__etiqueta-base blog__etiqueta--vivencias">VIVENCIAS UNIVERSITARIAS</span>
+    <h1 class="blog__articulo-titulo">La noche que no dormimos calculando huella de carbono</h1>
+    <div class="blog__articulo-autor">
+      <img class="blog__articulo-autor-foto" src="img/blog/avatar-articulo-3.jpg" alt="">
+      <div class="blog__articulo-autor-info">
+        <span class="blog__articulo-autor-nombre">Ana Lucía Paz</span>
+        <span class="blog__articulo-autor-rol">Estudiante de 3er año</span>
+      </div>
+      <span class="blog__articulo-tiempo">4 min de lectura</span>
+    </div>
+  </div>
+  <div class="blog__articulo-cuerpo">
+    <p class="blog__articulo-dropcap">Eran las once de la noche cuando el archivo de Excel con todos los cálculos de huella de carbono del proyecto final se corrompió. Ana Lucía y sus tres compañeros de grupo se miraron sin decir nada durante un minuto entero antes de empezar de cero.</p>
+  </div>
+  <div class="blog__articulo-dato">
+    <span class="blog__articulo-dato-num">36%</span>
+    <div class="blog__articulo-dato-texto">
+      <span class="blog__articulo-dato-etiqueta">Dato ambiental global</span>
+      de las emisiones globales de CO₂ provienen del sector energético según el último inventario disponible.
+    </div>
+  </div>
+  <div class="blog__articulo-cuerpo blog__articulo-cuerpo--cierre">
+    <p>Terminaron a las cinco de la mañana, con el campus vacío y una cafetera compartida entre los cuatro. Cuando presentaron el proyecto esa tarde, ninguno mencionó la crisis de la madrugada. "Fue agotador, pero fue la primera vez que sentí que estábamos resolviendo un problema real, no solo entregando una tarea", recuerda.</p>
+  </div>
+</section>
+
+<!-- ARTÍCULO 4 — Roberto Núñez -->
+<section class="blog__view" data-view="articulo-4">
+  <div class="blog__articulo-portada">
+    <img class="blog__articulo-portada-img" src="img/blog/portada-articulo-4.jpg" alt="Reforestación">
+    <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+  </div>
+  <div class="blog__articulo-encabezado">
+    <span class="blog__etiqueta-base blog__etiqueta--egresados">EGRESADOS</span>
+    <h1 class="blog__articulo-titulo">Reforestando el Corredor Biológico</h1>
+    <div class="blog__articulo-autor">
+      <img class="blog__articulo-autor-foto" src="img/blog/avatar-articulo-4.jpg" alt="">
+      <div class="blog__articulo-autor-info">
+        <span class="blog__articulo-autor-nombre">Roberto Núñez</span>
+        <span class="blog__articulo-autor-rol">Egresado 2016 · Coordinador de Proyectos, Fundación Vida</span>
+      </div>
+      <span class="blog__articulo-tiempo">5 min de lectura</span>
+    </div>
+  </div>
+  <div class="blog__articulo-cuerpo">
+    <p class="blog__articulo-dropcap">Cuando Roberto presentó su tesis sobre restauración de suelos degradados, su asesor le hizo una pregunta que no pudo responder: "¿Y quién le va a dar seguimiento a esto después de que te gradúes?" Ocho años después, la respuesta es él mismo.</p>
+  </div>
+  <div class="blog__articulo-dato">
+    <span class="blog__articulo-dato-num">40,000+</span>
+    <div class="blog__articulo-dato-texto">
+      <span class="blog__articulo-dato-etiqueta">Dato ambiental global</span>
+      árboles nativos plantados por su equipo en los últimos ocho años dentro del Corredor Biológico Mesoamericano.
+    </div>
+  </div>
+  <div class="blog__articulo-cuerpo blog__articulo-cuerpo--cierre">
+    <p>Su fundación trabaja con comunidades locales para reforestar tramos del Corredor Biológico, combinando especies nativas con necesidades productivas de las familias. "La ingeniería ambiental que a mí me sirvió no fue la de los libros, fue la de convencer a un señor de que sembrar guayabo también le conviene a él", dice, riendo.</p>
+  </div>
+</section>
+
+<!-- ARTÍCULO 5 — Fernanda Erazo -->
+<section class="blog__view" data-view="articulo-5">
+  <div class="blog__articulo-portada">
+    <img class="blog__articulo-portada-img" src="img/blog/portada-articulo-5.jpg" alt="Cayos Cochinos">
+    <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+  </div>
+  <div class="blog__articulo-encabezado">
+    <span class="blog__etiqueta-base blog__etiqueta--expediciones">EXPEDICIONES</span>
+    <h1 class="blog__articulo-titulo">Buceando entre corales en Cayos Cochinos</h1>
+    <div class="blog__articulo-autor">
+      <img class="blog__articulo-autor-foto" src="img/blog/avatar-articulo-5.jpg" alt="">
+      <div class="blog__articulo-autor-info">
+        <span class="blog__articulo-autor-nombre">Fernanda Erazo</span>
+        <span class="blog__articulo-autor-rol">Estudiante de 4to año</span>
+      </div>
+      <span class="blog__articulo-tiempo">5 min de lectura</span>
+    </div>
+  </div>
+  <div class="blog__articulo-cuerpo">
+    <p class="blog__articulo-dropcap">Fernanda había buceado antes, pero nunca con una tabla de registro atada a la muñeca y un protocolo de conteo de especies que memorizar bajo el agua. La expedición a Cayos Cochinos formaba parte de un convenio de investigación entre UNICAH y una estación biológica marina.</p>
+  </div>
+  <div class="blog__articulo-dato">
+    <span class="blog__articulo-dato-num">50%</span>
+    <div class="blog__articulo-dato-texto">
+      <span class="blog__articulo-dato-etiqueta">Dato ambiental global</span>
+      de los arrecifes de coral del mundo se ha perdido desde 1950 debido al cambio climático y la contaminación.
+    </div>
+  </div>
+  <div class="blog__articulo-cuerpo blog__articulo-cuerpo--cierre">
+    <p>El segundo día de inmersiones, su grupo documentó un sector de arrecife completamente blanqueado. "Nadie nos preparó para lo que se siente ver eso de cerca", cuenta. Volvió a la superficie con la máscara empañada por dentro, y desde entonces decidió enfocar su tesis en resiliencia de ecosistemas coralinos.</p>
+  </div>
+</section>
+
+  </main>
+
+  <script src="js/funciones-compartidas.js" defer></script>
+  <script src="js/pagina-07.js" defer></script>
 </body>
 </html>
