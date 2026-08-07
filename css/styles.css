@@ -2180,9 +2180,341 @@ body.plan__page {
 
   /* ============ PÁGINA 5 - VIDA ESTUDIANTIL ============ */
   /* Dueño: Fernando */
+  :root {
+    --vida-verde-oscuro: #1a2e1a;
+    --vida-verde-oscuro-2: #24391f;
+    --vida-verde-oscuro-3: #2e4a2e;
+    --vida-fondo-alterno: #e8ede3;
+    --vida-dorado: #c98a4b;
+    --vida-dorado-hover: #b5793e;
+    --vida-resaltado: #8bc34a;
+    --vida-tarjeta-fondo: #f4f1ea;
+    --vida-tarjeta-borde: #d5dccb;
+    --vida-texto-oscuro: #3a3a3a;
+    --vida-texto-muted: #5c6355;
+    --vida-fuente-texto: 'PT Serif', serif;
+    --vida-fuente-titulo: 'Tangerine', cursive;
+  }
+
+  .vida__hero {
+    position: relative;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    padding: 140px 40px 80px;
+    background: linear-gradient(135deg, var(--vida-verde-oscuro) 0%, var(--vida-verde-oscuro-2) 55%, var(--vida-verde-oscuro-3) 100%);
+    overflow: hidden;
+  }
+
+  .vida__hero-contenido {
+    max-width: 700px;
+    color: #fff;
+  }
+
   .vida__titulo {
-  font-size: 2.5rem;
-    color:green;
+    font-family: var(--vida-fuente-texto);
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 12px;
+  }
+
+  .vida__subtitulo-hero {
+    font-family: var(--vida-fuente-texto);
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+  }
+
+  .vida__resaltado {
+    color: var(--vida-resaltado);
+  }
+
+  .vida__hero-texto {
+    font-family: var(--vida-fuente-texto);
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    max-width: 560px;
+    margin-bottom: 28px;
+  }
+
+  .vida__cta-flecha {
+    display: inline-block;
+    font-family: var(--vida-fuente-texto);
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    transition: background 0.3s ease;
+  }
+
+  .vida__cta-flecha:hover {
+    background: rgba(255,255,255,0.25);
+  }
+
+  .vida__etiqueta {
+    display: block;
+    text-align: center;
+    font-family: var(--vida-fuente-texto);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--vida-dorado);
+    margin-bottom: 10px;
+  }
+
+  .vida__subtitulo {
+    display: block;
+    text-align: center;
+    font-family: var(--vida-fuente-titulo);
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: var(--vida-verde-oscuro);
+    margin-bottom: 20px;
+  }
+
+  .vida__intro {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .vida__intro-texto {
+    font-family: var(--vida-fuente-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--vida-texto-oscuro);
+  }
+
+  .vida__giras {
+    background: var(--vida-fondo-alterno);
+    padding: 80px 40px;
+  }
+
+  .vida__giras-texto {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+    font-family: var(--vida-fuente-texto);
+    color: var(--vida-texto-oscuro);
+    line-height: 1.6;
+  }
+
+  .vida__tarjetas {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .vida__tarjeta {
+    background: var(--vida-tarjeta-fondo);
+    border: 1px solid var(--vida-tarjeta-borde);
+    border-radius: 12px;
+    padding: 28px 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .vida__tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  }
+
+  .vida__tarjeta-titulo {
+    font-family: var(--vida-fuente-texto);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--vida-verde-oscuro);
+    margin-bottom: 10px;
+  }
+
+  .vida__tarjeta-texto {
+    font-family: var(--vida-fuente-texto);
+    font-size: 0.9rem;
+    color: var(--vida-texto-muted);
+    line-height: 1.5;
+  }
+
+  .vida__semana-verde {
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .vida__semana-verde-texto {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-family: var(--vida-fuente-texto);
+    color: var(--vida-texto-oscuro);
+    line-height: 1.6;
+  }
+
+  .vida__redes {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .vida__boton {
+    display: inline-block;
+    font-family: var(--vida-fuente-texto);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .vida__boton--primario {
+    background: var(--vida-dorado);
+    color: #1a1a1a;
+  }
+
+  .vida__boton--primario:hover {
+    background: var(--vida-dorado-hover);
+  }
+
+  .vida__boton--secundario {
+    background: transparent;
+    color: var(--vida-dorado);
+    border: 2px solid var(--vida-dorado);
+  }
+
+  .vida__boton--secundario:hover {
+    background: var(--vida-dorado);
+    color: #1a1a1a;
+  }
+
+  .vida__nota {
+    max-width: 640px;
+    margin: 0 auto;
+    font-family: var(--vida-fuente-texto);
+    font-size: 0.85rem;
+    color: var(--vida-texto-muted);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .vida__testimonios {
+    background: var(--vida-fondo-alterno);
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .vida__testimonio {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    border-left: 4px solid var(--vida-dorado);
+    border-radius: 12px;
+    padding: 36px 32px;
+    text-align: left;
+  }
+
+  .vida__testimonio-texto {
+    font-family: var(--vida-fuente-texto);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--vida-verde-oscuro);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .vida__testimonio-autor {
+    font-family: var(--vida-fuente-texto);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--vida-texto-muted);
+  }
+
+  .vida__cta {
+    background: var(--vida-verde-oscuro);
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .vida__cta .vida__subtitulo {
+    color: #fff;
+  }
+
+  .vida__cta-botones {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .vida__hero {
+      padding: 120px 24px 60px;
+      min-height: 520px;
+    }
+
+    .vida__titulo {
+      font-size: 2.2rem;
+    }
+
+    .vida__subtitulo-hero {
+      font-size: 1.3rem;
+    }
+
+    .vida__subtitulo {
+      font-size: 2.4rem;
+    }
+
+    .vida__intro,
+    .vida__giras,
+    .vida__semana-verde,
+    .vida__testimonios,
+    .vida__cta {
+      padding: 50px 20px;
+    }
+
+    .vida__testimonio {
+      padding: 28px 22px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .vida__titulo {
+      font-size: 1.8rem;
+    }
+
+    .vida__subtitulo-hero {
+      font-size: 1.1rem;
+    }
+
+    .vida__hero-texto {
+      font-size: 0.85rem;
+    }
+
+    .vida__subtitulo {
+      font-size: 2rem;
+    }
+
+    .vida__tarjetas {
+      grid-template-columns: 1fr;
+    }
+
+    .vida__boton {
+      width: 100%;
+      text-align: center;
+    }
+
+    .vida__redes,
+    .vida__cta-botones {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
 
 
