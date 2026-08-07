@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "osmer-ponce": {
             nombre: "Osmer Ponce",
             cargo: "Decano",
-            foto: "media/logo-facultad.png",
+            foto: "media/docentes/decano-perfil.jpeg",
             bio: "Al frente de la facultad desde hace más de una década, defiende una ingeniería que se aprende tanto en el aula como en el campo. Llegó a la docencia después de años trabajando en gestión de cuencas para instituciones públicas, y desde entonces ha insistido en que ningún estudiante se gradúe sin haber pisado el territorio que estudia. Bajo su gestión, la facultad amplió las giras de campo y fortaleció los convenios con municipalidades e instituciones ambientales del país.",
             cita: "Al frente de la facultad desde hace más de una década, defiende una ingeniería que se aprende tanto en el aula como en el campo.",
             pasiones: [
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "carmen-izaguirre": {
             nombre: "Carmen Izaguirre",
             cargo: "Catedrática de Zoología",
-            foto: "media/docentes/carmen-izaguirre.jpg",
+            foto: "media/docentes/ingCarmenI.png",
             bio: "Imparte zoología, gestión de recursos naturales y calidad de aire y suelo, guiando a los estudiantes a identificar y proteger la fauna y los ecosistemas de Honduras. Sus clases combinan trabajo de campo con análisis técnico, para que cada estudiante aprenda a leer un ecosistema antes de intervenir en él. La zoología permite entender qué especies habitan un territorio y cómo su presencia — o ausencia — revela el estado real del ambiente, mientras que la calidad de aire y suelo aporta las herramientas técnicas para medir el impacto de cualquier actividad humana sobre esos mismos ecosistemas.",
             cita: "Ningún ecosistema se protege desde un escritorio — primero hay que aprender a leerlo en el campo.",
             pasiones: [
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "miguel-montoya": {
             nombre: "Miguel Montoya",
             cargo: "Catedrático de Hidráulica y Sanitaria",
-            foto: "media/docentes/miguel-montoya.jpg",
+            foto: "media/docentes/ingMon.png",
             bio: "Enseña hidráulica, ingeniería sanitaria I y II, desechos sólidos e hidrogeología — las bases técnicas para diseñar sistemas de agua, saneamiento y manejo de residuos. Estas materias forman el núcleo de la ingeniería ambiental aplicada: sin un buen diseño hidráulico no hay agua potable confiable, sin ingeniería sanitaria no hay tratamiento adecuado de aguas residuales, y sin un manejo correcto de desechos sólidos cualquier avance ambiental se pierde. La hidrogeología, además, es clave para entender cómo se mueve y se contamina el agua subterránea.",
             cita: "Enseña las bases técnicas para diseñar sistemas de agua, saneamiento y manejo de residuos.",
             pasiones: [
@@ -104,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
         detalleFoto.src = docente.foto;
         detalleFoto.alt = docente.nombre;
         detalleFoto.classList.toggle("docentes__foto--logo", idDocente === "osmer-ponce");
+        detalleFoto.classList.toggle("docentes__foto--icono", idDocente !== "osmer-ponce" && docente.foto.endsWith(".svg"));
         detalleBio.textContent = docente.bio;
         detalleCita.textContent = docente.cita;
         detalleCargo.textContent = docente.cargo;
