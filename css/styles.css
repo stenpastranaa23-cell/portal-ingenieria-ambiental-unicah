@@ -281,8 +281,8 @@ body.plan__page {
 .plan__hero {
   position: relative;
   width: 100%;
-  height: 45vh;
-  min-height: 350px;
+  height: 70vh;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
