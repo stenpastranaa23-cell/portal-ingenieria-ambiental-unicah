@@ -1,3 +1,18 @@
+/* ============================================
+   RESETEO GLOBAL (ELIMINA BORDES BLANCOS)
+   ============================================ */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 
 /* ============ PÁGINA 1 - INICIO ============ */
 /* Dueño: Stefany */
@@ -70,22 +85,9 @@
 }
 
 /* ============================================
-   PÁGINA 11 - DOCENTES 
+   PÁGINA 11 - DOCENTES (PANTALLA COMPLETA)
    ============================================ */
 /* Dueño: Stefany */
-
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
 
 .docentes__nav {
   position: relative;
