@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "carmen-izaguirre": {
             nombre: "Carmen Izaguirre",
             cargo: "Catedrática de Zoología",
-            foto: "media/docentes/carmen-izaguirre.jpg",
+            foto: "media/docentes/zoologia.svg",
             bio: "Imparte zoología, gestión de recursos naturales y calidad de aire y suelo, guiando a los estudiantes a identificar y proteger la fauna y los ecosistemas de Honduras. Sus clases combinan trabajo de campo con análisis técnico, para que cada estudiante aprenda a leer un ecosistema antes de intervenir en él. La zoología permite entender qué especies habitan un territorio y cómo su presencia — o ausencia — revela el estado real del ambiente, mientras que la calidad de aire y suelo aporta las herramientas técnicas para medir el impacto de cualquier actividad humana sobre esos mismos ecosistemas.",
             cita: "Ningún ecosistema se protege desde un escritorio — primero hay que aprender a leerlo en el campo.",
             pasiones: [
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "miguel-montoya": {
             nombre: "Miguel Montoya",
             cargo: "Catedrático de Hidráulica y Sanitaria",
-            foto: "media/docentes/miguel-montoya.jpg",
+            foto: "media/docentes/hidraulica.svg",
             bio: "Enseña hidráulica, ingeniería sanitaria I y II, desechos sólidos e hidrogeología — las bases técnicas para diseñar sistemas de agua, saneamiento y manejo de residuos. Estas materias forman el núcleo de la ingeniería ambiental aplicada: sin un buen diseño hidráulico no hay agua potable confiable, sin ingeniería sanitaria no hay tratamiento adecuado de aguas residuales, y sin un manejo correcto de desechos sólidos cualquier avance ambiental se pierde. La hidrogeología, además, es clave para entender cómo se mueve y se contamina el agua subterránea.",
             cita: "Enseña las bases técnicas para diseñar sistemas de agua, saneamiento y manejo de residuos.",
             pasiones: [
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "juan-meza": {
             nombre: "Juan Meza",
             cargo: "Catedrático de SIG y Evaluación de Impacto Ambiental",
-            foto: "media/docentes/juan-meza.jpg",
+            foto: "media/docentes/sig-mapa.svg",
             bio: "Imparte Sistemas de Información Geográfica (SIG) y Evaluación de Impacto Ambiental I y II, herramientas clave para mapear el territorio y anticipar el efecto de los proyectos sobre el ambiente. El SIG permite representar y analizar información geográfica con precisión, mientras que la Evaluación de Impacto Ambiental es el proceso que identifica, previene y mitiga los efectos de un proyecto de construcción, minería o infraestructura antes de que se ejecute.",
             cita: "Enseña a mapear el territorio y anticipar el efecto de los proyectos sobre el ambiente.",
             pasiones: [
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "thelma-cabrera": {
             nombre: "Thelma Cabrera",
             cargo: "Catedrática de Manejo de Contaminantes",
-            foto: "media/docentes/thelma-cabrera.jpg",
+            foto: "media/docentes/produccion-limpia.svg",
             bio: "Imparte manejo de contaminantes, producción limpia, planeación de proyectos y formulación y evaluación de proyectos, formando a los estudiantes para prevenir la contaminación desde el diseño mismo de los procesos. La producción limpia busca reducir residuos y emisiones desde el origen de un proceso industrial, en vez de tratarlos después, mientras que la formulación y evaluación de proyectos le da a los estudiantes las herramientas para planear soluciones ambientales técnica y financieramente viables.",
             cita: "Forma a los estudiantes para prevenir la contaminación desde el diseño mismo de los procesos.",
             pasiones: [
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "carol-elvir": {
             nombre: "Carol Elvir",
             cargo: "Catedrática de Economía Ambiental",
-            foto: "media/docentes/carol-elvir.jpg",
+            foto: "media/docentes/energia-solar.svg",
             bio: "Enseña economía ambiental, además de energía y ambiente, mostrando cómo las decisiones económicas y energéticas impactan los recursos naturales del país. La economía ambiental estudia cómo asignar valor a los recursos naturales y cómo diseñar incentivos para su uso sostenible, mientras que energía y ambiente analiza el impacto de las distintas fuentes de energía — renovables y no renovables — sobre el entorno y la transición energética en Honduras.",
             cita: "Muestra cómo las decisiones económicas y energéticas impactan los recursos naturales del país.",
             pasiones: [
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "mirtha-ferrari": {
             nombre: "Mirtha Ferrari",
             cargo: "Catedrática de Toxicología y Salud Ambiental",
-            foto: "media/docentes/mirtha-ferrari.jpg",
+            foto: "media/docentes/toxicologia.svg",
             bio: "Imparte toxicología y salud, además de remediación ambiental, formando a los estudiantes para entender el efecto de los contaminantes en la salud pública y cómo revertir el daño ya causado. La toxicología ambiental estudia cómo las sustancias químicas afectan a las personas y a los ecosistemas, mientras que la remediación ambiental aporta las técnicas para limpiar suelos y cuerpos de agua contaminados y devolverlos a condiciones seguras.",
             cita: "Forma a los estudiantes para entender el efecto de los contaminantes en la salud pública.",
             pasiones: [
@@ -104,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
         detalleFoto.src = docente.foto;
         detalleFoto.alt = docente.nombre;
         detalleFoto.classList.toggle("docentes__foto--logo", idDocente === "osmer-ponce");
+        detalleFoto.classList.toggle("docentes__foto--icono", idDocente !== "osmer-ponce");
         detalleBio.textContent = docente.bio;
         detalleCita.textContent = docente.cita;
         detalleCargo.textContent = docente.cargo;

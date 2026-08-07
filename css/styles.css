@@ -1,3 +1,12 @@
+/* ============ RESET BASE (afecta a todas las páginas) ============ */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'PT Serif', serif;
+}
+
 /* ============ PÁGINA 1 - INICIO ============ */
 /* Dueño: Stefany */
 .inicio__titulo {
@@ -82,22 +91,76 @@
 /* ============ PÁGINA 11 - DOCENTES ============ */
 /* Dueño: Stefany */
 
-.docentes__nav {
+.docentes__hero {
   position: relative;
+  min-height: 260px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.docentes__hero-oscuro {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 10, 8, 0.72);
+}
+
+.docentes__hero--sin-foto {
+  background-color: #1a2e1a;
+}
+
+.docentes__hero--sin-foto .docentes__hero-oscuro {
+  display: none;
+}
+
+.docentes__hero-texto {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+}
+
+.docentes__hero-titulo {
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.docentes__hero-subtitulo {
+  font-family: 'PT Serif', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #fff;
+  margin: 0;
+}
+
+.docentes__nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #e8ede3;
 }
 
 .docentes__marca {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #fff;
-  border: 1px solid #d5dccb;
-  color: #1a2e1a;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
   text-decoration: none;
   padding: 0.4rem 1rem 0.4rem 0.4rem;
   border-radius: 999px;
@@ -121,8 +184,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid #d5dccb;
-  background-color: #fff;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -135,7 +198,7 @@
   display: block;
   width: 18px;
   height: 2px;
-  background-color: #1a2e1a;
+  background-color: #fff;
 }
 
 .docentes__menu-desplegable {
@@ -146,6 +209,8 @@
   right: 1rem;
   width: 220px;
   max-width: calc(100% - 2rem);
+  max-height: calc(100% - 5.5rem);
+  overflow-y: auto;
   background-color: rgba(28, 20, 12, 0.92);
   border-radius: 10px;
   padding: 1rem;
@@ -253,6 +318,14 @@
   background-color: #fff;
   border: 1px solid #d5dccb;
   padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.docentes__foto--icono {
+  object-fit: contain;
+  background-color: #f4f1ea;
+  border: 1px solid #d5dccb;
+  padding: 2.5rem;
   box-sizing: border-box;
 }
 
@@ -500,6 +573,18 @@
 }
 
 @media (min-width: 720px) {
+  .docentes__hero {
+    min-height: 320px;
+  }
+
+  .docentes__hero-titulo {
+    font-size: 2.5rem;
+  }
+
+  .docentes__hero-subtitulo {
+    font-size: 1.2rem;
+  }
+
   .docentes__titulo {
     font-size: 3rem;
   }
@@ -542,6 +627,14 @@
 }
 
 @media (min-width: 1025px) {
+  .docentes__hero {
+    min-height: 380px;
+  }
+
+  .docentes__hero-titulo {
+    font-size: 3rem;
+  }
+
   .docentes__nav {
     padding: 1.25rem 2rem;
   }
