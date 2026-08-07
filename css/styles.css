@@ -179,7 +179,7 @@ body.plan__page {
   transition: opacity 0.8s ease-in-out;
 }
 
-.plan__slide:nth-child(1) { background-position: center 20%; }
+.plan__slide:nth-child(1) { background-position: center center; background-size: contain; }
 .plan__slide:nth-child(2) { background-position: center 15%; }
 .plan__slide:nth-child(3) { background-position: center 40%; }
 
