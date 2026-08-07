@@ -1,14 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Docentes</title>
-    <link rel="stylesheet" href="../css/styles.css">|
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <h1 class="docentes__titulo">Docentes</h1>
 
-    
+    <nav class="docentes__nav">
+        <a class="docentes__marca" href="index.html">
+            <img class="docentes__marca-logo" src="media/logo-facultad.png" alt="Logo Facultad de Ingeniería Ambiental">
+            <span>Ingeniería Ambiental · UNICAH</span>
+        </a>
+        <button class="docentes__menu-btn" type="button" aria-label="Abrir menú" id="docentesMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="docentes__menu-desplegable" id="docentesMenuDesplegable">
+            <p class="docentes__menu-categoria">Sobre la carrera</p>
+            <a class="docentes__menu-link" href="index.html">Inicio</a>
+            <a class="docentes__menu-link" href="pagina-02-carrera.html">Sobre la Carrera</a>
+            <a class="docentes__menu-link" href="pagina-03-plan-estudio.html">Plan de Estudio</a>
+            <a class="docentes__menu-link" href="pagina-11-docentes.html">Docentes</a>
+
+            <p class="docentes__menu-categoria">Comunidad</p>
+            <a class="docentes__menu-link" href="pagina-04-instalaciones.html">Instalaciones y Laboratorios</a>
+            <a class="docentes__menu-link" href="pagina-05-vida-estudiantil.html">Únete / Vida Estudiantil</a>
+            <a class="docentes__menu-link" href="pagina-06-galeria.html">Galería</a>
+
+            <p class="docentes__menu-categoria">Recursos</p>
+            <a class="docentes__menu-link" href="pagina-07-blog.html">Blog</a>
+            <a class="docentes__menu-link" href="pagina-08-contacto.html">Contacto</a>
+            <a class="docentes__menu-link" href="pagina-09-sumate.html">Súmate</a>
+            <a class="docentes__menu-link" href="pagina-10-preguntas.html">Preguntas Frecuentes</a>
+        </div>
+    </nav>
+
+    <section class="docentes__equipo">
+        <p class="docentes__eyebrow">Nuestro equipo</p>
+        <h1 class="docentes__titulo">Toca cada materia para conocer más</h1>
+
+        <ul class="docentes__lista">
+            <li class="docentes__item">
+                <button class="docentes__tarjeta" type="button" data-docente="osmer-ponce">
+                    <!-- TODO: reemplazar por la foto real del Decano Osmer Ponce -->
+                    <img class="docentes__foto docentes__foto--logo" src="media/logo-facultad.png" alt="Logo Facultad de Ingeniería Ambiental">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Decano</span>
+                        <span class="docentes__nombre">Osmer Ponce</span>
+                        <span class="docentes__bio-corta">
+                            Al frente de la facultad desde hace más de una década, defiende una ingeniería
+                            que se aprende tanto en el aula como en el campo. Llegó a la docencia después de
+                            años trabajando en gestión de cuencas para instituciones públicas, y desde
+                            entonces ha insistido en que ningún estudiante se gradúe sin haber pisado el
+                            territorio que estudia.
+                        </span>
+                    </span>
+                </button>
+            </li>
+
+            <li class="docentes__item">
+                <button class="docentes__tarjeta docentes__tarjeta--invertida" type="button" data-docente="carmen-izaguirre">
+                    <!-- TODO: reemplazar por la foto real de la Lic. Carmen Izaguirre -->
+                    <img class="docentes__foto" src="media/docentes/carmen-izaguirre.jpg" alt="Zoología y ecosistemas de Honduras">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Catedrática de Zoología</span>
+                        <span class="docentes__nombre">Carmen Izaguirre</span>
+                        <span class="docentes__bio-corta">
+                            Imparte zoología, gestión de recursos naturales y calidad de aire y suelo,
+                            guiando a los estudiantes a identificar y proteger la fauna y los ecosistemas
+                            de Honduras.
+                        </span>
+                    </span>
+                </button>
+            </li>
+
+            <li class="docentes__item">
+                <button class="docentes__tarjeta" type="button" data-docente="miguel-montoya">
+                    <!-- TODO: reemplazar por la foto real del Ing. Miguel Montoya -->
+                    <img class="docentes__foto" src="media/docentes/miguel-montoya.jpg" alt="Hidráulica y manejo del agua">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Catedrático de Hidráulica y Sanitaria</span>
+                        <span class="docentes__nombre">Miguel Montoya</span>
+                        <span class="docentes__bio-corta">
+                            Enseña hidráulica, ingeniería sanitaria I y II, desechos sólidos e
+                            hidrogeología — las bases técnicas para diseñar sistemas de agua, saneamiento
+                            y manejo de residuos.
+                        </span>
+                    </span>
+                </button>
+            </li>
+
+            <li class="docentes__item">
+                <button class="docentes__tarjeta docentes__tarjeta--invertida" type="button" data-docente="juan-meza">
+                    <!-- TODO: reemplazar por la foto real del Ing. Juan Meza -->
+                    <img class="docentes__foto" src="media/docentes/juan-meza.jpg" alt="Territorio y mapeo del terreno">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Catedrático de SIG y Evaluación de Impacto Ambiental</span>
+                        <span class="docentes__nombre">Juan Meza</span>
+                        <span class="docentes__bio-corta">
+                            Imparte Sistemas de Información Geográfica (SIG) y Evaluación de Impacto
+                            Ambiental I y II, herramientas clave para mapear el territorio y anticipar el
+                            efecto de los proyectos sobre el ambiente.
+                        </span>
+                    </span>
+                </button>
+            </li>
+
+            <li class="docentes__item">
+                <button class="docentes__tarjeta" type="button" data-docente="thelma-cabrera">
+                    <!-- TODO: reemplazar por la foto real de la Ing. Thelma Cabrera -->
+                    <img class="docentes__foto" src="media/docentes/thelma-cabrera.jpg" alt="Procesos industriales y manejo de contaminantes">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Catedrática de Manejo de Contaminantes</span>
+                        <span class="docentes__nombre">Thelma Cabrera</span>
+                        <span class="docentes__bio-corta">
+                            Imparte manejo de contaminantes, producción limpia, planeación de proyectos y
+                            formulación y evaluación de proyectos, formando a los estudiantes para prevenir
+                            la contaminación desde el diseño mismo de los procesos.
+                        </span>
+                    </span>
+                </button>
+            </li>
+
+            <li class="docentes__item">
+                <button class="docentes__tarjeta docentes__tarjeta--invertida" type="button" data-docente="carol-elvir">
+                    <!-- TODO: reemplazar por la foto real de la Ing. Carol Elvir -->
+                    <img class="docentes__foto" src="media/docentes/carol-elvir.jpg" alt="Energía y ambiente">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Catedrática de Economía Ambiental</span>
+                        <span class="docentes__nombre">Carol Elvir</span>
+                        <span class="docentes__bio-corta">
+                            Enseña economía ambiental, además de energía y ambiente, mostrando cómo las
+                            decisiones económicas y energéticas impactan los recursos naturales del país.
+                        </span>
+                    </span>
+                </button>
+            </li>
+
+            <li class="docentes__item">
+                <button class="docentes__tarjeta" type="button" data-docente="mirtha-ferrari">
+                    <!-- TODO: reemplazar por la foto real de la Dra. Mirtha Ferrari -->
+                    <img class="docentes__foto" src="media/docentes/mirtha-ferrari.jpg" alt="Remediación ambiental y cuerpos de agua">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Catedrática de Toxicología y Salud Ambiental</span>
+                        <span class="docentes__nombre">Mirtha Ferrari</span>
+                        <span class="docentes__bio-corta">
+                            Imparte toxicología y salud, además de remediación ambiental, formando a los
+                            estudiantes para entender el efecto de los contaminantes en la salud pública y
+                            cómo revertir el daño ya causado.
+                        </span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </section>
+
+    <div class="docentes__overlay" id="docentesOverlay">
+        <div class="docentes__detalle">
+            <button class="docentes__cerrar" type="button" id="docentesCerrarBtn" aria-label="Cerrar">&times;</button>
+
+            <div class="docentes__detalle-cabecera">
+                <img class="docentes__detalle-foto" id="docentesDetalleFoto" src="" alt="">
+                <div class="docentes__detalle-bio">
+                    <p class="docentes__detalle-parrafo" id="docentesDetalleBio"></p>
+                </div>
+            </div>
+
+            <blockquote class="docentes__detalle-cita" id="docentesDetalleCita"></blockquote>
+
+            <p class="docentes__eyebrow">Lo que le apasiona</p>
+
+            <ul class="docentes__detalle-pasiones" id="docentesDetallePasiones"></ul>
+
+            <p class="docentes__cargo" id="docentesDetalleCargo"></p>
+            <p class="docentes__nombre" id="docentesDetalleNombre"></p>
+        </div>
+    </div>
+
+    <section class="docentes__testimonios">
+        <p class="docentes__eyebrow">Voces estudiantiles</p>
+        <h2 class="docentes__testimonios-titulo">Lo que dicen de ellos</h2>
+
+        <div class="docentes__lista-testimonios">
+            <div class="docentes__testimonio">
+                <p class="docentes__testimonio-texto">
+                    "El profesor Montoya nos hizo medir un río en persona antes de explicarnos la fórmula.
+                    Así se me quedó de verdad."
+                </p>
+                <div class="docentes__testimonio-autor">
+                    <span class="docentes__testimonio-avatar">KR</span>
+                    <span>
+                        <strong>Kevin R.</strong>
+                        <span class="docentes__testimonio-sobre">Sobre Miguel Montoya</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="docentes__testimonio">
+                <p class="docentes__testimonio-texto">
+                    "El Decano se aprende el nombre de todos los estudiantes de primer ingreso. Eso dice
+                    mucho de la carrera."
+                </p>
+                <div class="docentes__testimonio-autor">
+                    <span class="docentes__testimonio-avatar">FL</span>
+                    <span>
+                        <strong>Fátima L.</strong>
+                        <span class="docentes__testimonio-sobre">Sobre Osmer Ponce</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="docentes__testimonio">
+                <p class="docentes__testimonio-texto">
+                    "Con la profesora Elvir analizamos el costo real de un proyecto de energía solar en
+                    una aldea. Fue la clase más útil que he tenido."
+                </p>
+                <div class="docentes__testimonio-autor">
+                    <span class="docentes__testimonio-avatar">DM</span>
+                    <span>
+                        <strong>Diego M.</strong>
+                        <span class="docentes__testimonio-sobre">Sobre Carol Elvir</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docentes__footer">
+        <span class="docentes__footer-logo" role="img" aria-label="Escudo UNICAH"></span>
+        <span class="docentes__footer-separador"></span>
+        <p class="docentes__footer-frase">Donde la ingeniería se convierte en territorio protegido.</p>
+    </footer>
+
+    <script src="js/docentes.js"></script>
 </body>
 </html>

@@ -81,7 +81,478 @@
 
 /* ============ PÁGINA 11 - DOCENTES ============ */
 /* Dueño: Stefany */
+
+.docentes__nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #e8ede3;
+}
+
+.docentes__marca {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #d5dccb;
+  color: #1a2e1a;
+  text-decoration: none;
+  padding: 0.4rem 1rem 0.4rem 0.4rem;
+  border-radius: 999px;
+  font-family: 'PT Serif', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.docentes__marca-logo {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+.docentes__menu-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #d5dccb;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.docentes__menu-btn span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #1a2e1a;
+}
+
+.docentes__menu-desplegable {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  top: 4.5rem;
+  right: 1rem;
+  width: 220px;
+  max-width: calc(100% - 2rem);
+  background-color: rgba(28, 20, 12, 0.92);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.docentes__menu-desplegable--abierto {
+  display: block;
+}
+
+.docentes__menu-categoria {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #c98a4b;
+  font-family: 'PT Serif', serif;
+  margin: 1rem 0 0.4rem;
+}
+
+.docentes__menu-categoria:first-child {
+  margin-top: 0;
+}
+
+.docentes__menu-link {
+  display: block;
+  color: #f2ede2;
+  text-decoration: none;
+  font-family: 'PT Serif', serif;
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+}
+
+.docentes__menu-link:hover {
+  text-decoration: underline;
+}
+
+.docentes__equipo {
+  position: relative;
+  background-color: #e8ede3;
+  padding: 2rem 1rem 3rem;
+  text-align: center;
+}
+
+.docentes__eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #c98a4b;
+  font-family: 'PT Serif', serif;
+  margin: 0 0 0.5rem;
+}
+
 .docentes__titulo {
- font-size: 2.5rem;
-  color:green;
+  font-family: 'Tangerine', cursive;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #1a2e1a;
+  margin: 0 0 2rem;
+}
+
+.docentes__lista {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.docentes__item {
+  border-top: 1px solid rgba(26, 46, 26, 0.15);
+  padding: 2rem 0;
+}
+
+.docentes__item:last-child {
+  border-bottom: 1px solid rgba(26, 46, 26, 0.15);
+}
+
+.docentes__tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'PT Serif', serif;
+}
+
+.docentes__foto {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.docentes__foto--logo {
+  object-fit: contain;
+  background-color: #fff;
+  border: 1px solid #d5dccb;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.docentes__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.docentes__cargo {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #c98a4b;
+  font-family: 'PT Serif', serif;
+}
+
+.docentes__nombre {
+  display: block;
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #1a2e1a;
+}
+
+.docentes__bio-corta {
+  display: block;
+  font-family: 'PT Serif', serif;
+  font-size: 0.95rem;
+  color: #3a3a3a;
+  line-height: 1.6;
+}
+
+.docentes__overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background-color: rgba(20, 15, 10, 0.65);
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+}
+
+.docentes__overlay--abierto {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.docentes__detalle {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  background-color: #faf7f2;
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.docentes__cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #1a2e1a;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.docentes__detalle-cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.docentes__detalle-foto {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.docentes__detalle-bio {
+  flex: 1;
+}
+
+.docentes__detalle-parrafo {
+  font-family: 'PT Serif', serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #2b2b2b;
+  margin: 0;
+}
+
+.docentes__detalle-parrafo::first-letter {
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: #c98a4b;
+  float: left;
+  line-height: 1;
+  padding-right: 0.4rem;
+}
+
+.docentes__detalle-cita {
+  margin: 1.5rem 0;
+  padding: 0.25rem 0 0.25rem 1rem;
+  border-left: 3px solid #c98a4b;
+  font-family: 'PT Serif', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #1a2e1a;
+}
+
+.docentes__detalle-pasiones {
+  list-style: none;
+  margin: 0.5rem 0 1.5rem;
+  padding: 0;
+}
+
+.docentes__detalle-pasion {
+  border-top: 1px solid rgba(26, 46, 26, 0.15);
+  padding: 0.85rem 0;
+  font-family: 'PT Serif', serif;
+  font-size: 0.95rem;
+  color: #3a3a3a;
+}
+
+.docentes__testimonios {
+  background-color: #e8ede3;
+  padding: 2rem 1rem 3rem;
+  text-align: center;
+}
+
+.docentes__testimonios-titulo {
+  font-family: 'Tangerine', cursive;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #1a2e1a;
+  margin: 0 0 2rem;
+}
+
+.docentes__lista-testimonios {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.docentes__testimonio {
+  background-color: #f4f1ea;
+  border: 1px solid #d5dccb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.docentes__testimonio-texto {
+  font-family: 'PT Serif', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #2b2b2b;
+  margin: 0 0 1rem;
+}
+
+.docentes__testimonio-autor {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'PT Serif', serif;
+}
+
+.docentes__testimonio-avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e0d9c8;
+  color: #c98a4b;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.docentes__testimonio-sobre {
+  display: block;
+  font-size: 0.8rem;
+  color: #6b6b6b;
+}
+
+.docentes__footer {
+  padding: 1.5rem 1rem;
+  background-color: #241c14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.docentes__footer-logo {
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-color: #e9efe3;
+  -webkit-mask-image: url("../media/logo-unicah.svg");
+  mask-image: url("../media/logo-unicah.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.docentes__footer-separador {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(233, 239, 227, 0.35);
+}
+
+.docentes__footer-frase {
+  font-family: 'PT Serif', serif;
+  font-style: italic;
+  font-weight: 700;
+  color: #e9efe3;
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (min-width: 720px) {
+  .docentes__titulo {
+    font-size: 3rem;
+  }
+
+  .docentes__tarjeta {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .docentes__tarjeta--invertida {
+    flex-direction: row-reverse;
+  }
+
+  .docentes__foto {
+    max-width: 220px;
+    flex-shrink: 0;
+  }
+
+  .docentes__detalle-cabecera {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .docentes__detalle-foto {
+    flex-shrink: 0;
+  }
+
+  .docentes__testimonios-titulo {
+    font-size: 3rem;
+  }
+
+  .docentes__lista-testimonios {
+    flex-direction: row;
+  }
+
+  .docentes__testimonio {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1025px) {
+  .docentes__nav {
+    padding: 1.25rem 2rem;
+  }
+
+  .docentes__equipo,
+  .docentes__testimonios {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .docentes__detalle {
+    padding: 3rem;
+  }
 }
