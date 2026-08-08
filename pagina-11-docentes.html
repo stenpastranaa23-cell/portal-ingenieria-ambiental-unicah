@@ -11,38 +11,39 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body class="pagina-docentes">
 
-    <nav class="docentes__nav">
-        <a class="docentes__marca" href="index.html">
-            <img class="docentes__marca-logo" src="media/logo-facultad.png" alt="Logo Facultad de Ingeniería Ambiental">
-            <span>Ingeniería Ambiental · UNICAH</span>
-        </a>
-        <button class="docentes__menu-btn" type="button" aria-label="Abrir menú" id="docentesMenuBtn">
-            <span></span>
-            <span></span>
-            <span></span>
+    <header class="header-sitio">
+        <div class="header-sitio__badge">
+            <img src="img/compartido/Logo Ambiental.png" alt="Logo Ingeniería Ambiental" class="header-sitio__badge-icon">
+            <span class="header-sitio__badge-text">INGENIERÍA AMBIENTAL · UNICAH</span>
+        </div>
+        <button class="header-sitio__menu-btn" id="btn-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-panel">
+            <span></span><span></span><span></span>
         </button>
+        <nav class="menu-panel" id="menu-panel">
 
-        <div class="docentes__menu-desplegable" id="docentesMenuDesplegable">
-            <p class="docentes__menu-categoria">Sobre la carrera</p>
-            <a class="docentes__menu-link" href="index.html">Inicio</a>
-            <a class="docentes__menu-link" href="pagina-02-carrera.html">Sobre la Carrera</a>
-            <a class="docentes__menu-link" href="pagina-03-plan-estudio.html">Plan de Estudio</a>
-            <a class="docentes__menu-link" href="pagina-11-docentes.html">Docentes</a>
-
-            <p class="docentes__menu-categoria">Comunidad</p>
-            <a class="docentes__menu-link" href="pagina-04-instalaciones.html">Instalaciones y Laboratorios</a>
-            <a class="docentes__menu-link" href="pagina-05-vida-estudiantil.html">Únete / Vida Estudiantil</a>
-            <a class="docentes__menu-link" href="pagina-06-galeria.html">Galería</a>
-
-            <p class="docentes__menu-categoria">Recursos</p>
-            <a class="docentes__menu-link" href="pagina-07-blog.html">Blog</a>
-            <a class="docentes__menu-link" href="pagina-08-contacto.html">Contacto</a>
-            <a class="docentes__menu-link" href="pagina-09-sumate.html">Súmate</a>
-            <a class="docentes__menu-link" href="pagina-10-preguntas.html">Preguntas Frecuentes</a>
+        <div class="menu-panel__grupo">
+            <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+            <a href="index.html" class="menu-panel__link">Inicio</a>
+            <a href="pagina-02-carrera.html" class="menu-panel__link">Sobre la Carrera</a>
+            <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+            <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+        </div>
+        <div class="menu-panel__grupo">
+            <span class="menu-panel__categoria">COMUNIDAD</span>
+            <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link">Únete / Vida Estudiantil</a>
+            <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+        </div>
+        <div class="menu-panel__grupo">
+            <span class="menu-panel__categoria">RECURSOS</span>
+            <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+            <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+            <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+            <a href="pagina-10-preguntas.html" class="menu-panel__link">Preguntas Frecuentes</a>
         </div>
     </nav>
+</header>
 
     <section class="docentes__equipo">
         <p class="docentes__eyebrow">Nuestro equipo</p>
@@ -51,7 +52,7 @@
         <ul class="docentes__lista">
             <li class="docentes__item">
                 <button class="docentes__tarjeta" type="button" data-docente="osmer-ponce">
-                    <img class="docentes__foto docentes__foto--logo" src="media/docentes/decano-perfil.jpeg" alt="Logo Facultad de Ingeniería Ambiental">
+                    <img class="docentes__foto docentes__foto--logo" src="img/docentes/decano-perfil.jpeg" alt="Logo Facultad de Ingeniería Ambiental">
                     <span class="docentes__info">
                         <span class="docentes__cargo">Decano</span>
                         <span class="docentes__nombre">Osmer Ponce</span>
@@ -68,7 +69,7 @@
 
             <li class="docentes__item">
                 <button class="docentes__tarjeta docentes__tarjeta--invertida" type="button" data-docente="carmen-izaguirre">
-                    <img class="docentes__foto" src="media/docentes/ingCarmenI.png" alt="Zoología y ecosistemas de Honduras">
+                    <img class="docentes__foto" src="img/docentes/ingCarmenI.png" alt="Zoología y ecosistemas de Honduras">
                     <span class="docentes__info">
                         <span class="docentes__cargo">Catedrática de Zoología</span>
                         <span class="docentes__nombre">Carmen Izaguirre</span>
@@ -83,7 +84,7 @@
 
             <li class="docentes__item">
                 <button class="docentes__tarjeta" type="button" data-docente="miguel-montoya">
-                    <img class="docentes__foto" src="media/docentes/IngMon.png" alt="Hidráulica y manejo del agua">
+                    <img class="docentes__foto" src="img/docentes/IngMon.png" alt="Hidráulica y manejo del agua">
                     <span class="docentes__info">
                         <span class="docentes__cargo">Catedrático de Hidráulica y Sanitaria</span>
                         <span class="docentes__nombre">Miguel Montoya</span>
@@ -100,7 +101,7 @@
 
             <li class="docentes__item">
                 <button class="docentes__tarjeta docentes__tarjeta--invertida" type="button" data-docente="thelma-cabrera">
-                    <img class="docentes__foto" src="media/galeria-10.jpeg" alt="Procesos industriales y manejo de contaminantes">
+                    <img class="docentes__foto" src="img/galeria-10.jpeg" alt="Procesos industriales y manejo de contaminantes">
                     <span class="docentes__info">
                         <span class="docentes__cargo">Catedrática de Manejo de Contaminantes</span>
                         <span class="docentes__nombre">Thelma Cabrera</span>
@@ -117,7 +118,7 @@
 
             <li class="docentes__item">
                 <button class="docentes__tarjeta" type="button" data-docente="mirtha-ferrari">
-                    <img class="docentes__foto" src="media/docentes/mirtha-ferrari.jpg" alt="Remediación ambiental y cuerpos de agua">
+                    <img class="docentes__foto" src="img/docentes/mirtha-ferrari.jpg" alt="Remediación ambiental y cuerpos de agua">
                     <span class="docentes__info">
                         <span class="docentes__cargo">Catedrática de Toxicología y Salud Ambiental</span>
                         <span class="docentes__nombre">Mirtha Ferrari</span>
@@ -149,7 +150,7 @@
 
             <ul class="docentes__detalle-pasiones" id="docentesDetallePasiones"></ul>
 
-            <p class="docentes__cargo" id="docentesDetalleCargo"></p>
+           <p class="docentes__cargo" id="docentesDetalleCargo"></p>
             <p class="docentes__nombre" id="docentesDetalleNombre"></p>
         </div>
     </div>
@@ -204,20 +205,21 @@
     </section>
 
 
-    <footer class="docentes__footer">
-        <div class="docentes__footer-redes">
-            <a href="https://wa.me/50495000315" target="_blank" rel="noopener" class="docentes__footer-red" aria-label="WhatsApp">
-                <img src="media/docentes/Logo de Wha.png" alt="WhatsApp" class="docentes__footer-red-icono">
-            </a>
-            <a href="https://www.instagram.com/ambientalunicah" target="_blank" rel="noopener" class="docentes__footer-red" aria-label="Instagram">
-                <img src="media/docentes/Instagram-Logo.png" alt="Instagram" class="docentes__footer-red-icono">
-            </a>
-            <a href="https://www.unicah.edu/" target="_blank" rel="noopener" class="docentes__footer-red" aria-label="Sitio de UNICAH">
-                <img src="media/logo-unicah.svg" alt="UNICAH" class="docentes__footer-red-icono">
-            </a>
-        </div>
-    </footer>
+  <footer class="pie-sitio">
+    <div class="pie-sitio__redes">
+        <a href="https://wa.me/50495000315" target="_blank" rel="noopener" class="pie-sitio__red" aria-label="WhatsApp">
+            <img src="img/compartido/Logo de Wha.png" alt="WhatsApp" class="pie-sitio__red-icono">
+        </a>
+        <a href="https://www.instagram.com/ambientalunicah?igsh=aWM5amVwNnY1a3dv" target="_blank" rel="noopener" class="pie-sitio__red" aria-label="Instagram">
+            <img src="img/compartido/Instagram-Logo.png" alt="Instagram" class="pie-sitio__red-icono">
+        </a>
+        <a href="https://www.unicah.edu/" target="_blank" rel="noopener" class="pie-sitio__red" aria-label="Sitio de UNICAH">
+            <img src="img/compartido/Logo Unicah.png" alt="UNICAH" class="pie-sitio__red-icono">
+        </a>
+    </div>
+</footer>
 
-    <script src="js/docentes.js"></script>
+  <script src="js/funciones-compartidas.js"></script>
+<script src="js/docentes.js"></script>
 </body>
 </html>

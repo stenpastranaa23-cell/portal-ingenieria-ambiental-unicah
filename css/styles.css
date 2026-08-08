@@ -89,107 +89,16 @@ html, body {
    ============================================ */
 /* Dueño: Stefany */
 
-.docentes__nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.5rem;
-  background-color: #e8ede3;
-  width: 100%;
-}
-
-.docentes__marca {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: #fff;
-  border: 1px solid #d5dccb;
+.pagina-docentes .header-sitio__badge {
+  background: #ffffff;
   color: #1a2e1a;
-  text-decoration: none;
-  padding: 0.4rem 1rem 0.4rem 0.4rem;
-  border-radius: 999px;
-  font-family: 'PT Serif', serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
-.docentes__marca-logo {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background-color: #fff;
-  padding: 3px;
-  box-sizing: border-box;
+.pagina-docentes .header-sitio__menu-btn span {
+  background: #1a2e1a;
+  height: 3px;
 }
 
-.docentes__menu-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid #d5dccb;
-  background-color: #fff;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-
-.docentes__menu-btn span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background-color: #1a2e1a;
-}
-
-.docentes__menu-desplegable {
-  display: none;
-  position: absolute;
-  z-index: 3;
-  top: 4.5rem;
-  right: 1rem;
-  width: 220px;
-  max-width: calc(100% - 2rem);
-  background-color: rgba(28, 20, 12, 0.92);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-.docentes__menu-desplegable--abierto {
-  display: block;
-}
-
-.docentes__menu-categoria {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #c98a4b;
-  font-family: 'PT Serif', serif;
-  margin: 1rem 0 0.4rem;
-}
-
-.docentes__menu-categoria:first-child {
-  margin-top: 0;
-}
-
-.docentes__menu-link {
-  display: block;
-  color: #f2ede2;
-  text-decoration: none;
-  font-family: 'PT Serif', serif;
-  font-size: 0.95rem;
-  padding: 0.3rem 0;
-}
-
-.docentes__menu-link:hover {
-  text-decoration: underline;
-}
 
 .docentes__equipo {
   position: relative;
@@ -485,54 +394,7 @@ html, body {
   color: #6b6b6b;
 }
 
-.docentes__footer {
-  padding: 1.5rem 1rem;
-  background-color: #241c14;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.docentes__footer-redes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-}
-
-.docentes__footer-red {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.docentes__footer-red:hover {
-  transform: scale(1.1);
-}
-
-.docentes__footer-red-icono {
-  width: 60%;
-  height: 60%;
-  object-fit: contain;
-}
-
-@media (max-width: 480px) {
-  .docentes__footer-red {
-    width: 44px;
-    height: 44px;
-  }
-}
-
-@media (min-width: 720px) {
+  @media (min-width: 720px) {
   .docentes__titulo {
     font-size: 3rem;
   }
@@ -575,10 +437,6 @@ html, body {
 }
 
 @media (min-width: 1025px) {
-  .docentes__nav {
-    padding: 1.25rem 2rem;
-  }
-
   .docentes__equipo,
   .docentes__testimonios {
     padding-left: 2rem;
