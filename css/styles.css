@@ -2163,7 +2163,7 @@ body.plan__page {
   /* ============ PÁGINA 2 - SOBRE LA CARRERA ============ */
   /* Dueño: Fernando */
   :root {
-    --carrera-verde-oscuro: #1a2e1a;
+    --carrera-verde-oscuro: #2a4a2a;
     --carrera-verde-oscuro-2: #24391f;
     --carrera-verde-oscuro-3: #2e4a2e;
     --carrera-fondo-alterno: #e8ede3;
@@ -2184,18 +2184,14 @@ body.plan__page {
     display: flex;
     align-items: center;
     padding: 140px 40px 60px;
-    background: var(--carrera-verde-oscuro);
-    background-image: url('../img/Inicio/Logo Ambiental.png');
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: contain;
+    background: url('../img/Inicio/inicio-decano-fondo.jpeg') 40% 20% / cover no-repeat;
   }
 
   .carrera__hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, var(--carrera-verde-oscuro) 0%, rgba(26, 46, 26, 0.95) 40%, rgba(26, 46, 26, 0.3) 100%);
+    background: linear-gradient(to right, rgba(42, 74, 42, 0.85) 0%, rgba(42, 74, 42, 0.4) 40%, rgba(42, 74, 42, 0.1) 100%);
     z-index: 0;
   }
 
