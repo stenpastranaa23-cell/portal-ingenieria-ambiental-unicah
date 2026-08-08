@@ -2281,17 +2281,131 @@ body.plan__page {
     font-weight: 700;
     font-size: 5.5rem;
     line-height: 1.1;
+    color: var(--vida-resaltado);
+  }
+
+  .vida__recorrido-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    padding: 16px 34px;
+    border: 2px solid var(--vida-resaltado);
+    border-radius: 999px;
+    background: rgba(139, 195, 74, 0.12);
+    color: var(--vida-resaltado);
+    font-family: var(--vida-fuente-texto);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+
+  .vida__recorrido-inicio::after {
+    content: '↓';
+    font-size: 1.1rem;
+  }
+
+  .vida__recorrido-inicio:hover {
+    background: var(--vida-resaltado);
+    color: var(--vida-verde-oscuro);
+    transform: translateY(-2px);
+  }
+
+  .vida__recorrido {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translateX(-50%);
+    z-index: 90;
+    width: min(560px, calc(100vw - 32px));
+  }
+
+  .vida__recorrido[hidden] {
+    display: none;
+  }
+
+  .vida__recorrido-panel {
+    background: var(--vida-verde-oscuro);
+    color: #fff;
+    border-radius: 18px;
+    padding: 20px 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    text-align: center;
+  }
+
+  .vida__recorrido-contador {
+    font-family: var(--vida-fuente-texto);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vida-dorado);
+    margin-bottom: 6px;
+  }
+
+  .vida__recorrido-nombre {
+    font-family: var(--vida-fuente-titulo);
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .vida__recorrido-barra {
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+
+  .vida__recorrido-progreso {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--vida-resaltado);
+    transition: width 0.4s ease;
+  }
+
+  .vida__recorrido-controles {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .vida__recorrido-btn {
+    font-family: var(--vida-fuente-texto);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 11px 22px;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+  }
+
+  .vida__recorrido-btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+  }
+
+  .vida__parada-activa {
+    outline: 3px solid var(--vida-resaltado);
+    outline-offset: 16px;
+    border-radius: 4px;
   }
 
   .vida__etiqueta {
     display: block;
     text-align: center;
     font-family: var(--vida-fuente-texto);
-    font-size: 0.8rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: var(--vida-dorado);
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
 
   .vida__subtitulo {
@@ -2299,9 +2413,10 @@ body.plan__page {
     text-align: center;
     font-family: var(--vida-fuente-titulo);
     font-weight: 700;
-    font-size: 3.2rem;
+    font-size: 4.6rem;
+    line-height: 1.15;
     color: var(--vida-verde-oscuro);
-    margin-bottom: 20px;
+    margin-bottom: 28px;
   }
 
   .vida__intro {
@@ -2325,12 +2440,128 @@ body.plan__page {
     z-index: -1;
   }
 
+  .vida__enredaderas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .vida__enredadera {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: clamp(140px, 15vw, 260px);
+    opacity: 0.5;
+    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 34%, rgba(0, 0, 0, 0.3) 62%, transparent 88%);
+    mask-image: linear-gradient(to right, #000 0%, #000 34%, rgba(0, 0, 0, 0.3) 62%, transparent 88%);
+  }
+
+  .vida__enredadera--izq {
+    left: 0;
+  }
+
+  .vida__enredadera--der {
+    right: 0;
+    transform: scaleX(-1);
+  }
+
+  .vida__enr-tallo,
+  .vida__enr-rama,
+  .vida__enr-zarcillo {
+    fill: none;
+    stroke: var(--vida-verde-oscuro-3);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+
+  .vida__enr-tallo {
+    stroke-width: 3.4;
+  }
+
+  .vida__enr-rama {
+    stroke-width: 2.6;
+  }
+
+  .vida__enr-zarcillo {
+    stroke-width: 2.1;
+  }
+
+  .vida__enr-hoja {
+    fill: var(--vida-verde-oscuro-3);
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+  }
+
+  .vida__enredadera g:nth-of-type(even) .vida__enr-hoja {
+    fill: #4d7343;
+  }
+
+  @media (max-width: 1600px) {
+    .vida__enredadera {
+      width: clamp(120px, 11vw, 180px);
+      opacity: 0.35;
+      -webkit-mask-image: linear-gradient(to right, #000 0%, #000 22%, rgba(0, 0, 0, 0.25) 52%, transparent 82%);
+      mask-image: linear-gradient(to right, #000 0%, #000 22%, rgba(0, 0, 0, 0.25) 52%, transparent 82%);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .vida__enredaderas {
+      display: none;
+    }
+  }
+
+  .vida__intro-cabecera {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 32px 32px;
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .vida__intro-cabecera--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .vida__intro-cabecera .vida__subtitulo {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 14px;
+  }
+
+  .vida__intro-cabecera .vida__subtitulo::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: var(--vida-dorado);
+    transform: translateX(-50%);
+    transition: width 1s ease 0.5s;
+  }
+
+  .vida__intro-cabecera--visible .vida__subtitulo::after {
+    width: 220px;
+  }
+
   .vida__intro-texto {
-    max-width: 700px;
+    max-width: 820px;
     margin: 0 auto;
     font-family: var(--vida-fuente-texto);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.35rem;
+    line-height: 1.75;
     color: var(--vida-texto-oscuro);
   }
 
@@ -2393,7 +2624,7 @@ body.plan__page {
   .vida__formacion-titulo {
     font-family: var(--vida-fuente-texto);
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     color: var(--vida-verde-oscuro);
     margin-bottom: 8px;
   }
@@ -2401,7 +2632,7 @@ body.plan__page {
   .vida__formacion-descripcion {
     font-family: var(--vida-fuente-texto);
     color: var(--vida-texto-muted);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.6;
   }
 
@@ -2703,7 +2934,19 @@ body.plan__page {
     }
 
     .vida__subtitulo {
-      font-size: 2.4rem;
+      font-size: 3.2rem;
+    }
+
+    .vida__intro-texto {
+      font-size: 1.15rem;
+    }
+
+    .vida__intro-cabecera {
+      padding: 16px 0 24px;
+    }
+
+    .vida__recorrido-nombre {
+      font-size: 2.2rem;
     }
 
     .vida__intro,
@@ -2725,7 +2968,12 @@ body.plan__page {
     }
 
     .vida__subtitulo {
-      font-size: 2rem;
+      font-size: 2.6rem;
+    }
+
+    .vida__recorrido-btn {
+      flex: 1;
+      padding: 11px 12px;
     }
 
     .vida__boton {
@@ -2749,11 +2997,11 @@ body.plan__page {
     }
 
     .vida__formacion-titulo {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
     }
 
     .vida__formacion-descripcion {
-      font-size: 0.9rem;
+      font-size: 1.05rem;
     }
   }
 
