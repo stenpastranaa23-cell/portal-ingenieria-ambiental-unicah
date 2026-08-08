@@ -250,7 +250,6 @@ customElements.define('honduras-map', HondurasMap);
 
 document.addEventListener('DOMContentLoaded', () => {
     inicioIniciarCarrusel();
-    inicioIniciarMenu();
     inicioIniciarCaminos();
     inicioIniciarContador();
     inicioIniciarInstagram();
