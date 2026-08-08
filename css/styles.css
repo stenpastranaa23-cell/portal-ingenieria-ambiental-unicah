@@ -259,6 +259,7 @@ html, body {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 10px;
+  color:green;
 }
 
 .inicio__subtitulo {
@@ -516,12 +517,6 @@ html, body {
   background: #c98a4b;
 }
 
-@media (max-width: 900px) {
-  .caminos__tarjeta {
-    flex: 0 0 calc(50% - 10px);
-    height: 400px;
-  }
-}
 
 @media (max-width: 480px) {
   .caminos {
@@ -567,14 +562,7 @@ html, body {
   }
 }
 
-@media (max-width: 480px) {
-  .menu-panel {
-    right: 20px;
-    top: 70px;
-    width: calc(100% - 40px);
-    padding: 20px;
-  }
-}
+
 
 /* ============================================
    BLOQUE DECANO (Cita destacada) - INICIO
@@ -1369,14 +1357,6 @@ html, body {
   .instagram__tarjeta--der1 { transform: translate(-50%, -50%) translateX(130px) rotateY(-35deg) scale(0.75); }
   .instagram__tarjeta--der2 { display: none; }
 }
-
- 
-  /* ============ PÁGINA 1 - INICIO ============ */
-  /* Dueño: Stefany */
-  .inicio__titulo {
-    font-size: 2.5rem;
-    color:green;
-  }
 
 
   /* ============ PÁGINA 2 - SOBRE LA CARRERA ============ */
