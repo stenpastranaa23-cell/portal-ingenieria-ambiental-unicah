@@ -153,7 +153,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 24px 40px;
 }
 
 .header-sitio__badge {
@@ -202,13 +202,10 @@ html, body {
   background: #fff;
 }
 
-.menu-panel--abierto {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.menu-panel__link:hover {
+  color: #8bc34a;
+  padding-left: 6px;
 }
-
-.menu-panel__grupo {
   display: flex;
   flex-direction: column;
   gap: 13px;
@@ -229,6 +226,7 @@ html, body {
   font-size: 1.09rem;
   color: #fff;
   text-decoration: none;
+  display: block;
   padding: 2px 0;
   transition: color 0.2s ease, padding-left 0.2s ease;
 }
@@ -303,18 +301,20 @@ html, body {
 
 .menu-panel {
   position: absolute;
-  top: 80px;
+  top: calc(100% + 8px);
   right: 40px;
-  width: 340px;
-  max-width: calc(100% - 40px);
-  background: rgba(20, 25, 20, 0.9);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 28px;
+  left: auto;
+  width: 320px;
+  box-sizing: border-box;
+  background: rgba(18, 26, 22, 0.75);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 28px 24px 28px;
   z-index: 20;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 
   opacity: 0;
   visibility: hidden;
@@ -326,36 +326,6 @@ html, body {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-}
-
-.menu-panel__grupo {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.menu-panel__categoria {
-  font-family: 'PT Serif', serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #c98a4b;
-  margin-bottom: 4px;
-}
-
-.menu-panel__link {
-  font-family: 'PT Serif', serif;
-  font-size: 1rem;
-  color: #fff;
-  text-decoration: none;
-  padding: 4px 0;
-  transition: color 0.2s ease, padding-left 0.2s ease;
-}
-
-.menu-panel__link:hover {
-  color: #8bc34a;
-  padding-left: 6px;
 }
 
 /* ============================================
@@ -1484,130 +1454,7 @@ html, body {
     height: 30px;
     font-size: 1.1rem;
   }
-    
-    /* ============================================
-      COMPARTIDO · HEADER Y MENÚ DE NAVEGACIÓN
-      ============================================ */
 
-    .header-sitio {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 40px;
-    }
-
-    .header-sitio__badge {
-      display: inline-flex;
-      align-items: center;  
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(8px);
-      border-radius: 999px;
-      padding: 8px 16px;
-      color: #fff;
-    }
-
-    .header-sitio__badge-icon {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    .header-sitio__badge-text {
-      font-family: 'PT Serif', serif;
-      font-size: clamp(0.55rem, 2.8vw, 0.75rem);
-      letter-spacing: 1px;
-      font-weight: 700;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .header-sitio__menu-btn {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      min-width: 44px;  
-      min-height: 44px;     
-      padding: 8px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    .header-sitio__menu-btn span {
-      width: 26px;
-      height: 2px;
-      background: #fff;
-    }
-
-    /* ---- Menú desplegable (PC Y TABLETS) ---- */
-
-    .menu-panel {
-      position: absolute;
-      top: calc(100% + 8px);
-      right: 40px;
-      left: auto;             
-      width: 320px;            
-      box-sizing: border-box;           
-      background: rgba(18, 26, 22, 0.75);
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 20px;
-      padding: 28px 24px 28px;
-      z-index: 20;
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    }
-
-    .menu-panel--abierto {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .menu-panel__grupo {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-    }
-
-    .menu-panel__categoria {
-      font-family: 'PT Serif', serif;
-      font-size: 0.70rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #c98a4b;
-      margin-bottom: 1px;
-    }
-
-    .menu-panel__link {
-      font-family: 'PT Serif', serif;
-      font-size: 1.09rem;
-      color: #fff;
-      text-decoration: none;
-      padding: 2px 0;
-      transition: color 0.2s ease, padding-left 0.2s ease;
-    }
-
-    .menu-panel__link:hover {
-      color: #8bc34a;
-      padding-left: 6px;
-    }
 }
 
 @media (max-width: 767px) {
@@ -1704,7 +1551,8 @@ html, body {
     font-size: 1.09rem;
     color: #fff;
     text-decoration: none;
-    padding: 2px 0;
+    display: block;
+    padding: 4px 0;
     transition: color 0.2s ease, padding-left 0.2s ease;
   }
 
@@ -2353,41 +2201,7 @@ html, body {
   .plan__boton--secundario:hover {
     background: #c98a4b;
     color: #1a1a1a;
-  }
-
-  /* --- FOOTER --- */
-  .pie {
-    background: #1a1206;
-    padding: 40px;
-  }
-
-  .pie__redes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .pie__red {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-
-  .pie__red:hover {
-    transform: scale(1.1);
-  }
-
-  .pie__red-icono {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
+    }
   }
 
   /* --- RESPONSIVE --- */
@@ -2496,14 +2310,6 @@ html, body {
       align-items: stretch;
     }
 
-    .pie {
-      padding: 30px 20px;
-    }
-
-    .pie__red {
-      width: 44px;
-      height: 44px;
-    }
   }
 
 
