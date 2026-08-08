@@ -2592,8 +2592,13 @@ body {
   /* ============ PÁGINA 2 - SOBRE LA CARRERA ============ */
   /* Dueño: Fernando */
   .carrera__titulo {
-  font-size: 2.5rem;
-    color:green;
+    font-family: var(--carrera-fuente-texto);
+    font-weight: 700;
+    font-size: 3.4rem;
+    line-height: 1.15;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(26, 19, 13, 0.55), 0 6px 24px rgba(26, 19, 13, 0.7);
+    margin-bottom: 16px;
   }
 
 
@@ -2626,6 +2631,18 @@ body {
     --vida-texto-muted: #5c6355;
     --vida-fuente-texto: 'PT Serif', serif;
     --vida-fuente-titulo: 'Tangerine', cursive;
+
+    --carrera-verde-oscuro: var(--vida-verde-oscuro);
+    --carrera-verde-oscuro-3: var(--vida-verde-oscuro-3);
+    --carrera-fondo-alterno: var(--vida-fondo-alterno);
+    --carrera-dorado: var(--vida-dorado);
+    --carrera-dorado-hover: var(--vida-dorado-hover);
+    --carrera-tarjeta-fondo: var(--vida-tarjeta-fondo);
+    --carrera-tarjeta-borde: var(--vida-tarjeta-borde);
+    --carrera-texto-oscuro: var(--vida-texto-oscuro);
+    --carrera-texto-muted: var(--vida-texto-muted);
+    --carrera-fuente-texto: var(--vida-fuente-texto);
+    --carrera-fuente-titulo: var(--vida-fuente-titulo);
   }
 
 
@@ -4522,6 +4539,7 @@ body {
 
 
   .carrera__que-es {
+    position: relative;
     max-width: 820px;
     margin: 0 auto;
     padding: 80px 40px;
@@ -4818,6 +4836,63 @@ body {
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+  }
+
+
+
+
+
+  .carrera__revelar {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+
+
+
+
+  .carrera__revelar--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+
+
+
+  .carrera__enredaderas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+
+
+
+
+  @media (max-width: 900px) {
+    .carrera__enredaderas {
+      display: none;
+    }
+  }
+
+
+
+
+
+  @media (prefers-reduced-motion: reduce) {
+    .carrera__revelar {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 
 
