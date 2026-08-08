@@ -154,6 +154,54 @@ html, body {
   }
 }
 
+ /* ============================================
+    COMPARTIDO · PIE DE PÁGINA
+    ============================================ */
+.pie-sitio {
+  background: #1a1206;
+  padding: 40px;
+}
+
+.pie-sitio__redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.pie-sitio__red {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.pie-sitio__red:hover {
+  transform: scale(1.1);
+}
+
+.pie-sitio__red-icono {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .pie-sitio {
+    padding: 30px 20px;
+   }
+
+  .pie-sitio__red {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 /* ============ PÁGINA 1 - INICIO ============ */
 /* Dueño: Stefany */
 .inicio__titulo {
