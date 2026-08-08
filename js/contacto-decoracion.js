@@ -1,45 +1,34 @@
-function faqIniciarAcordeon() {
-    const questions = document.querySelectorAll(".faq-question");
+document.addEventListener("DOMContentLoaded", () => {
+    contactoIniciarRevelado();
+    contactoIniciarEnredaderas();
+});
 
-    questions.forEach(question => {
-        question.addEventListener("click", () => {
-            const answer = question.nextElementSibling;
-            const isOpen = answer.classList.contains("active");
-
-            // Cerrar todas
-            document.querySelectorAll(".faq-answer").forEach(item => {
-                item.classList.remove("active");
-            });
-
-            document.querySelectorAll(".faq-question").forEach(item => {
-                item.querySelector("span").textContent = "+";
-            });
-
-            if (!isOpen) {
-                answer.classList.add("active");
-                question.querySelector("span").textContent = "×";
-            }
-        });
-    });
-}
-
-function faqIniciarRevelado() {
-    const elementos = document.querySelectorAll(".faq__revelar");
+function contactoIniciarRevelado() {
+    const elementos = document.querySelectorAll(".contacto__revelar");
     if (!elementos.length) return;
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        elementos.forEach((el) => el.classList.add("faq__revelar--visible"));
+        elementos.forEach((el) => el.classList.add("contacto__revelar--visible"));
         return;
     }
 
-    elementos.forEach((el, indice) => {
-        el.style.transitionDelay = (indice % 4 * 0.08) + "s";
+    const grupos = new Map();
+    elementos.forEach((el) => {
+        const padre = el.parentElement;
+        if (!grupos.has(padre)) grupos.set(padre, []);
+        grupos.get(padre).push(el);
+    });
+
+    elementos.forEach((el) => {
+        const hermanos = grupos.get(el.parentElement);
+        const indice = hermanos.indexOf(el);
+        el.style.transitionDelay = (indice * 0.08) + "s";
     });
 
     const observador = new IntersectionObserver((entradas) => {
         entradas.forEach((entrada) => {
             if (!entrada.isIntersecting) return;
-            entrada.target.classList.add("faq__revelar--visible");
+            entrada.target.classList.add("contacto__revelar--visible");
             observador.unobserve(entrada.target);
         });
     }, { threshold: 0.15, rootMargin: "0px 0px -10% 0px" });
@@ -47,9 +36,9 @@ function faqIniciarRevelado() {
     elementos.forEach((el) => observador.observe(el));
 }
 
-function faqIniciarEnredaderas() {
-    const contenedor = document.querySelector(".faq__enredaderas");
-    const seccion = document.querySelector(".faq-content");
+function contactoIniciarEnredaderas() {
+    const contenedor = document.querySelector(".contacto__enredaderas");
+    const seccion = document.querySelector(".contacto__canales");
 
     if (!contenedor || !seccion) return;
 
@@ -116,9 +105,3 @@ function faqIniciarEnredaderas() {
     window.addEventListener("resize", actualizar);
     actualizar();
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    faqIniciarAcordeon();
-    faqIniciarRevelado();
-    faqIniciarEnredaderas();
-});

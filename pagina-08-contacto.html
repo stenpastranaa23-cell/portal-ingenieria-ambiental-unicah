@@ -10,9 +10,9 @@
         href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Tangerine:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="contacto__page">
     <div class="vida__carga" role="status" aria-live="polite">
         <div class="vida__carga-contenido">
             <svg class="vida__carga-flor" viewBox="-90 -20 180 260" width="120" height="160" aria-hidden="true" focusable="false">
@@ -33,52 +33,68 @@
         </div>
     </div>
 
-    <section class="contacto__hero" style="background-image: url('media/IMG_3054.JPG.jpg');">
-        <div class="contacto__hero-oscuro"></div>
-        <nav class="contacto__hero-nav">
-            <a class="contacto__hero-marca" href="index.html">
-                <img class="contacto__hero-marca-logo" src="media/logo-facultad.png" alt="Logo Facultad de Ingeniería Ambiental">
-                <span>Ingeniería Ambiental · UNICAH</span>
-            </a>
-            <button class="contacto__hero-menu" type="button" aria-label="Abrir menú" id="contactoMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <header class="header-sitio">
+        <div class="header-sitio__badge">
+            <img src="img/compartido/Logo Ambiental.png" alt="Logo Ingeniería Ambiental" class="header-sitio__badge-icon">
+            <span class="header-sitio__badge-text">INGENIERÍA AMBIENTAL · UNICAH</span>
+        </div>
+        <button class="header-sitio__menu-btn" id="btn-menu" aria-label="Abrir menú" aria-expanded="false"
+            aria-controls="menu-panel">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="menu-panel" id="menu-panel">
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+                <a href="index.html" class="menu-panel__link">Inicio</a>
+                <a href="pagina-02-carrera.html" class="menu-panel__link">Sobre la Carrera</a>
+                <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+                <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+            </div>
+
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">COMUNIDAD</span>
+                <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link">Únete / Vida Estudiantil</a>
+                <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+            </div>
+
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">RECURSOS</span>
+                <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+                <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+                <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+                <a href="pagina-10-preguntas.html" class="menu-panel__link">Preguntas Frecuentes</a>
+            </div>
         </nav>
-
-        <div class="contacto__menu-desplegable" id="contactoMenuDesplegable">
-            <p class="contacto__menu-categoria">Sobre la carrera</p>
-            <a class="contacto__menu-link" href="index.html">Inicio</a>
-            <a class="contacto__menu-link" href="pagina-02-carrera.html">Sobre la Carrera</a>
-            <a class="contacto__menu-link" href="pagina-03-plan-estudio.html">Plan de Estudio</a>
-            <a class="contacto__menu-link" href="pagina-11-docentes.html">Docentes</a>
-
-            <p class="contacto__menu-categoria">Comunidad</p>
-            <a class="contacto__menu-link" href="pagina-05-vida-estudiantil.html">Únete / Vida Estudiantil</a>
-            <a class="contacto__menu-link" href="pagina-06-galeria.html">Galería</a>
-
-            <p class="contacto__menu-categoria">Recursos</p>
-            <a class="contacto__menu-link" href="pagina-07-blog.html">Blog</a>
-            <a class="contacto__menu-link" href="pagina-08-contacto.html">Contacto</a>
-            <a class="contacto__menu-link" href="pagina-09-sumate.html">Súmate</a>
-            <a class="contacto__menu-link" href="pagina-10-preguntas.html">Preguntas Frecuentes</a>
-        </div>
-
-        <div class="contacto__hero-texto">
-            <h1 class="contacto__hero-titulo">Contacto</h1>
-            <p class="contacto__hero-subtitulo">Escríbenos, con gusto te respondemos.</p>
-        </div>
-    </section>
+    </header>
 
     <section class="contacto__canales">
+      <div class="contacto__enredaderas" aria-hidden="true">
+        <svg class="vida__enredadera vida__enredadera--izq" viewBox="0 0 320 1500" preserveAspectRatio="none" focusable="false">
+          <path class="vida__enr-tallo" pathLength="1" data-s="0" data-e="88.0" d="M178.15,0.00 C178.95,2.78 181.67,11.11 182.98,16.67 C184.30,22.22 185.33,27.78 186.04,33.33 C186.75,38.89 187.14,44.44 187.26,50.00 C187.38,55.56 187.16,61.11 186.76,66.67 C186.36,72.22 185.66,77.78 184.86,83.33 C184.07,88.89 183.03,94.44 181.98,100.00 C180.93,105.56 179.73,111.11 178.58,116.67 C177.44,122.22 176.23,127.78 175.13,133.33 C174.03,138.89 172.94,144.44 171.97,150.00 C171.01,155.56 170.13,161.11 169.35,166.67 C168.58,172.22 167.92,177.78 167.32,183.33 C166.73,188.89 166.26,194.44 165.79,200.00 C165.32,205.56 164.95,211.11 164.51,216.67 C164.07,222.22 163.68,227.78 163.16,233.33 C162.64,238.89 162.11,244.44 161.40,250.00 C160.69,255.56 159.89,261.11 158.90,266.67 C157.91,272.22 156.77,277.78 155.46,283.33 C154.16,288.89 152.66,294.44 151.04,300.00 C149.42,305.56 147.61,311.11 145.75,316.67 C143.90,322.22 141.87,327.78 139.90,333.33 C137.92,338.89 135.84,344.44 133.92,350.00 C131.99,355.56 130.04,361.11 128.34,366.67 C126.65,372.22 125.03,377.78 123.75,383.33 C122.46,388.89 121.36,394.44 120.63,400.00 C119.90,405.56 119.45,411.11 119.38,416.67 C119.32,422.22 119.60,427.78 120.22,433.33 C120.85,438.89 121.87,444.44 123.16,450.00 C124.45,455.56 126.12,461.11 127.97,466.67 C129.82,472.22 132.00,477.78 134.25,483.33 C136.50,488.89 139.00,494.44 141.45,500.00 C143.90,505.56 146.51,511.11 148.95,516.67 C151.39,522.22 153.87,527.78 156.11,533.33 C158.35,538.89 160.51,544.44 162.37,550.00 C164.24,555.56 165.93,561.11 167.32,566.67 C168.72,572.22 169.85,577.78 170.72,583.33 C171.59,588.89 172.16,594.44 172.52,600.00 C172.88,605.56 172.95,611.11 172.88,616.67 C172.81,622.22 172.48,627.78 172.10,633.33 C171.71,638.89 171.13,644.44 170.56,650.00 C170.00,655.56 169.32,661.11 168.71,666.67 C168.10,672.22 167.45,677.78 166.91,683.33 C166.36,688.89 165.85,694.44 165.44,700.00 C165.03,705.56 164.70,711.11 164.44,716.67 C164.18,722.22 164.02,727.78 163.88,733.33 C163.73,738.89 163.68,744.44 163.56,750.00 C163.45,755.56 163.39,761.11 163.20,766.67 C163.01,772.22 162.81,777.78 162.42,783.33 C162.03,788.89 161.56,794.44 160.85,800.00 C160.15,805.56 159.29,811.11 158.19,816.67 C157.10,822.22 155.79,827.78 154.28,833.33 C152.76,838.89 151.01,844.44 149.10,850.00 C147.20,855.56 145.06,861.11 142.86,866.67 C140.66,872.22 138.26,877.78 135.92,883.33 C133.57,888.89 131.09,894.44 128.77,900.00 C126.46,905.56 124.11,911.11 122.03,916.67 C119.95,922.22 117.94,927.78 116.28,933.33 C114.61,938.89 113.14,944.44 112.05,950.00 C110.97,955.56 110.17,961.11 109.76,966.67 C109.35,972.22 109.30,977.78 109.60,983.33 C109.90,988.89 110.60,994.44 111.58,1000.00 C112.56,1005.56 113.92,1011.11 115.47,1016.67 C117.02,1022.22 118.92,1027.78 120.88,1033.33 C122.84,1038.89 125.07,1044.44 127.25,1050.00 C129.44,1055.56 131.79,1061.11 133.99,1066.67 C136.20,1072.22 138.46,1077.78 140.50,1083.33 C142.55,1088.89 144.54,1094.44 146.28,1100.00 C148.01,1105.56 149.60,1111.11 150.94,1116.67 C152.28,1122.22 153.40,1127.78 154.30,1133.33 C155.21,1138.89 155.87,1144.44 156.37,1150.00 C156.88,1155.56 157.14,1161.11 157.32,1166.67 C157.50,1172.22 157.48,1177.78 157.44,1183.33 C157.41,1188.89 157.24,1194.44 157.12,1200.00 C157.00,1205.56 156.81,1211.11 156.72,1216.67 C156.63,1222.22 156.54,1227.78 156.55,1233.33 C156.57,1238.89 156.65,1244.44 156.81,1250.00 C156.98,1255.56 157.24,1261.11 157.53,1266.67 C157.83,1272.22 158.23,1277.78 158.59,1283.33 C158.95,1288.89 159.39,1294.44 159.71,1300.00 C160.03,1305.56 160.37,1311.11 160.52,1316.67 C160.67,1322.22 160.76,1327.78 160.60,1333.33 C160.44,1338.89 160.14,1344.44 159.56,1350.00 C158.98,1355.56 158.19,1361.11 157.11,1366.67 C156.03,1372.22 154.69,1377.78 153.10,1383.33 C151.51,1388.89 149.63,1394.44 147.58,1400.00 C145.53,1405.56 143.19,1411.11 140.78,1416.67 C138.37,1422.22 135.73,1427.78 133.13,1433.33 C130.53,1438.89 127.77,1444.44 125.17,1450.00 C122.58,1455.56 119.93,1461.11 117.55,1466.67 C115.17,1472.22 112.85,1477.78 110.88,1483.33 C108.91,1488.89 106.57,1497.22 105.71,1500.00"/>
+          <g transform="translate(186.48,70.00) rotate(69.3) scale(0.906)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="4.1" data-e="13.1"/></g>
+          <g transform="translate(175.40,132.00) rotate(-52.5) scale(0.974)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="7.7" data-e="16.7"/></g>
+          <g transform="translate(166.30,194.00) rotate(69.0) scale(1.025)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="11.4" data-e="20.4"/></g>
+          <path class="vida__enr-rama" pathLength="1" d="M161.40,250.00 C163.67,249.26 170.56,247.24 175.05,245.59 C179.54,243.94 184.02,242.12 188.35,240.12 C192.68,238.12 196.93,235.94 201.01,233.58 C205.08,231.23 209.03,228.69 212.82,225.98 C216.60,223.27 220.23,220.39 223.72,217.32 C227.21,214.26 230.53,211.02 233.77,207.60 C237.02,204.18 240.10,200.59 243.18,196.82 C246.26,193.04 250.73,186.94 252.24,184.97" data-s="14.7" data-e="27.7"/>
+          <g transform="translate(160.59,256.00) rotate(-55.9) scale(1.054)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="15.0" data-e="24.0"/></g>
+          <g transform="translate(145.30,318.00) rotate(82.8) scale(1.059)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="18.7" data-e="27.7"/></g>
+          <g transform="translate(128.34,366.67) rotate(-48.3) scale(0.88)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="24.0" data-e="33.0"/></g>
+          <g transform="translate(119.38,416.67) rotate(61.2) scale(0.95)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="30.0" data-e="39.0"/></g>
+          <g transform="translate(123.16,450.00) rotate(-70.4) scale(0.80)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="35.0" data-e="44.0"/></g>
+          <g transform="translate(141.45,500.00) rotate(54.0) scale(1.02)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="40.0" data-e="49.0"/></g>
+          <g transform="translate(162.37,550.00) rotate(-63.5) scale(0.90)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="46.0" data-e="55.0"/></g>
+          <g transform="translate(172.52,600.00) rotate(70.0) scale(0.97)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="52.0" data-e="61.0"/></g>
+          <g transform="translate(165.44,700.00) rotate(-58.0) scale(0.92)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="60.0" data-e="69.0"/></g>
+          <g transform="translate(158.59,1283.33) rotate(65.0) scale(0.93)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="70.0" data-e="79.0"/></g>
+          <g transform="translate(140.78,1416.67) rotate(-60.0) scale(0.9)"><path class="vida__enr-hoja" d="M0,0 C-16.80,-12.60 -13.78,-31.92 0,-42.00 C13.78,-31.92 16.80,-12.60 0,0 Z" data-s="79.0" data-e="88.0"/></g>
+        </svg>
+      </div>
       <div class="contacto__canales-inner">
         <div class="contacto__canales-texto">
             <p class="contacto__eyebrow">Contáctanos directo</p>
-            <h2 class="contacto__canales-titulo">Elige el canal que prefieras — te respondemos ahí mismo.</h2>
+            <h2 class="contacto__canales-titulo contacto__revelar">Elige el canal que prefieras — te respondemos ahí mismo.</h2>
 
             <ul class="contacto__lista-canales">
-                <li class="contacto__canal">
+                <li class="contacto__canal contacto__revelar">
                     <a class="contacto__canal-link" href="https://wa.me/50495000315" target="_blank" rel="noopener">
                         <span class="contacto__canal-icono contacto__canal-icono--whatsapp">
                             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.32-1.93 1.4-.49.08-1.11.11-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94s.73-2.09 1-2.37c.24-.26.53-.32.71-.32.18 0 .35 0 .5.01.16.01.38-.06.59.45.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.04.94 1.93 1.23 2.2 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
@@ -89,7 +105,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="contacto__canal">
+                <li class="contacto__canal contacto__revelar">
                     <a class="contacto__canal-link" href="https://www.instagram.com/ambientalunicah/" target="_blank" rel="noopener">
                         <span class="contacto__canal-icono contacto__canal-icono--instagram">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
@@ -100,7 +116,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="contacto__canal">
+                <li class="contacto__canal contacto__revelar">
                     <a class="contacto__canal-link" href="https://www.facebook.com/profile.php?id=100068132044734&locale=es_LA" target="_blank" rel="noopener">
                         <span class="contacto__canal-icono contacto__canal-icono--facebook">
                             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.55c0-.86.24-1.44 1.47-1.44h1.57V4.46A21 21 0 0 0 14.2 4.3c-2.24 0-3.78 1.37-3.78 3.87v2.27H7.85v2.96h2.57V21h3.08z"/></svg>
@@ -111,7 +127,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="contacto__canal">
+                <li class="contacto__canal contacto__revelar">
                     <a class="contacto__canal-link"
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=admisiones@unicah.edu"
                         target="_blank" rel="noopener">
@@ -122,7 +138,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="contacto__canal">
+                <li class="contacto__canal contacto__revelar">
                     <a class="contacto__canal-link" href="https://www.unicah.edu/" target="_blank" rel="noopener">
                         <span class="contacto__canal-icono contacto__canal-icono--admisiones">U</span>
                         <span class="contacto__canal-texto">
@@ -131,7 +147,7 @@
                         </span>
                     </a>
                 </li>
-                <li class="contacto__canal">
+                <li class="contacto__canal contacto__revelar">
                     <a class="contacto__canal-link"
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=admisionescj@unicah.edu"
                         target="_blank" rel="noopener">
@@ -145,7 +161,7 @@
             </ul>
         </div>
 
-        <div class="contacto__galeria">
+        <div class="contacto__galeria contacto__revelar">
             <button class="contacto__galeria-foto contacto__galeria-foto--1" type="button">
                 <img src="media/galeria/galeria-2.jpg" alt="Estudiantes de Ingeniería Ambiental leyendo en el campus">
             </button>
@@ -165,7 +181,7 @@
 
     <section class="contacto__ubicacion">
         <p class="contacto__eyebrow">Encuéntranos</p>
-        <h2 class="contacto__ubicacion-titulo">Campus Sagrado Corazón de Jesús</h2>
+        <h2 class="contacto__ubicacion-titulo contacto__revelar">Campus Sagrado Corazón de Jesús</h2>
 
         <div class="contacto__mapa" id="contactoMapa"></div>
 
@@ -186,7 +202,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="js/contacto-galeria.js"></script>
     <script src="js/contacto-mapa.js"></script>
-    <script src="js/contacto-menu.js"></script>
+    <script src="js/contacto-decoracion.js"></script>
     <script src="js/funciones-compartidas.js"></script>
 </body>
 </html>

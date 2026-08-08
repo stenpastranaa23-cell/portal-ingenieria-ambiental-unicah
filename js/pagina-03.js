@@ -331,6 +331,34 @@
     });
   }
 
+  // --- ANIMACIONES DE ENTRADA (fade-in al hacer scroll) ---
+  // Nota: solo se anima "opacity" (nunca transform/translate) en .plan__semestre
+  // porque redibujarTodasLasLineas() usa getBoundingClientRect() de los cursos
+  // para trazar las lineas de requisitos; un transform en curso cambiaria esa
+  // posicion mientras se revela y desalinearia las lineas.
+  function revelarBloques() {
+    var elementos = document.querySelectorAll('.plan__stat, .plan__semestre');
+    if (!elementos.length) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      elementos.forEach(function (el) {
+        el.classList.add(el.classList.contains('plan__stat') ? 'plan__stat--visible' : 'plan__semestre--visible');
+      });
+      return;
+    }
+
+    var observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (!entrada.isIntersecting) return;
+        var el = entrada.target;
+        el.classList.add(el.classList.contains('plan__stat') ? 'plan__stat--visible' : 'plan__semestre--visible');
+        observador.unobserve(el);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+
+    elementos.forEach(function (el) { observador.observe(el); });
+  }
+
   // --- MODAL ---
   function abrirModal(curso) {
     var nombre = curso.querySelector('.plan__curso-nombre').textContent;
@@ -410,6 +438,9 @@
     // Animar stats al cargar
     animarStats();
 
+    // Revelar bloques (stats y semestres) al hacer scroll
+    revelarBloques();
+
     // Scroll suave al hacer clic en el timeline
     document.querySelectorAll('.plan__timeline-punto').forEach(function (punto) {
       punto.addEventListener('click', function () {
@@ -437,68 +468,4 @@
   } else {
     init();
   }
-})();
-
-// ============================================
-// CARRUSEL DEL HERO (fuera del IIFE principal)
-// ============================================
-(function () {
-  'use strict';
-
-  var slides = document.querySelectorAll('.plan__slide');
-  var dots = document.querySelectorAll('.plan__dot');
-  var flechaIzq = document.getElementById('plan-flecha-izq');
-  var flechaDer = document.getElementById('plan-flecha-der');
-  var indiceActual = 0;
-  var intervalo;
-
-  if (slides.length === 0) return;
-
-  function mostrarSlide(indice) {
-    slides.forEach(function (s) { s.classList.remove('plan__slide--activo'); });
-    dots.forEach(function (d) { d.classList.remove('plan__dot--activo'); });
-    slides[indice].classList.add('plan__slide--activo');
-    dots[indice].classList.add('plan__dot--activo');
-    indiceActual = indice;
-  }
-
-  function siguiente() {
-    mostrarSlide((indiceActual + 1) % slides.length);
-  }
-
-  function anterior() {
-    mostrarSlide((indiceActual - 1 + slides.length) % slides.length);
-  }
-
-  function iniciarAuto() {
-    intervalo = setInterval(siguiente, 6000);
-  }
-
-  function reiniciarAuto() {
-    clearInterval(intervalo);
-    iniciarAuto();
-  }
-
-  if (flechaDer) {
-    flechaDer.addEventListener('click', function () {
-      siguiente();
-      reiniciarAuto();
-    });
-  }
-
-  if (flechaIzq) {
-    flechaIzq.addEventListener('click', function () {
-      anterior();
-      reiniciarAuto();
-    });
-  }
-
-  dots.forEach(function (dot) {
-    dot.addEventListener('click', function () {
-      mostrarSlide(parseInt(dot.dataset.index, 10));
-      reiniciarAuto();
-    });
-  });
-
-  iniciarAuto();
 })();

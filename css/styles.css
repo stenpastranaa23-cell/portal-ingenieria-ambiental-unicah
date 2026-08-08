@@ -5255,237 +5255,72 @@ body {
 /* ============ PÁGINA 8 - CONTACTO ============ */
 /* Dueño: Diego */
 
-.contacto__hero {
+.contacto__page .header-sitio {
   position: relative;
-  min-height: 260px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background: var(--vida-verde-oscuro);
 }
 
 
-
-
-
-
-.contacto__hero-oscuro {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(10, 10, 8, 0.72);
+.contacto__page .header-sitio__badge {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 
-
-
-
-
-.contacto__hero-nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
+@media (max-width: 767px) {
+  .contacto__page .header-sitio {
+    padding: 16px 20px;
+  }
 }
-
-
-
-
-
-
-.contacto__hero-marca {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #fff;
-  text-decoration: none;
-  padding: 0.4rem 1rem 0.4rem 0.4rem;
-  border-radius: 999px;
-  font-family: 'PT Serif', serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-
-
-
-
-
-.contacto__hero-marca-logo {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background-color: #fff;
-  padding: 3px;
-  box-sizing: border-box;
-}
-
-
-
-
-
-
-.contacto__hero-menu {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.18);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-
-
-
-
-
-
-.contacto__hero-menu span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background-color: #fff;
-}
-
-
-
-
-
-
-.contacto__menu-desplegable {
-  display: none;
-  position: absolute;
-  z-index: 3;
-  top: 4.5rem;
-  right: 1rem;
-  width: 220px;
-  max-width: calc(100% - 2rem);
-  max-height: calc(100vh - 7rem);
-  overflow-y: auto;
-  background-color: rgba(28, 20, 12, 0.92);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.4);
-}
-
-
-
-
-
-
-.contacto__menu-desplegable--abierto {
-  display: block;
-}
-
-
-
-
-
-
-.contacto__menu-categoria {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #c98a4b;
-  font-family: 'PT Serif', serif;
-  margin: 1rem 0 0.4rem;
-}
-
-
-
-
-
-
-.contacto__menu-categoria:first-child {
-  margin-top: 0;
-}
-
-
-
-
-
-
-.contacto__menu-link {
-  display: block;
-  color: #f2ede2;
-  text-decoration: none;
-  font-family: 'PT Serif', serif;
-  font-size: 0.95rem;
-  padding: 0.3rem 0;
-}
-
-
-
-
-
-
-.contacto__menu-link:hover {
-  text-decoration: underline;
-}
-
-
-
-
-
-
-.contacto__hero-texto {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 1.5rem 1rem 2rem;
-}
-
-
-
-
-
-
-.contacto__hero-titulo {
-  font-family: 'PT Serif', serif;
-  font-weight: 700;
-  font-size: 2.2rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 0 0 0.5rem;
-}
-
-
-
-
-
-
-.contacto__hero-subtitulo {
-  font-family: 'PT Serif', serif;
-  font-style: italic;
-  font-size: 1.05rem;
-  color: #fff;
-  margin: 0;
-}
-
-
-
-
 
 
 .contacto__canales {
+  position: relative;
   background-color: #e8ede3;
   padding: 2rem 1rem;
+}
+
+
+/* Enredadera decorativa (misma pieza que Vida Estudiantil / Sobre la Carrera) */
+.contacto__enredaderas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+
+@media (max-width: 900px) {
+  .contacto__enredaderas {
+    display: none;
+  }
+}
+
+
+/* Animacion de entrada suave */
+.contacto__revelar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+.contacto__revelar--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .contacto__revelar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 
@@ -5820,7 +5655,7 @@ body {
 .contacto__ubicacion {
   padding: 2rem 1rem;
   text-align: center;
-  background-color: #e8ede3;
+  background-color: #f9f7f2;
   font-family: 'PT Serif', serif;
 }
 
@@ -6030,27 +5865,6 @@ body {
 
 
 
-  .contacto__hero {
-    min-height: 320px;
-  }
-
-
-
-
-
-
-  .contacto__hero-titulo {
-    font-size: 2.5rem;
-  }
-
-
-
-
-
-
-  .contacto__hero-subtitulo {
-    font-size: 1.2rem;
-  }
 
 
 
@@ -6177,18 +5991,6 @@ body {
 
 
 
-  .contacto__hero {
-    min-height: 380px;
-  }
-
-
-
-
-
-
-  .contacto__hero-titulo {
-    font-size: 3rem;
-  }
 
 
 
@@ -6245,8 +6047,61 @@ body {
 .sumate-body{
   margin: 0;
   padding: 0;
-  background-color: #F5EFE7;
+  background-color: #F0E4D3;
   color: #2d221d;
+}
+
+
+
+
+
+/* Contraste del header sobre el fondo claro de esta página */
+.sumate-body .header-sitio__badge {
+  background: rgba(26, 58, 42, 0.08);
+}
+
+.sumate-body .header-sitio__badge-text {
+  color: #1a3a2a;
+}
+
+.sumate-body .header-sitio__menu-btn span {
+  background-color: #1a3a2a;
+}
+
+
+
+
+
+/* Animacion de entrada suave del header y del hero */
+@keyframes sumate-header-entrada {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sumate-body .header-sitio {
+  animation: sumate-header-entrada 0.8s ease both;
+}
+
+@keyframes sumate-hero-entrada {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sumate-main .hero h1,
+.sumate-main .hero p {
+  animation: sumate-hero-entrada 0.9s ease both;
+}
+
+.sumate-main .hero p {
+  animation-delay: 0.15s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sumate-body .header-sitio,
+  .sumate-main .hero h1,
+  .sumate-main .hero p {
+    animation: none;
+  }
 }
 
 
@@ -6440,16 +6295,26 @@ body {
 /* Dueño: Byron */
 .sumate-main .card-becas .becas-img{
   width: 50%;
-  background:
-  linear-gradient(
+  position: relative;
+  overflow: hidden;
+}
+
+.sumate-main .card-becas .becas-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sumate-main .card-becas .becas-img::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
       to right,
       #30221b 0%,
       transparent
-  ),
-  url("../media/sumate-card-becas.jpeg");
-
-  background-size: cover;
-  background-position: center;
+  );
 }
 
 
@@ -6543,8 +6408,15 @@ body {
 .sumate-main .cards-bottom .card-img{
   width:100%;
   height:240px;
-  background-size:cover;
-  background-position:center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sumate-main .cards-bottom .card-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 
@@ -6553,17 +6425,16 @@ body {
 
 
 /* Dueño: Byron */
-.sumate-main .laboratorio-img {
+.sumate-main .laboratorio-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image:
   linear-gradient(
     to bottom,
   #fff,
     transparent 40%
-  ),
-  url("../media/sumate-card-laboratorio.jpeg");
-
-  background-size: cover;
-  background-position: center;
+  );
 }
 
 
@@ -6572,14 +6443,16 @@ body {
 
 
 /* Dueño: Byron */
-.sumate-main .alianzas-img {
+.sumate-main .alianzas-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image:
   linear-gradient(
     to bottom,
     #fff,
     transparent 50%
-  ),
-  url("../media/sumate-card-alianzas.jpeg");
+  );
 }
 
 
@@ -6682,24 +6555,34 @@ body {
   max-width: 520px;
   height: 360px;
   border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sumate-main .story-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  filter:
+    brightness(1.05)
+    contrast(1)
+    saturate(1.5)
+    sepia(1);
+}
+
+.sumate-main .story-image::after{
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image:
     linear-gradient(
       to right,
       rgba(245, 238, 228, 1) 0%,
       rgba(245, 238, 228, .75) 6%,
       rgba(245, 238, 228, 0) 40%
-    ),
-    url("../media/sumate-story.jpeg");
-    overflow: hidden;
-
-  background-size: cover;
-  background-position: center;
-
-  filter:
-    brightness(1.05)
-    contrast(1)
-    saturate(1.5)
-    sepia(1)
+    );
 }
 
 
@@ -6959,104 +6842,36 @@ body {
 
 /* ============ RECUPERADO DE origin/pagina-10-preguntas ============ */
 
-
 /* Dueño: Byron */
-.faq-hero-panel{
-  position:relative;
-  width:100%;
-  height:70vh;
-  min-height:320px;
-  overflow:hidden;
-}
-
-
-
-
-
-
-/* Dueño: Byron */
-.faq-hero-panel .hero-background{
-  width: 100%;
-  height: 100%;
+.faq__page .header-sitio {
   position: relative;
+  background: var(--vida-verde-oscuro);
 }
 
 
-
-
-
-
-/* Dueño: Byron */
-.faq-hero-panel .hero-background img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.faq__page .header-sitio__badge {
+  background: rgba(255, 255, 255, 0.14);
 }
-
-
-
-
-
-
-/* Dueño: Byron */
-.faq-hero-panel .hero-call-to-action{
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    width: 360px;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0,0,0,.65);
-    border-radius: 10px;
-    color: #fff;
-    text-align: center;
-}
-
-
-
-
-
-
-/* Dueño: Byron */
-.faq-hero-panel .hero-call-to-action h2{
-  margin:0px;
-  font-size:2rem;
-  text-align:center;
-}
-
-
-
-
 
 
 /* Dueño: Byron */
 .faq-content{
-  width: 47.8%;
+  position: relative;
+  max-width: 780px;
   margin: 5rem auto;
+  padding: 0 40px;
 }
-
-
-
-
 
 
 /* Dueño: Byron */
 .faq-content h1{
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   text-align: center;
-  font-size: 3rem;
-  font-style:italic;
-  font-weight: normal;
-  color: #1f1f1f;
+  font-family: var(--vida-fuente-titulo);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  color: var(--vida-verde-oscuro);
 }
-
-
-
-
 
 
 /* Dueño: Byron */
@@ -7066,39 +6881,30 @@ body {
 }
 
 
-
-
-
-
 /* Dueño: Byron */
 .faq-question{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
   margin: 0;
-  font-size: 1.2rem;
-  color: #1f1f1f;
-  font-weight: bold;
+  font-family: var(--vida-fuente-texto);
+  font-size: 1.1rem;
+  color: var(--vida-verde-oscuro);
+  font-weight: 700;
   padding: 1.5rem 0;
-  border-top: 1px solid #d8d8d8;
+  border-top: 1px solid var(--vida-tarjeta-borde);
   cursor: pointer;
 }
 
 
-
-
-
-
 /* Dueño: Byron */
 .faq-question span{
+  flex-shrink: 0;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #8c7a3e;
+  color: var(--vida-dorado);
 }
-
-
-
-
 
 
 /* Dueño: Byron */
@@ -7116,8 +6922,12 @@ body {
 }
 
 
-
-
+/* Dueño: Byron */
+.faq-answer p {
+  font-family: var(--vida-fuente-texto);
+  color: var(--vida-texto-muted);
+  line-height: 1.6;
+}
 
 
 /* Dueño: Byron */
@@ -7129,45 +6939,114 @@ body {
 }
 
 
-
-
-
-
-
 /* Dueño: Byron */
 .faq-contact{
+  background: var(--vida-verde-oscuro);
   text-align: center;
-  padding: 5rem 0;
+  padding: 5rem 40px;
 }
-
-
-
-
 
 
 /* Dueño: Byron */
 .faq-contact h2{
   margin-bottom: 2rem;
-  font-size: 2.2rem;
-  color: #1f1f1f;
+  font-family: var(--vida-fuente-titulo);
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #fff;
 }
-
-
-
-
 
 
 /* Dueño: Byron */
 .faq-button{
   display: inline-block;
+  font-family: var(--vida-fuente-texto);
   padding: 1rem 2.5rem;
-  background-color: #3a1d00;
-  color: white;
+  background-color: var(--vida-dorado);
+  color: #1a1a1a;
   text-decoration: none;
   border-radius: 30px;
   font-size: 0.9rem;
   font-weight: bold;
+  transition: background 0.3s ease;
 }
+
+
+/* Dueño: Byron */
+.faq-button:hover {
+  background-color: var(--vida-dorado-hover);
+}
+
+
+/* Enredadera decorativa (misma pieza que Vida Estudiantil / Sobre la Carrera) */
+.faq__enredaderas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+
+@media (max-width: 900px) {
+  .faq__enredaderas {
+    display: none;
+  }
+}
+
+
+/* Animacion de entrada de cada pregunta */
+.faq__revelar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+.faq__revelar--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .faq__revelar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 767px) {
+  .faq__page .header-sitio {
+    padding: 16px 20px;
+  }
+
+  .faq-content {
+    padding: 0 24px;
+    margin: 3rem auto;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .faq-contact {
+    padding: 3.5rem 24px;
+  }
+
+  .faq-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 
 
@@ -7192,6 +7071,8 @@ body {
 
   /* Restaurar estilos del header y menú compartidos (ganan por cascade) */
   .plan__page .header-sitio {
+    position: relative;
+    background: #1a3a2a;
     padding: 24px 40px;
   }
 
@@ -7285,198 +7166,24 @@ body {
 
 
 
-  /* --- HERO SECTION --- */
-  .plan__hero {
-    position: relative;
-    width: 100%;
-    height: 70vh;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* --- TITULO SECTION --- */
+  .plan__titulo-seccion {
+    background: #1a3a2a;
+    padding: 48px 40px 72px;
     text-align: center;
-    overflow: hidden;
   }
 
 
 
 
 
-  /* --- CARRUSEL --- */
-  .plan__carrusel {
-    position: absolute;
-    inset: 0;
-  }
-
-
-
-
-
-  .plan__slide {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center 30%;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
-  }
-
-
-
-
-
-  .plan__slide:nth-child(1) { background-position: center center; background-size: contain; }
-
-
-
-
-  .plan__slide:nth-child(2) { background-position: center 25%; }
-
-
-
-
-  .plan__slide:nth-child(3) { background-position: center 25%; }
-
-
-
-
-
-  .plan__slide--activo {
-    opacity: 1;
-  }
-
-
-
-
-
-  .plan__hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(10, 30, 20, 0.45) 0%,
-      rgba(10, 30, 20, 0.55) 100%
-    );
-  }
-
-
-
-
-
-  .plan__hero-contenido {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-  }
-
-
-
-
-
-  .plan__hero-titulo {
-    font-family: 'Georgia', serif;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  .plan__titulo-principal {
+    font-family: 'PT Serif', serif;
     font-weight: 700;
-    letter-spacing: 0.08em;
-    margin: 0 0 0.8rem;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
-  }
-
-
-
-
-
-  .plan__hero-subtitulo {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    font-weight: 400;
-    opacity: 0.9;
-    letter-spacing: 0.03em;
-  }
-
-
-
-
-
-  /* --- CONTROLES CARRUSEL --- */
-  .plan__controles {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-
-
-
-
-  .plan__flecha {
-    background: rgba(255, 255, 255, 0.15);
-    border: none;
+    font-size: clamp(1.8rem, 4vw + 1.2rem, 4.5rem);
+    letter-spacing: 0.06em;
     color: #fff;
-    font-size: 1.4rem;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-
-
-
-
-
-  .plan__flecha:hover {
-    background: rgba(255, 255, 255, 0.4);
-    transform: scale(1.15);
-  }
-
-
-
-
-
-  .plan__dots {
-    display: flex;
-    gap: 10px;
-  }
-
-
-
-
-
-  .plan__dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease, width 0.3s ease;
-  }
-
-
-
-
-
-  .plan__dot:hover {
-    transform: scale(1.3);
-  }
-
-
-
-
-
-  .plan__dot--activo {
-    background: #fff;
-    width: 28px;
-    border-radius: 999px;
+    margin: 0;
   }
 
 
@@ -7497,6 +7204,18 @@ body {
 
   .plan__stat {
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+
+
+
+
+  .plan__stat--visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
 
@@ -7506,7 +7225,7 @@ body {
   .plan__stat-numero {
     display: block;
     font-family: 'Georgia', serif;
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
     font-weight: 700;
     color: #1a3a2a;
     line-height: 1;
@@ -7532,9 +7251,17 @@ body {
 
   /* --- PROGRESS SECTION --- */
   .plan__progreso {
+    background: #eeeadf;
+    max-width: none;
+    margin: 0;
+    padding: 1.5rem 2rem 2rem;
+  }
+
+  .plan__progreso-barra-contenedor,
+  .plan__progreso-instruccion {
     max-width: 700px;
-    margin: 0 auto;
-    padding: 1.5rem 2rem 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 
@@ -7614,9 +7341,15 @@ body {
 
   /* --- TIMELINE --- */
   .plan__timeline {
+    background: #eeeadf;
+    max-width: none;
+    margin: 0;
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .plan__timeline-track {
     max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 1rem 0.5rem;
   }
 
 
@@ -7740,6 +7473,7 @@ body {
   /* --- CONTENEDOR DE SEMESTRES --- */
   .plan__contenedor {
     position: relative;
+    background: #f9f7f2;
     max-width: 1100px;
     margin: 0 auto;
     padding: 1rem 1.5rem 4rem;
@@ -7797,10 +7531,52 @@ body {
   .plan__semestre {
     display: flex;
     gap: 1.5rem;
-    padding: 1.8rem 0;
+    padding: 1.8rem 1rem;
+    margin: 0 -1rem;
+    border-radius: 12px;
     border-bottom: 1px solid #e8e5dc;
     position: relative;
     z-index: 1;
+  }
+
+
+
+
+
+  .plan__semestre:nth-child(even) {
+    background: rgba(26, 58, 42, 0.035);
+  }
+
+
+
+
+
+  /* Entrada solo con opacidad (sin transform) para no alterar los
+     getBoundingClientRect() que usa el trazado de líneas de requisitos */
+  .plan__semestre {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+
+
+
+
+  .plan__semestre--visible {
+    opacity: 1;
+  }
+
+
+
+
+
+  @media (prefers-reduced-motion: reduce) {
+    .plan__stat,
+    .plan__semestre {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 
 
@@ -7876,7 +7652,8 @@ body {
 
   .plan__curso:hover {
     border-color: #1a6a3a;
-    box-shadow: 0 2px 8px rgba(26, 106, 58, 0.12);
+    box-shadow: 0 4px 12px rgba(26, 106, 58, 0.16);
+    transform: translateY(-2px);
   }
 
 
@@ -8147,101 +7924,7 @@ body {
 
 
 
-  /* --- CTA --- */
-  .plan__cta {
-    background: #1a2e1a;
-    padding: 80px 40px;
-    text-align: center;
-  }
-
-
-
-
-
-  .plan__cta-titulo {
-    font-family: 'Tangerine', cursive;
-    font-weight: 700;
-    font-size: 3.2rem;
-    color: #fff;
-    margin-bottom: 24px;
-  }
-
-
-
-
-
-  .plan__cta-botones {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-
-
-
-
-  .plan__boton {
-    display: inline-block;
-    font-family: 'PT Serif', serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    padding: 14px 28px;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-
-
-
-
-
-  .plan__boton--primario {
-    background: #c98a4b;
-    color: #1a1a1a;
-  }
-
-
-
-
-
-  .plan__boton--primario:hover {
-    background: #b5793e;
-  }
-
-
-
-
-
-  .plan__boton--secundario {
-    background: transparent;
-    color: #c98a4b;
-    border: 2px solid #c98a4b;
-  }
-
-
-
-
-
-  .plan__boton--secundario:hover {
-    background: #c98a4b;
-    color: #1a1a1a;
-    }
-
-
-
-
-
   @media (max-width: 480px) {
-
-
-
-
-    .plan__stats {
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
 
 
 
@@ -8249,39 +7932,98 @@ body {
     .plan__progreso-barra-contenedor {
       flex-wrap: wrap;
     }
+}
 
 
 
 
 
-    .plan__cta {
-      padding: 60px 20px;
+  /* --- RESPONSIVE: TABLETS Y MOVILES --- */
+  @media (max-width: 767px) {
+
+    .plan__page .header-sitio {
+      padding: 16px 20px;
     }
 
-
-
-
-
-    .plan__cta-titulo {
-      font-size: 2.2rem;
+    .plan__titulo-seccion {
+      padding: 36px 20px 56px;
     }
 
-
-
-
-
-    .plan__boton {
-      width: 100%;
-      text-align: center;
+    .plan__stats {
+      padding: 2.5rem 1.25rem 1.5rem;
+      gap: 2rem;
     }
 
+    .plan__progreso {
+      padding: 1.25rem 1.25rem 1.75rem;
+    }
 
+    .plan__timeline {
+      padding: 1.5rem 0 2rem;
+    }
 
+    .plan__timeline-track {
+      overflow-x: auto;
+      justify-content: flex-start;
+      gap: 1.5rem;
+      padding: 0 20px 8px;
+      -webkit-overflow-scrolling: touch;
+    }
 
+    .plan__timeline-punto {
+      flex-shrink: 0;
+    }
 
-    .plan__cta-botones {
+    .plan__contenedor {
+      padding: 1rem 1.25rem 3rem;
+    }
+
+    .plan__semestre {
       flex-direction: column;
-      align-items: stretch;
+      gap: 0.6rem;
+      margin: 0;
+      padding: 1.4rem 0.75rem;
+    }
+
+    .plan__semestre-header {
+      width: auto;
+      text-align: left;
+    }
+
+    .plan__semestre-numero {
+      transform: none;
+      font-size: 1.5rem;
+    }
+
+    .plan__curso {
+      flex: 1 1 200px;
+      max-width: 100%;
+    }
+}
+
+
+
+
+
+  /* --- RESPONSIVE: PANTALLAS ESTRECHAS (stats en columna) --- */
+  @media (max-width: 640px) {
+
+    .plan__stats {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+}
+
+
+
+
+
+  @media (max-width: 380px) {
+
+    .plan__page .header-sitio__badge-text {
+      max-width: 145px;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 }
 
