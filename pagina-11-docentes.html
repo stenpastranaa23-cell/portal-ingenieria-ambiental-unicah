@@ -12,6 +12,25 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+    <div class="vida__carga" role="status" aria-live="polite">
+        <div class="vida__carga-contenido">
+            <svg class="vida__carga-flor" viewBox="-90 -20 180 260" width="120" height="160" aria-hidden="true" focusable="false">
+                <path class="vida__carga-tallo" pathLength="1" d="M0,230 C -8,190 8,150 0,110 C -6,90 6,75 0,60"></path>
+                <path class="vida__carga-hoja vida__carga-hoja--izquierda" pathLength="1" d="M0,150 C -22,142 -42,155 -50,175 C -36,163 -18,160 0,150 Z"></path>
+                <path class="vida__carga-hoja vida__carga-hoja--derecha" pathLength="1" d="M0,175 C 20,167 40,180 48,200 C 34,188 16,185 0,175 Z"></path>
+                <g transform="translate(0,60)">
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(0)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(60)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(120)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(180)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(240)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(300)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                </g>
+                <circle class="vida__carga-centro" cx="0" cy="60" r="13"></circle>
+            </svg>
+            <span class="vida__carga-texto">Docentes</span>
+        </div>
+    </div>
 
     <nav class="docentes__nav">
         <a class="docentes__marca" href="index.html">
@@ -51,6 +70,7 @@
         <ul class="docentes__lista">
             <li class="docentes__item">
                 <button class="docentes__tarjeta" type="button" data-docente="osmer-ponce">
+                    <img class="docentes__foto docentes__foto--logo" src="media/docentes/decano-perfil.jpeg" alt="Osmer Ponce, decano de la Facultad de Ingeniería Ambiental">
                     <span class="docentes__info">
                         <span class="docentes__cargo">Decano</span>
                         <span class="docentes__nombre">Osmer Ponce</span>
@@ -96,23 +116,8 @@
             </li>
 
             <li class="docentes__item">
-                <button class="docentes__tarjeta docentes__tarjeta--invertida" type="button" data-docente="juan-meza">
-                    <img class="docentes__foto" src="media/docentes/juan-meza.jpg" alt="Territorio y mapeo del terreno">
-                    <span class="docentes__info">
-                        <span class="docentes__cargo">Catedrático de SIG y Evaluación de Impacto Ambiental</span>
-                        <span class="docentes__nombre">Juan Meza</span>
-                        <span class="docentes__bio-corta">
-                            Imparte Sistemas de Información Geográfica (SIG) y Evaluación de Impacto
-                            Ambiental I y II, herramientas clave para mapear el territorio y anticipar el
-                            efecto de los proyectos sobre el ambiente.
-                        </span>
-                    </span>
-                </button>
-            </li>
-
-            <li class="docentes__item">
-                <button class="docentes__tarjeta" type="button" data-docente="thelma-cabrera">
-                    <img class="docentes__foto" src="media/docentes/thelma-cabrera.jpg" alt="Procesos industriales y manejo de contaminantes">
+                <button class="docentes__tarjeta docentes__tarjeta--invertida" type="button" data-docente="thelma-cabrera">
+                    <img class="docentes__foto" src="media/galeria-10.jpeg" alt="Procesos industriales y manejo de contaminantes">
                     <span class="docentes__info">
                         <span class="docentes__cargo">Catedrática de Manejo de Contaminantes</span>
                         <span class="docentes__nombre">Thelma Cabrera</span>
@@ -120,20 +125,6 @@
                             Imparte manejo de contaminantes, producción limpia, planeación de proyectos y
                             formulación y evaluación de proyectos, formando a los estudiantes para prevenir
                             la contaminación desde el diseño mismo de los procesos.
-                        </span>
-                    </span>
-                </button>
-            </li>
-
-            <li class="docentes__item">
-                <button class="docentes__tarjeta docentes__tarjeta--invertida" type="button" data-docente="carol-elvir">
-                    <img class="docentes__foto" src="media/docentes/carol-elvir.jpg" alt="Energía y ambiente">
-                    <span class="docentes__info">
-                        <span class="docentes__cargo">Catedrática de Economía Ambiental</span>
-                        <span class="docentes__nombre">Carol Elvir</span>
-                        <span class="docentes__bio-corta">
-                            Enseña economía ambiental, además de energía y ambiente, mostrando cómo las
-                            decisiones económicas y energéticas impactan los recursos naturales del país.
                         </span>
                     </span>
                 </button>
@@ -243,5 +234,6 @@
     </footer>
 
     <script src="js/docentes.js"></script>
+    <script src="js/funciones-compartidas.js"></script>
 </body>
 </html>

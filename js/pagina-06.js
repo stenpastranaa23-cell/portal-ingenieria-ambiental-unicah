@@ -14,7 +14,7 @@ const galeriaFotos = [
   'galeria-02.jpeg',
   'galeria-14.jpeg',
   'galeria-15.jpg',
-  'galeria-16.jpg',
+  'galeria-16.jpeg',
   'galeria-17.jpg',
   'IMG_4953.JPG.jpeg',
   'galeria-11.jpeg',
@@ -102,26 +102,7 @@ function galeriaIniciarLightbox() {
   });
 }
 
-function galeriaIniciarMenu() {
-  const btnMenu = document.getElementById('btn-menu');
-  const menuPanel = document.getElementById('menu-panel');
-
-  if (!btnMenu || !menuPanel) return;
-
-  btnMenu.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menuPanel.classList.toggle('menu-panel--abierto');
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!menuPanel.contains(e.target) && !btnMenu.contains(e.target)) {
-      menuPanel.classList.remove('menu-panel--abierto');
-    }
-  });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   galeriaGenerarGrid();
   galeriaIniciarLightbox();
-  galeriaIniciarMenu();
 });

@@ -65,33 +65,46 @@ function blogIniciarDestacadas() {
   blogIniciarAutoplayDestacadas();
 }
 
+function blogIniciarScrollReveal() {
+  const seccionInstagram = document.querySelector('[data-instagram-seccion]');
+
+  if (!seccionInstagram || !('IntersectionObserver' in window)) return;
+
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('blog__instagram--visible');
+        observador.unobserve(entrada.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  observador.observe(seccionInstagram);
+}
+
+function blogIniciarBrilloCita() {
+  const seccionCita = document.querySelector('[data-dia-cita-seccion]');
+  const textoCita = document.querySelector('[data-dia-cita]');
+
+  if (!seccionCita || !textoCita || !('IntersectionObserver' in window)) return;
+
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        observador.unobserve(entrada.target);
+        setTimeout(() => {
+          textoCita.classList.add('blog__dia-cita--brillo');
+        }, 5000);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  observador.observe(seccionCita);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   blogIniciarVistas();
   blogIniciarDestacadas();
-  blogIniciarFiltros();
+  blogIniciarScrollReveal();
+  blogIniciarBrilloCita();
 });
-
-function blogIniciarFiltros() {
-  const filtros = document.querySelectorAll('[data-filtro]');
-  const tarjetas = document.querySelectorAll('[data-categoria]');
-
-  if (filtros.length === 0) return;
-
-  filtros.forEach((filtro) => {
-    filtro.addEventListener('click', (evento) => {
-      evento.stopPropagation();
-
-      const categoriaElegida = filtro.dataset.filtro;
-
-      filtros.forEach((f) => {
-        f.classList.toggle('blog__filtro--activo', f === filtro);
-        f.setAttribute('aria-selected', String(f === filtro));
-      });
-
-      tarjetas.forEach((tarjeta) => {
-        const coincide = categoriaElegida === 'todas' || tarjeta.dataset.categoria === categoriaElegida;
-        tarjeta.classList.toggle('blog__tarjeta--oculta', !coincide);
-      });
-    });
-  });
-}
