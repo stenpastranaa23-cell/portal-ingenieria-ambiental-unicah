@@ -280,6 +280,7 @@
     margin-bottom: 24px;
     max-width: 560px;
   }
+}
 
   .inicio__cta {
     display: inline-block;
@@ -610,6 +611,7 @@
     border-radius: 16px;
     padding: 32px 36px;
   }
+}
 
   .decano__perfil {
     flex-shrink: 0;
