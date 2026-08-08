@@ -1,35 +1,63 @@
-/* ============================================
-   RESETEO GLOBAL (ELIMINA BORDES BLANCOS)
-   ============================================ */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
+      /* ============================================
+    VARIABLES Y ESTILOS BASE 
+    ============================================ */
 
-
-/* ============ PÁGINA 1 - INICIO ============ */
-/* Dueño: Stefany */
-
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
 /* ============ PÁGINA 2 - SOBRE LA CARRERA ============ */
 /* Dueño: Fernando */
 
+  /* ============================================
+    COMPARTIDO · HEADER Y MENÚ DE NAVEGACIÓN
+    ============================================ */
 
-/* ============ PÁGINA 3 - PLAN DE ESTUDIO ============ */
-/* Dueño: Kevin */
+  .header-sitio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+  }
 
+  .header-sitio__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    border-radius: 999px;
+    padding: 8px 16px;
+    color: #fff;
+  }
 
 /* ============ PÁGINA 4 - INSTALACIONES Y LABORATORIOS ============ */
 /* Dueño: Eduin */
 
+  .header-sitio__badge-text {
+    font-family: 'PT Serif', serif;
+    font-size: clamp(0.55rem, 2.8vw, 0.75rem);
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
 
 /* ============ PÁGINA 5 - VIDA ESTUDIANTIL ============ */
 /* Dueño: Fernando */
 
+  .header-sitio__menu-btn span {
+    width: 26px;
+    height: 2px;
+    background: #fff;
+  }
 
 /* ============ PÁGINA 6 - GALERÍA ============ */
 /* Dueño: Stefany */
@@ -38,28 +66,301 @@ html, body {
 /* ============ PÁGINA 7 - BLOG ============ */
 /* Dueño: Eduin */
 
+  .blog__destacada-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(250, 247, 240, 0.4);
+    cursor: pointer;
+  }
 
 /* ============ PÁGINA 8 - CONTACTO ============ */
 /* Dueño: Diego */
 
+  /* ---- Bloque 2: Historias Recientes ---- */
 
 /* ============ PÁGINA 9 - SÚMATE ============ */
 /* Dueño: Byron */
 
+  .blog__recientes-titulo {
+    font-family: 'PT Serif', serif;
+    color: #6b6252;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(47, 42, 31, 0.15);
+    padding-bottom: 14px;
+    margin: 0 0 14px 0;
+  }
 
-/* ============ PÁGINA 10 - PREGUNTAS FRECUENTES ============ */
-/* Dueño: Byron */
+  .blog__filtros {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin: 0 0 26px 0;
+  }
+
+  .blog__filtro {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #6b6252;
+    padding: 0 0 6px 0;
+    font-family: 'PT Serif', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .blog__filtro--activo {
+    border-bottom-color: #a3792f;
+    color: #2f2a1f;
+  }
+
+  .blog__lista {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog__tarjeta {
+    display: flex;
+    gap: 22px;
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(47, 42, 31, 0.12);
+    cursor: pointer;
+  }
+
+  .blog__tarjeta-img {
+    width: 112px;
+    height: 112px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+    background-color: #2f3d2f;
+  }
+
+  .blog__tarjeta-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .blog__tarjeta-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.76rem;
+    color: #6b6252;
+  }
+
+  .blog__tarjeta-titulo {
+    font-family: 'PT Serif', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #2f2a1f;
+    margin: 0;
+  }
+
+  .blog__tarjeta-resumen {
+    font-size: 0.86rem;
+    color: #6b6252;
+    line-height: 1.5;
+    max-width: 580px;
+    margin: 0;
+  }
+
+  .blog__tarjeta-link {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #a3792f;
+  }
+
+  .blog__tarjeta--oculta {
+    display: none;
+  }
+
+  /* ---- Bloque 3: Vista de Detalle ---- */
+
+  .blog__articulo-portada {
+    position: relative;
+  }
+
+  .blog__articulo-portada-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .blog__volver {
+    position: absolute;
+    top: 20px;
+    left: 5vw;
+    z-index: 2;
+    background: rgba(20, 26, 18, 0.45);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(250, 247, 240, 0.25);
+    color: #fff;
+    padding: 9px 20px;
+    border-radius: 999px;
+    font-family: 'PT Serif', serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .blog__articulo-encabezado {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 44px 5vw 0 5vw;
+  }
+
+  .blog__articulo-titulo {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    line-height: 1.18;
+    margin: 20px 0 22px 0;
+  }
+
+  .blog__articulo-autor {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(47, 42, 31, 0.15);
+  }
+
+  .blog__articulo-autor-foto {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid #a3792f;
+    padding: 3px;
+    background-color: #cba135;
+    object-fit: cover;
+  }
+
+  .blog__articulo-autor-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog__articulo-autor-nombre {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .blog__articulo-autor-rol {
+    font-size: 0.78rem;
+    color: #6b6252;
+  }
+
+  .blog__articulo-tiempo {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: #6b6252;
+  }
+
+  .blog__articulo-cuerpo {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 10px 5vw 10px 5vw;
+    font-size: 1.06rem;
+    line-height: 1.85;
+  }
+
+  .blog__articulo-cuerpo p {
+    margin: 0;
+  }
+
+  .blog__articulo-cuerpo--cierre {
+    padding-bottom: 70px;
+  }
+
+  .blog__articulo-dropcap::first-letter {
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 6.5rem;
+    line-height: 0.7;
+    float: left;
+    padding: 10px 8px 0 0;
+    color: #a3792f;
+  }
+
+  .blog__articulo-dato {
+    max-width: 680px;
+    margin: 10px auto 10px auto;
+    background: #1f2b1f;
+    color: #faf7f0;
+    border-radius: 6px;
+    padding: 34px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .blog__articulo-dato-num {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    color: #cba135;
+    font-size: 3rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .blog__articulo-dato-texto {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #e6e2d3;
+    min-width: 220px;
+    flex: 1;
+  }
+
+  .blog__articulo-dato-etiqueta {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.66rem;
+    color: #cba135;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+    /* ============ PÁGINA 8 - CONTACTO ============ */
+    /* Dueño: Diego */
+    .contacto__titulo {
+      font-size: 2.5rem;
+      color:green;
+    }
 
 
-/* ============================================
-   PÁGINA 11 - DOCENTES (PANTALLA COMPLETA)
-   ============================================ */
-/* Dueño: Stefany */
+    /* ============ PÁGINA 9 - SÚMATE ============ */
+    /* Dueño: Byron */
+    .sumate__titulo {
+    font-size: 2.5rem;
+      color:green;
+    }
 
-.pagina-docentes .header-sitio__badge {
-  background: #ffffff;
-  color: #1a2e1a;
-}
+
+    /* ============ PÁGINA 10 - PREGUNTAS FRECUENTES ============ */
+    /* Dueño: Byron */
+    .preguntas__titulo {
+      font-size: 2.5rem;
+      color:green;
+    }
 
 .pagina-docentes .header-sitio__menu-btn span {
   background: #1a2e1a;
@@ -67,350 +368,9 @@ html, body {
 }
 
 
-.docentes__equipo {
-  position: relative;
-  background-color: #e8ede3;
-  padding: 2rem 1.5rem 3rem;
-  text-align: center;
-  width: 100%;
-}
-
-.docentes__eyebrow {
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #c98a4b;
-  font-family: 'PT Serif', serif;
-  margin: 0 0 0.5rem;
-}
-
-.docentes__titulo {
-  font-family: 'Tangerine', cursive;
-  font-weight: 700;
-  font-size: 2.4rem;
-  color: #1a2e1a;
-  margin: 0 0 2rem;
-}
-
-.docentes__lista {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 1000px;
-  text-align: left;
-}
-
-.docentes__item {
-  border-top: 1px solid rgba(26, 46, 26, 0.15);
-  padding: 2rem 0;
-}
-
-.docentes__item:last-child {
-  border-bottom: 1px solid rgba(26, 46, 26, 0.15);
-}
-
-.docentes__tarjeta {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-align: left;
-  font-family: 'PT Serif', serif;
-}
-
-.docentes__foto {
-  width: 100%;
-  max-width: 260px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 8px;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.docentes__tarjeta:hover .docentes__foto {
-  transform: scale(1.03);
-}
-
-.docentes__foto--logo {
-  object-fit: contain;
-  background-color: #fff;
-  border: 1px solid #d5dccb;
-  padding: 1.5rem;
-  box-sizing: border-box;
-}
-
-.docentes__info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.docentes__cargo {
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #c98a4b;
-  font-family: 'PT Serif', serif;
-}
-
-.docentes__nombre {
-  display: block;
-  font-family: 'PT Serif', serif;
-  font-weight: 700;
-  font-size: 1.6rem;
-  color: #1a2e1a;
-  transition: color 0.3s ease;
-}
-
-.docentes__tarjeta:hover .docentes__nombre {
-  color: #c98a4b;
-}
-
-.docentes__bio-corta {
-  display: block;
-  font-family: 'PT Serif', serif;
-  font-size: 0.95rem;
-  color: #3a3a3a;
-  line-height: 1.6;
-}
-
-.docentes__overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  background-color: rgba(20, 15, 10, 0.65);
-  padding: 1.5rem 1rem;
-  overflow-y: auto;
-}
-
-.docentes__overlay--abierto {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.docentes__detalle {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  background-color: #faf7f2;
-  border-radius: 16px;
-  padding: 2.5rem 1.5rem 2rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-}
-
-.docentes__cerrar {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background-color: #1a2e1a;
-  color: #fff;
-  font-size: 1.5rem;
-  line-height: 1;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.docentes__detalle-cabecera {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.docentes__detalle-foto {
-  width: 100%;
-  max-width: 260px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.docentes__detalle-bio {
-  flex: 1;
-}
-
-.docentes__detalle-parrafo {
-  font-family: 'PT Serif', serif;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #2b2b2b;
-  margin: 0;
-}
-
-.docentes__detalle-parrafo::first-letter {
-  font-family: 'PT Serif', serif;
-  font-weight: 700;
-  font-size: 2.6rem;
-  color: #c98a4b;
-  float: left;
-  line-height: 1;
-  padding-right: 0.4rem;
-}
-
-.docentes__detalle-cita {
-  margin: 1.5rem 0;
-  padding: 0.25rem 0 0.25rem 1rem;
-  border-left: 3px solid #c98a4b;
-  font-family: 'PT Serif', serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: #1a2e1a;
-}
-
-.docentes__detalle-pasiones {
-  list-style: none;
-  margin: 0.5rem 0 1.5rem;
-  padding: 0;
-}
-
-.docentes__detalle-pasion {
-  border-top: 1px solid rgba(26, 46, 26, 0.15);
-  padding: 0.85rem 0;
-  font-family: 'PT Serif', serif;
-  font-size: 0.95rem;
-  color: #3a3a3a;
-}
-
-.docentes__testimonios {
-  background-color: #e8ede3;
-  padding: 2rem 1.5rem 3rem;
-  text-align: center;
-  width: 100%;
-}
-
-.docentes__testimonios-titulo {
-  font-family: 'Tangerine', cursive;
-  font-weight: 700;
-  font-size: 2.4rem;
-  color: #1a2e1a;
-  margin: 0 0 2rem;
-}
-
-.docentes__lista-testimonios {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.docentes__testimonio {
-  background-color: #f4f1ea;
-  border: 1px solid #d5dccb;
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.docentes__testimonio:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-}
-
-.docentes__testimonio-texto {
-  font-family: 'PT Serif', serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #2b2b2b;
-  margin: 0 0 1rem;
-}
-
-.docentes__testimonio-autor {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: 'PT Serif', serif;
-}
-
-.docentes__testimonio-avatar {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #e0d9c8;
-  color: #c98a4b;
-  font-weight: 700;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.docentes__testimonio-sobre {
-  display: block;
-  font-size: 0.8rem;
-  color: #6b6b6b;
-}
-
-  @media (min-width: 720px) {
-  .docentes__titulo {
-    font-size: 3rem;
-  }
-
-  .docentes__tarjeta {
-    flex-direction: row;
-    align-items: center;
-    gap: 2.5rem;
-  }
-
-  .docentes__tarjeta--invertida {
-    flex-direction: row-reverse;
-  }
-
-  .docentes__foto {
-    max-width: 220px;
-    flex-shrink: 0;
-  }
-
-  .docentes__detalle-cabecera {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .docentes__detalle-foto {
-    flex-shrink: 0;
-  }
-
-  .docentes__testimonios-titulo {
-    font-size: 3rem;
-  }
-
-  .docentes__lista-testimonios {
-    flex-direction: row;
-  }
-
-  .docentes__testimonio {
-    flex: 1;
-  }
-}
-
-@media (min-width: 1025px) {
-  .docentes__equipo,
-  .docentes__testimonios {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .docentes__detalle {
-    padding: 3rem;
-  }
-}
+    /* ============ PÁGINA 11 - DOCENTES ============ */
+    /* Dueño: Stefany */
+    .docentes__titulo {
+    font-size: 2.5rem;
+      color:green;
+    }
