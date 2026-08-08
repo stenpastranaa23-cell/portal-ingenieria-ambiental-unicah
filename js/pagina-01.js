@@ -39,6 +39,41 @@ function inicioIniciarCarrusel() {
     setInterval(inicioSiguiente, 6000);
 }
 
+function inicioIniciarHeroZoom() {
+    const hero = document.querySelector('.inicio__hero');
+    const carrusel = document.querySelector('.inicio__carrusel');
+
+    if (!hero || !carrusel) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const escalaMaxScroll = 0.15;
+
+    const actualizar = () => {
+        const heroRect = hero.getBoundingClientRect();
+        const progreso = Math.min(1, Math.max(0, -heroRect.top / hero.offsetHeight));
+        carrusel.style.transform = 'scale(' + (1 + progreso * escalaMaxScroll) + ')';
+    };
+
+    const activarZoomPorScroll = () => {
+        carrusel.style.animation = 'none';
+
+        let pendiente = false;
+        window.addEventListener('scroll', () => {
+            if (pendiente) return;
+            pendiente = true;
+            requestAnimationFrame(() => {
+                actualizar();
+                pendiente = false;
+            });
+        }, { passive: true });
+
+        window.addEventListener('resize', actualizar);
+        actualizar();
+    };
+
+    carrusel.addEventListener('animationend', activarZoomPorScroll, { once: true });
+}
+
 function inicioIniciarCaminos() {
     const carrusel = document.getElementById('caminos-carrusel');
     const tarjetas = document.querySelectorAll('.caminos__tarjeta');
@@ -227,6 +262,7 @@ customElements.define('honduras-map', HondurasMap);
 
 document.addEventListener('DOMContentLoaded', () => {
     inicioIniciarCarrusel();
+    inicioIniciarHeroZoom();
     inicioIniciarCaminos();
     inicioIniciarContador();
     inicioIniciarInstagram();

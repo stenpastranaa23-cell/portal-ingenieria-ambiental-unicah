@@ -117,6 +117,9 @@ html, body {
 .inicio__carrusel {
   position: absolute;
   inset: 0;
+  transform-origin: center;
+  will-change: transform;
+  animation: inicio-imagen-entrada 2.2s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 
@@ -164,6 +167,8 @@ html, body {
   max-width: 700px;
   z-index: 5;
   color: #fff;
+  transform-origin: left bottom;
+  animation: inicio-contenido-entrada 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
 
@@ -278,6 +283,47 @@ body {
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+
+
+
+
+
+@keyframes inicio-imagen-entrada {
+  from {
+    transform: scale(1.15);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+@keyframes inicio-contenido-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  .inicio__carrusel,
+  .inicio__contenido {
+    animation: none;
   }
 }
 
