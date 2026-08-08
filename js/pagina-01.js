@@ -39,24 +39,6 @@ function inicioIniciarCarrusel() {
     setInterval(inicioSiguiente, 6000);
 }
 
-function inicioIniciarMenu() {
-    const btnMenu = document.getElementById('btn-menu');
-    const menuPanel = document.getElementById('menu-panel');
-
-    btnMenu.addEventListener('click', () => {
-        menuPanel.classList.toggle('menu-panel--abierto');
-    });
-
-    document.addEventListener('click', (evento) => {
-        const clickDentroDelMenu = menuPanel.contains(evento.target);
-        const clickEnElBoton = btnMenu.contains(evento.target);
-
-        if (!clickDentroDelMenu && !clickEnElBoton) {
-            menuPanel.classList.remove('menu-panel--abierto');
-        }
-    });
-}
-
 function inicioIniciarCaminos() {
     const carrusel = document.getElementById('caminos-carrusel');
     const tarjetas = document.querySelectorAll('.caminos__tarjeta');
@@ -113,11 +95,6 @@ const hmSitios = [
         descripcion: "Visita a comunidades rurales para conocer proyectos de agua potable.",
         foto: "img/Inicio/mapa-intibucua-agua-potable.jpeg"
     }
-
-    // Próximos sitios a agregar cuando se tengan los datos (coordenadas, foto y descripción real):
-    // { nombre: "Lago de Yojoa", departamento: "Cortés / Comayagua", lat: 0, lng: 0, descripcion: "", foto: "img/Inicio/mapa-....jpg" },
-    // { nombre: "Río Choluteca", departamento: "Francisco Morazán", lat: 0, lng: 0, descripcion: "", foto: "img/Inicio/mapa-....jpg" },
-    // { nombre: "La Tigra", departamento: "Francisco Morazán", lat: 0, lng: 0, descripcion: "", foto: "img/Inicio/mapa-....jpg" },
 ];
 
 class HondurasMap extends HTMLElement {
