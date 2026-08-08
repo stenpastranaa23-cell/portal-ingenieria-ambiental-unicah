@@ -205,7 +205,7 @@ html, body {
 .menu-panel__link:hover {
   color: #8bc34a;
   padding-left: 6px;
-}
+
   display: flex;
   flex-direction: column;
   gap: 13px;
