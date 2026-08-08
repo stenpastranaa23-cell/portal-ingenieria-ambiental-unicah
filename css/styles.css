@@ -2181,20 +2181,7 @@ body.plan__page {
     display: flex;
     align-items: center;
     padding: 140px 40px 60px;
-    background-size: cover;
-    background-position: center 30%;
-    background-repeat: no-repeat;
-    background-color: var(--carrera-verde-oscuro);
-  }
-
-  .carrera__hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(10, 30, 20, 0.45) 0%,
-      rgba(10, 30, 20, 0.55) 100%
-    );
+    background: linear-gradient(135deg, var(--carrera-verde-oscuro) 0%, var(--carrera-verde-oscuro-2) 55%, var(--carrera-verde-oscuro-3) 100%);
   }
 
   .carrera__hero-contenido {
