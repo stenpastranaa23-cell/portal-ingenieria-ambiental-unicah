@@ -128,7 +128,7 @@ const hmSitios = [
         lat: 14.3167,
         lng: -88.1833,
         descripcion: "Visita a comunidades rurales para conocer proyectos de agua potable.",
-        foto: "img/Inicio/mapa-intibucua-agua-potable.jpeg"
+        foto: "../img/Inicio/mapa-intibucua-agua-potable.jpeg"
     }
 ];
 

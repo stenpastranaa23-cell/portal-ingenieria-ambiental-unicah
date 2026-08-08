@@ -1,12 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería</title>
-    <link rel="stylesheet" href="../css/styles.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
-    <h1 class="galeria__titulo">Galería</h1>
+    <div class="vida__carga" role="status" aria-live="polite">
+        <div class="vida__carga-contenido">
+            <svg class="vida__carga-flor" viewBox="-90 -20 180 260" width="120" height="160" aria-hidden="true" focusable="false">
+                <path class="vida__carga-tallo" pathLength="1" d="M0,230 C -8,190 8,150 0,110 C -6,90 6,75 0,60"></path>
+                <path class="vida__carga-hoja vida__carga-hoja--izquierda" pathLength="1" d="M0,150 C -22,142 -42,155 -50,175 C -36,163 -18,160 0,150 Z"></path>
+                <path class="vida__carga-hoja vida__carga-hoja--derecha" pathLength="1" d="M0,175 C 20,167 40,180 48,200 C 34,188 16,185 0,175 Z"></path>
+                <g transform="translate(0,60)">
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(0)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(60)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(120)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(180)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(240)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(300)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                </g>
+                <circle class="vida__carga-centro" cx="0" cy="60" r="13"></circle>
+            </svg>
+            <span class="vida__carga-texto">Galería</span>
+        </div>
+    </div>
+    <header class="galeria__header">
+        <span class="galeria__logo-texto">GALERÍA</span>
+        <button class="inicio__menu-btn" id="btn-menu" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="menu-panel" id="menu-panel">
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+                <a href="index.html" class="menu-panel__link">Inicio</a>
+                <a href="pagina-02-carrera.html" class="menu-panel__link">Sobre la Carrera</a>
+                <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+                <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+            </div>
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">COMUNIDAD</span>
+                <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link">Únete / Vida Estudiantil</a>
+                <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+            </div>
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">RECURSOS</span>
+                <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+                <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+                <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+                <a href="pagina-10-preguntas.html" class="menu-panel__link">Preguntas Frecuentes</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="galeria__grid" id="galeria-grid">
+        <!-- El JS llena esto automáticamente desde el arreglo galeriaFotos -->
+    </section>
+
+    <div class="galeria__lightbox" id="galeria-lightbox">
+        <button class="galeria__lightbox-cerrar" id="galeria-cerrar" aria-label="Cerrar">✕</button>
+        <button class="galeria__lightbox-flecha galeria__lightbox-flecha--izq" id="galeria-anterior"
+            aria-label="Anterior">‹</button>
+        <img src="" alt="" class="galeria__lightbox-imagen" id="galeria-imagen-grande">
+        <button class="galeria__lightbox-flecha galeria__lightbox-flecha--der" id="galeria-siguiente"
+            aria-label="Siguiente">›</button>
+    </div>
+
+    <footer class="pie">
+        <div class="pie__redes">
+            <a href="https://wa.me/50495000315" target="_blank" rel="noopener" class="pie__red" aria-label="WhatsApp">
+                <img src="../Imagenes/Galeria/Logo%20de%20Wha.png" alt="WhatsApp" class="pie__red-icono">
+            </a>
+            <a href="https://www.instagram.com/ambientalunicah" target="_blank" rel="noopener" class="pie__red"
+                aria-label="Instagram">
+                <img src="../Imagenes/Galeria/Instagram-Logo.png" alt="Instagram" class="pie__red-icono">
+            </a>
+            <a href="https://www.unicah.edu/" target="_blank" rel="noopener" class="pie__red"
+                aria-label="Sitio de UNICAH">
+                <img src="../Imagenes/Galeria/Logo%20Unicah.png" alt="UNICAH" class="pie__red-icono">
+            </a>
+        </div>
+    </footer>
+
+    <script src="../js/pagina-06.js"></script>
+    <script src="../js/funciones-compartidas.js"></script>
 </body>
+
 </html>

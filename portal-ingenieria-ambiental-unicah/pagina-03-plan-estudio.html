@@ -1,13 +1,826 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan de Estudio</title>
+    <title>Plan de Estudio - Ing. Ambiental | UNICAH</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
-    <h1 class="plan__titulo">Plan de Estudio</h1>
+<body class="plan__page">
+    <div class="vida__carga" role="status" aria-live="polite">
+        <div class="vida__carga-contenido">
+            <svg class="vida__carga-flor" viewBox="-90 -20 180 260" width="120" height="160" aria-hidden="true" focusable="false">
+                <path class="vida__carga-tallo" pathLength="1" d="M0,230 C -8,190 8,150 0,110 C -6,90 6,75 0,60"></path>
+                <path class="vida__carga-hoja vida__carga-hoja--izquierda" pathLength="1" d="M0,150 C -22,142 -42,155 -50,175 C -36,163 -18,160 0,150 Z"></path>
+                <path class="vida__carga-hoja vida__carga-hoja--derecha" pathLength="1" d="M0,175 C 20,167 40,180 48,200 C 34,188 16,185 0,175 Z"></path>
+                <g transform="translate(0,60)">
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(0)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(60)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(120)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(180)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(240)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(300)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                </g>
+                <circle class="vida__carga-centro" cx="0" cy="60" r="13"></circle>
+            </svg>
+            <span class="vida__carga-texto">Plan de Estudio</span>
+        </div>
+    </div>
 
+    <!-- HEADER + MENU -->
+    <header class="header-sitio">
+        <div class="header-sitio__badge">
+            <img src="../img/Inicio/Logo Ambiental.png" alt="Logo" class="header-sitio__badge-icon">
+            <span class="header-sitio__badge-text">INGENIERÍA AMBIENTAL · UNICAH</span>
+        </div>
+        <button class="header-sitio__menu-btn" id="btn-menu" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="menu-panel" id="menu-panel">
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+                <a href="index.html" class="menu-panel__link">Inicio</a>
+                <a href="pagina-02-carrera.html" class="menu-panel__link">Sobre la Carrera</a>
+                <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+                <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+            </div>
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">COMUNIDAD</span>
+                <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link">Únete / Vida Estudiantil</a>
+                <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+            </div>
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">RECURSOS</span>
+                <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+                <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+                <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+                <a href="pagina-10-preguntas.html" class="menu-panel__link">Preguntas Frecuentes</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- TITULO SECTION -->
+    <section class="plan__titulo-seccion">
+        <h1 class="plan__titulo-principal">PLAN DE ESTUDIO</h1>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="plan__stats">
+        <div class="plan__stat">
+            <span class="plan__stat-numero" data-objetivo="61">0</span>
+            <span class="plan__stat-label">CLASES</span>
+        </div>
+        <div class="plan__stat">
+            <span class="plan__stat-numero" data-objetivo="13">0</span>
+            <span class="plan__stat-label">SEMESTRES</span>
+        </div>
+        <div class="plan__stat">
+            <span class="plan__stat-numero" data-objetivo="193">0</span>
+            <span class="plan__stat-label">CRÉDITOS TOTALES</span>
+        </div>
+    </section>
+
+    <!-- PROGRESS SECTION -->
+    <section class="plan__progreso">
+        <p class="plan__progreso-instruccion">Toca una clase para ver sus créditos y requisito. Marca el círculo para llevar tu propio avance.</p>
+        <div class="plan__progreso-barra-contenedor">
+            <span class="plan__progreso-label">TU AVANCE</span>
+            <div class="plan__progreso-barra">
+                <div class="plan__progreso-barra-fill" id="barra-progreso"></div>
+            </div>
+            <span class="plan__progreso-porcentaje" id="porcentaje-avance">0%</span>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <nav class="plan__timeline" id="timeline">
+        <div class="plan__timeline-track">
+            <div class="plan__timeline-line"></div>
+            <div class="plan__timeline-line-fill" id="timeline-fill"></div>
+            <div class="plan__timeline-punto" data-semestre="1"><span>I</span></div>
+            <div class="plan__timeline-punto" data-semestre="2"><span>II</span></div>
+            <div class="plan__timeline-punto" data-semestre="3"><span>III</span></div>
+            <div class="plan__timeline-punto" data-semestre="4"><span>IV</span></div>
+            <div class="plan__timeline-punto" data-semestre="5"><span>V</span></div>
+            <div class="plan__timeline-punto" data-semestre="6"><span>VI</span></div>
+            <div class="plan__timeline-punto" data-semestre="7"><span>VII</span></div>
+            <div class="plan__timeline-punto" data-semestre="8"><span>VIII</span></div>
+            <div class="plan__timeline-punto" data-semestre="9"><span>IX</span></div>
+            <div class="plan__timeline-punto" data-semestre="10"><span>X</span></div>
+            <div class="plan__timeline-punto" data-semestre="11"><span>XI</span></div>
+            <div class="plan__timeline-punto" data-semestre="12"><span>XII</span></div>
+            <div class="plan__timeline-punto" data-semestre="13"><span>XIII</span></div>
+        </div>
+    </nav>
+
+    <!-- SEMESTRES -->
+    <main class="plan__contenedor">
+        <!-- SVG overlay para líneas de requisitos -->
+        <svg class="plan__lineas-svg" id="lineas-svg">
+        </svg>
+
+        <!-- SEMESTRE I -->
+        <section class="plan__semestre" data-semestre="1">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">I</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Español</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="4" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 4</span>
+                        <span class="plan__curso-nombre">Matemáticas</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="4" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 4</span>
+                        <span class="plan__curso-nombre">Biología</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="5" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 5</span>
+                        <span class="plan__curso-nombre">Química</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Filosofía</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE II -->
+        <section class="plan__semestre" data-semestre="2">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">II</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="Español">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Expresión Oral y Escrita</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="4" data-requisito="Matemáticas">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 4</span>
+                        <span class="plan__curso-nombre">Pre-Cálculo</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Biología">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Microbiología Ambiental</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="5" data-requisito="Química">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 5</span>
+                        <span class="plan__curso-nombre">Química Orgánica</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">El Hombre Frente a la Vida</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE III -->
+        <section class="plan__semestre" data-semestre="3">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">III</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Electiva I</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="4" data-requisito="Pre-Cálculo">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 4</span>
+                        <span class="plan__curso-nombre">Cálculo I</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Botánica</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Química Orgánica">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Química Analítica Aplicada</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Sociología</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE IV -->
+        <section class="plan__semestre" data-semestre="4">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">IV</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Administración</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="4" data-requisito="Cálculo I">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 4</span>
+                        <span class="plan__curso-nombre">Cálculo II</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Zoología</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Ecología de Organizaciones y Población</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Gestión y Calidad del Agua</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE V -->
+        <section class="plan__semestre" data-semestre="5">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">V</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="4" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 4</span>
+                        <span class="plan__curso-nombre">Estadística I</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Matemáticas">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Física I</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Cálculo II">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Ecuaciones Diferenciales</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Dibujo I</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Gestión y Calidad del Aire</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE VI -->
+        <section class="plan__semestre" data-semestre="6">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">VI</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Métodos y Técnicas de Investigación</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Principios de Economía</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Dibujo I">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Dibujo Técnico</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Gestión y Calidad del Suelo</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Ética Profesional</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE VII -->
+        <section class="plan__semestre" data-semestre="7">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">VII</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="Métodos y Técnicas de Investigación">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Electiva II</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Física I">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Física II</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Dibujo Técnico">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Topografía</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Principios de Economía">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Economía Ambiental</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Historia de Honduras</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE VIII -->
+        <section class="plan__semestre" data-semestre="8">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">VIII</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="Física II">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Ingeniería Hidráulica Ambiental</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Física II">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Energía y Ambiente</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Topografía">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Gestión de Cuencas Hidrográficas</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Gestión y Tratamiento de Desechos Sólidos</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Electiva III</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE IX -->
+        <section class="plan__semestre" data-semestre="9">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">IX</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="Ingeniería Hidráulica Ambiental">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Hidrogeología</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Ingeniería Sanitaria I</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Gestión de Recursos Naturales Renovables y No Renovables</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Sistemas de Información Geográfica</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Gestión de la Calidad Total</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE X -->
+        <section class="plan__semestre" data-semestre="10">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">X</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Planeación y Administración Ambiental</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Ingeniería Sanitaria I">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Ingeniería Sanitaria II</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Legislación Ambiental</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Ética Profesional">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Doctrina Social de la Iglesia</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Gestión de la Calidad Total">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Control Estadístico de la Calidad</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE XI -->
+        <section class="plan__semestre" data-semestre="11">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">XI</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Manejo de Contaminantes</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Evaluación de Impacto Ambiental I</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Gestión del Riesgo y Vulnerabilidad</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Producción Limpia</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Control Estadístico de la Calidad">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Planeación y Diseño de un Modelo de Calidad</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE XII -->
+        <section class="plan__semestre" data-semestre="12">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">XII</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Formulación y Evaluación de Proyectos Ambientales</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="Evaluación de Impacto Ambiental I">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Evaluación de Impacto Ambiental II</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Remediación Ambiental</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Gestión Ambiental Municipal</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Toxicología y Salud</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMESTRE XIII -->
+        <section class="plan__semestre plan__semestre--final" data-semestre="13">
+            <div class="plan__semestre-header">
+                <h2 class="plan__semestre-numero">XIII</h2>
+            </div>
+            <div class="plan__cursos">
+                <div class="plan__curso" data-creditos="3" data-requisito="">
+                    <div class="plan__curso-info">
+                        <span class="plan__curso-creditos">CRÉDITOS: 3</span>
+                        <span class="plan__curso-nombre">Práctica Profesional Supervisada</span>
+                    </div>
+                    <button class="plan__curso-check" aria-label="Marcar como completado">
+                        <svg class="plan__curso-check-icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="pie">
+        <div class="pie__redes">
+            <a href="https://wa.me/50495000315" target="_blank" rel="noopener" class="pie__red" aria-label="WhatsApp">
+                <img src="../img/Inicio/Logo de Wha.png" alt="WhatsApp" class="pie__red-icono">
+            </a>
+            <a href="https://www.instagram.com/ambientalunicah/" target="_blank" rel="noopener" class="pie__red" aria-label="Instagram">
+                <img src="../img/Inicio/Instagram-Logo.png" alt="Instagram" class="pie__red-icono">
+            </a>
+            <a href="https://www.unicah.edu/" target="_blank" rel="noopener" class="pie__red" aria-label="Sitio de UNICAH">
+                <img src="../img/Inicio/Logo Unicah.png" alt="UNICAH" class="pie__red-icono">
+            </a>
+        </div>
+    </footer>
+
+    <!-- MODAL CURSO -->
+    <div class="plan__modal-overlay" id="modal-overlay">
+        <div class="plan__modal">
+            <button class="plan__modal-cerrar" id="modal-cerrar">&times;</button>
+            <span class="plan__modal-semestre" id="modal-semestre"></span>
+            <h2 class="plan__modal-nombre" id="modal-nombre"></h2>
+            <p class="plan__modal-creditos" id="modal-creditos"></p>
+            <div class="plan__modal-divider"></div>
+            <div class="plan__modal-requisito" id="modal-requisito">
+                <span class="plan__modal-requisito-label">REQUISITO</span>
+                <span class="plan__modal-requisito-valor" id="modal-requisito-valor"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts compartidos -->
+    <script src="../js/funciones-compartidas.js"></script>
+    <!-- Script de la página -->
+    <script src="../js/pagina-03.js"></script>
 </body>
 </html>

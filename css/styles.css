@@ -6867,7 +6867,7 @@ body {
 .faq-content h1{
   margin-bottom: 3rem;
   text-align: center;
-  font-family: var(--vida-fuente-titulo);
+  font-family: var(--vida-fuente-texto);
   font-weight: 700;
   font-size: clamp(2.6rem, 5vw, 4rem);
   color: var(--vida-verde-oscuro);
@@ -6950,7 +6950,7 @@ body {
 /* Dueño: Byron */
 .faq-contact h2{
   margin-bottom: 2rem;
-  font-family: var(--vida-fuente-titulo);
+  font-family: var(--vida-fuente-texto);
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 2.8rem);
   color: #fff;

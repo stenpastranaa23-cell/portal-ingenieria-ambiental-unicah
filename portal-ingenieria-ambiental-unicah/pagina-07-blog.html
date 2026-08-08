@@ -1,14 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <h1 class="blog__titulo">Blog</h1>
-     <p>Contenido de prueba - Página 7</p>
-     <p>Segunda prueba para verificar atribución de commits</p>
+    <div class="vida__carga" role="status" aria-live="polite">
+        <div class="vida__carga-contenido">
+            <svg class="vida__carga-flor" viewBox="-90 -20 180 260" width="120" height="160" aria-hidden="true" focusable="false">
+                <path class="vida__carga-tallo" pathLength="1" d="M0,230 C -8,190 8,150 0,110 C -6,90 6,75 0,60"></path>
+                <path class="vida__carga-hoja vida__carga-hoja--izquierda" pathLength="1" d="M0,150 C -22,142 -42,155 -50,175 C -36,163 -18,160 0,150 Z"></path>
+                <path class="vida__carga-hoja vida__carga-hoja--derecha" pathLength="1" d="M0,175 C 20,167 40,180 48,200 C 34,188 16,185 0,175 Z"></path>
+                <g transform="translate(0,60)">
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(0)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(60)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(120)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(180)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(240)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(300)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                </g>
+                <circle class="vida__carga-centro" cx="0" cy="60" r="13"></circle>
+            </svg>
+            <span class="vida__carga-texto">Blog</span>
+        </div>
+    </div>
+
+  <main id="blog-app" class="blog__app">
+
+    <section class="blog__view" data-view="list">
+
+      <header class="header-sitio">
+        <div class="header-sitio__badge">
+          <img src="../img/Inicio/Logo Ambiental.png" alt="Logo Ingeniería Ambiental" class="header-sitio__badge-icon">
+          <span class="header-sitio__badge-text">INGENIERÍA AMBIENTAL · UNICAH</span>
+        </div>
+        <button class="header-sitio__menu-btn" id="btn-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-panel">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="menu-panel" id="menu-panel">
+          <div class="menu-panel__grupo">
+            <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+            <a href="index.html" class="menu-panel__link">Inicio</a>
+            <a href="pagina-02-carrera.html" class="menu-panel__link">Sobre la Carrera</a>
+            <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+            <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+          </div>
+          <div class="menu-panel__grupo">
+            <span class="menu-panel__categoria">COMUNIDAD</span>
+            <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link">Únete / Vida Estudiantil</a>
+            <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+          </div>
+          <div class="menu-panel__grupo">
+            <span class="menu-panel__categoria">RECURSOS</span>
+            <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+            <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+            <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+            <a href="pagina-10-preguntas.html" class="menu-panel__link">Preguntas Frecuentes</a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- SECCIÓN 1: PORTADA -->
+      <section class="blog__portada" data-goto="articulo-0">
+        <img class="blog__portada-img" src="../img/vida-estudiantil/gira-hidrogeologia.jpg" alt="Valle montañoso al atardecer">
+        <div class="blog__portada-degradado"></div>
+        <div class="blog__portada-contenido">
+          <span class="blog__portada-eyebrow">Un día como</span>
+          <h1 class="blog__portada-titulo">Ingeniero Ambiental</h1>
+          <p class="blog__portada-frase">María José sale antes del amanecer con un kit de muestreo, un GPS y doce comunidades que dependen de lo que encuentre en el agua ese día.</p>
+          <span class="blog__portada-cta">Leer más →</span>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: INSTAGRAM (bento grid) -->
+      <section class="blog__instagram" id="instagram-scroll" data-instagram-seccion>
+        <div class="blog__instagram-contenedor">
+          <span class="blog__instagram-etiqueta">Síguenos</span>
+          <h2 class="blog__instagram-titulo">Últimas publicaciones</h2>
+
+          <div class="blog__instagram-grid">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="blog__instagram-tarjeta blog__instagram-tarjeta--grande">
+              <img class="blog__instagram-imagen" src="../img/vida-estudiantil/gira-hidrogeologia.jpg" alt="Muestreo en el Río Choluteca">
+              <div class="blog__instagram-degradado"></div>
+              <div class="blog__instagram-texto">
+                <h3 class="blog__instagram-post-titulo">Muestreo en el Río Choluteca</h3>
+                <p class="blog__instagram-post-descripcion">Jornada de muestreo junto a estudiantes de 4to año para medir calidad del agua.</p>
+              </div>
+              <span class="blog__instagram-icono" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="2" width="20" height="20" rx="6" stroke="#1a2e1a" stroke-width="2"></rect>
+                  <circle cx="12" cy="12" r="5" stroke="#1a2e1a" stroke-width="2"></circle>
+                  <circle cx="18" cy="6" r="1.4" fill="#1a2e1a"></circle>
+                </svg>
+              </span>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="blog__instagram-tarjeta">
+              <img class="blog__instagram-imagen" src="../img/vida-estudiantil/formacion-equipo.jpg" alt="Reforestación">
+              <div class="blog__instagram-degradado"></div>
+              <div class="blog__instagram-texto">
+                <h3 class="blog__instagram-post-titulo">Reforestación</h3>
+                <p class="blog__instagram-post-descripcion">Voluntariado de reforestación este fin de semana en el corredor biológico.</p>
+              </div>
+              <span class="blog__instagram-icono" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="2" width="20" height="20" rx="6" stroke="#1a2e1a" stroke-width="2"></rect>
+                  <circle cx="12" cy="12" r="5" stroke="#1a2e1a" stroke-width="2"></circle>
+                  <circle cx="18" cy="6" r="1.4" fill="#1a2e1a"></circle>
+                </svg>
+              </span>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="blog__instagram-tarjeta">
+              <img class="blog__instagram-imagen" src="../img/vida-estudiantil/formacion-academica.jpg" alt="Laboratorio de suelos">
+              <div class="blog__instagram-degradado"></div>
+              <div class="blog__instagram-texto">
+                <h3 class="blog__instagram-post-titulo">Laboratorio de suelos</h3>
+                <p class="blog__instagram-post-descripcion">Prácticas de análisis fisicoquímico con estudiantes de 2do año.</p>
+              </div>
+              <span class="blog__instagram-icono" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="2" width="20" height="20" rx="6" stroke="#1a2e1a" stroke-width="2"></rect>
+                  <circle cx="12" cy="12" r="5" stroke="#1a2e1a" stroke-width="2"></circle>
+                  <circle cx="18" cy="6" r="1.4" fill="#1a2e1a"></circle>
+                </svg>
+              </span>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="blog__instagram-tarjeta">
+              <img class="blog__instagram-imagen" src="../img/vida-estudiantil/gira-tela.jpg" alt="Río Plátano">
+              <div class="blog__instagram-degradado"></div>
+              <div class="blog__instagram-texto">
+                <h3 class="blog__instagram-post-titulo">Río Plátano</h3>
+                <p class="blog__instagram-post-descripcion">Expedición de diez días documentando cobertura boscosa en la reserva.</p>
+              </div>
+              <span class="blog__instagram-icono" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="2" width="20" height="20" rx="6" stroke="#1a2e1a" stroke-width="2"></rect>
+                  <circle cx="12" cy="12" r="5" stroke="#1a2e1a" stroke-width="2"></circle>
+                  <circle cx="18" cy="6" r="1.4" fill="#1a2e1a"></circle>
+                </svg>
+              </span>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="blog__instagram-tarjeta">
+              <img class="blog__instagram-imagen" src="../img/Inicio/mapa-intibucua-agua-potable.jpeg" alt="Graduación 2026">
+              <div class="blog__instagram-degradado"></div>
+              <div class="blog__instagram-texto">
+                <h3 class="blog__instagram-post-titulo">Graduación 2026</h3>
+                <p class="blog__instagram-post-descripcion">Celebrando a la nueva promoción de ingenieros ambientales.</p>
+              </div>
+              <span class="blog__instagram-icono" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="2" width="20" height="20" rx="6" stroke="#1a2e1a" stroke-width="2"></rect>
+                  <circle cx="12" cy="12" r="5" stroke="#1a2e1a" stroke-width="2"></circle>
+                  <circle cx="18" cy="6" r="1.4" fill="#1a2e1a"></circle>
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <a href="https://www.instagram.com/ambientalunicah" target="_blank" rel="noopener" class="blog__instagram-cta">Ver más en Instagram →</a>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3: HISTORIAS DESTACADAS -->
+      <div class="blog__destacadas-encabezado">
+        <span class="blog__destacadas-etiqueta">Lo que se vive aquí</span>
+        <h2 class="blog__destacadas-titulo">Historias destacadas</h2>
+      </div>
+
+      <section class="blog__destacadas">
+        <article class="blog__destacada-slide blog__destacada-slide--activa" data-destacada-slide data-goto="articulo-2" style="background-image: url('../img/vida-estudiantil/formacion-equipo.jpg');" aria-hidden="false">
+          <div class="blog__destacada-degradado"></div>
+          <div class="blog__destacada-texto">
+            <h3 class="blog__destacada-titulo">Diez días en la Reserva del Río Plátano</h3>
+          </div>
+        </article>
+        <article class="blog__destacada-slide" data-destacada-slide data-goto="articulo-7" style="background-image: url('../img/vida-estudiantil/gira-tela.jpg');" aria-hidden="true">
+          <div class="blog__destacada-degradado"></div>
+          <div class="blog__destacada-texto">
+            <h3 class="blog__destacada-titulo">Directora de Sostenibilidad a los 28 años</h3>
+          </div>
+        </article>
+        <article class="blog__destacada-slide" data-destacada-slide data-goto="articulo-9" style="background-image: url('../img/vida-estudiantil/formacion-academica.jpg');" aria-hidden="true">
+          <div class="blog__destacada-degradado"></div>
+          <div class="blog__destacada-texto">
+            <h3 class="blog__destacada-titulo">El proyecto que casi no entregamos a tiempo</h3>
+          </div>
+        </article>
+        <div class="blog__destacada-dots" role="tablist" aria-label="Historias destacadas">
+          <button type="button" class="blog__destacada-dot blog__destacada-dot--activo" data-destacada-dot role="tab" aria-selected="true" aria-label="Ver destacada 1"></button>
+          <button type="button" class="blog__destacada-dot" data-destacada-dot role="tab" aria-selected="false" aria-label="Ver destacada 2"></button>
+          <button type="button" class="blog__destacada-dot" data-destacada-dot role="tab" aria-selected="false" aria-label="Ver destacada 3"></button>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: DATO AMBIENTAL DEL DÍA -->
+      <section class="blog__dato-dia">
+        <div class="blog__dato-dia-texto">
+          <span class="blog__dato-dia-etiqueta">Para reflexionar</span>
+          <h2 class="blog__dato-dia-titulo">Dato ambiental del día</h2>
+          <p class="blog__dato-dia-frase">Honduras alberga más de 6,000 especies de plantas vasculares, muchas endémicas de sus bosques nublados.</p>
+        </div>
+        <div class="blog__dato-dia-imagen-wrap">
+          <img class="blog__dato-dia-imagen" src="../img/vida-estudiantil/formacion-equipo.jpg" alt="Bosque nublado en Honduras">
+        </div>
+      </section>
+
+    </section>
+
+    <!-- VISTA DE DETALLE ESPECIAL: "Un día en la vida" — artículo 0 (Portada) -->
+    <section class="blog__view" data-view="articulo-0">
+      <div class="blog__dia-hero">
+        <img class="blog__dia-hero-img" src="../img/vida-estudiantil/gira-hidrogeologia.jpg" alt="Valle montañoso al atardecer">
+        <div class="blog__dia-hero-degradado"></div>
+        <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+        <div class="blog__dia-hero-contenido">
+          <span class="blog__etiqueta-base blog__etiqueta--undia blog__dia-hero-sector">Manejo de cuencas</span>
+          <h1 class="blog__dia-hero-titulo">Un día monitoreando la cuenca del Río Choluteca</h1>
+        </div>
+      </div>
+
+      <div class="blog__dia-intro">
+        <p class="blog__dia-intro-frase">María José sale antes del amanecer con un kit de muestreo, un GPS y doce comunidades que dependen de lo que encuentre en el agua ese día.</p>
+        <p class="blog__dia-dropcap">María José Osorio recuerda el día exacto en que la ingeniería ambiental dejó de ser una carrera y se convirtió en una vocación: parada frente a un comité de agua potable rural, explicando en términos sencillos por qué el color del agua había cambiado, vio a un señor mayor asentir con los ojos llenos de lágrimas. "Por fin alguien nos explica algo", le dijo.</p>
+      </div>
+
+      <div class="blog__dia-cita-wrap" data-dia-cita-seccion>
+        <div class="blog__dia-cita-hoja"></div>
+        <p class="blog__dia-cita" data-dia-cita>"UNICAH me dio las herramientas técnicas. La cuenca me enseñó a usarlas con humildad"</p>
+      </div>
+
+      <div class="blog__dia-cierre">
+        <p>Hoy coordina el manejo de doce microcuencas que abastecen a comunidades rurales del sur del país. Su trabajo mezcla ciencia, negociación comunitaria y una paciencia que, admite, no aprendió en ningún curso sino en el terreno. "UNICAH me dio las herramientas técnicas. La cuenca me enseñó a usarlas con humildad", dice, mirando el mismo tramo del río donde hizo su primer muestreo hace nueve años.</p>
+      </div>
+    </section>
+
+    <!-- VISTA DE DETALLE REGULAR — artículo 1 -->
+    <section class="blog__view" data-view="articulo-1">
+      <div class="blog__articulo-portada">
+        <img class="blog__articulo-portada-img" src="../img/vida-estudiantil/gira-hidrogeologia.jpg" alt="Río Choluteca">
+        <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+      </div>
+      <div class="blog__articulo-encabezado">
+        <h1 class="blog__articulo-titulo">De las aulas a salvar el Río Choluteca</h1>
+      </div>
+      <div class="blog__articulo-cuerpo">
+        <p class="blog__articulo-dropcap">Carlos recuerda con exactitud la primera vez que metió las botas en el Río Choluteca durante su tercer año de carrera: el agua olía distinto a como la describían los libros. Esa tarde tomó una muestra, la etiquetó, y sin saberlo, definió el resto de su vida profesional.</p>
+      </div>
+      <div class="blog__articulo-cuerpo blog__articulo-cuerpo--cierre">
+        <p>Hoy dirige un equipo que monitorea la calidad del agua en doce puntos de la cuenca. Dice que lo que aprendió en los laboratorios de UNICAH no fue solo a interpretar un análisis fisicoquímico, sino a no rendirse cuando los números no mejoran de un mes a otro. "Uno aprende a medir el progreso en años, no en semanas", cuenta, mientras revisa una nueva muestra que, esta vez, sí muestra mejoría.</p>
+      </div>
+    </section>
+
+    <!-- VISTA DE DETALLE REGULAR — artículo 2 -->
+    <section class="blog__view" data-view="articulo-2">
+      <div class="blog__articulo-portada">
+        <img class="blog__articulo-portada-img" src="../img/vida-estudiantil/formacion-equipo.jpg" alt="Reserva del Río Plátano">
+        <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+      </div>
+      <div class="blog__articulo-encabezado">
+        <h1 class="blog__articulo-titulo">Diez días en la Reserva del Río Plátano</h1>
+      </div>
+      <div class="blog__articulo-cuerpo">
+        <p class="blog__articulo-dropcap">Diana no había dormido en una hamaca antes de este viaje. Tampoco había cargado un GPS satelital ni tomado muestras de sedimento bajo lluvia constante. La expedición de campo de su quinto año la llevó, junto a ocho compañeros, a diez días dentro de la Reserva del Río Plátano documentando cambios en la cobertura boscosa.</p>
+      </div>
+      <div class="blog__articulo-cuerpo blog__articulo-cuerpo--cierre">
+        <p>Lo que más recuerda no es el cansancio, sino las noches: sentados alrededor de una fogata, su profesor les pedía que describieran en voz alta todo lo que habían escuchado ese día en la selva. "Ahí entendí que un ecosistema no se estudia, se escucha", dice. Volvió a Tegucigalpa con las botas destruidas y, según ella, con la carrera clara por primera vez.</p>
+      </div>
+    </section>
+
+    <!-- VISTA DE DETALLE REGULAR — artículo 7 -->
+    <section class="blog__view" data-view="articulo-7">
+      <div class="blog__articulo-portada">
+        <img class="blog__articulo-portada-img" src="../img/vida-estudiantil/gira-tela.jpg" alt="Oficina de sostenibilidad">
+        <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+      </div>
+      <div class="blog__articulo-encabezado">
+        <h1 class="blog__articulo-titulo">Directora de Sostenibilidad a los 28 años</h1>
+      </div>
+      <div class="blog__articulo-cuerpo">
+        <p class="blog__articulo-dropcap">Cuando Gabriela hizo su práctica profesional archivando permisos ambientales en una planta industrial, nadie —ni ella misma— hubiera imaginado que cuatro años después dirigiría la estrategia de sostenibilidad de todo el grupo corporativo.</p>
+      </div>
+      <div class="blog__articulo-cuerpo blog__articulo-cuerpo--cierre">
+        <p>Su ascenso no fue un golpe de suerte: presentó, sin que se lo pidieran, un plan de reducción de residuos que terminó ahorrándole a la empresa una cifra de seis dígitos en su primer año. "La universidad no me enseñó a tener todas las respuestas. Me enseñó a hacer las preguntas incómodas en la sala correcta", dice.</p>
+      </div>
+    </section>
+
+    <!-- VISTA DE DETALLE REGULAR — artículo 9 -->
+    <section class="blog__view" data-view="articulo-9">
+      <div class="blog__articulo-portada">
+        <img class="blog__articulo-portada-img" src="../img/vida-estudiantil/formacion-academica.jpg" alt="Proyecto final de laboratorio">
+        <button type="button" class="blog__volver" data-goto="list">← Volver al Blog</button>
+      </div>
+      <div class="blog__articulo-encabezado">
+        <h1 class="blog__articulo-titulo">El proyecto que casi no entregamos a tiempo</h1>
+      </div>
+      <div class="blog__articulo-cuerpo">
+        <p class="blog__articulo-dropcap">El modelo a escala de la planta de tratamiento de aguas residuales llevaba tres semanas de trabajo cuando, a horas de la entrega final, una manguera mal sellada inundó media mesa de laboratorio.</p>
+      </div>
+      <div class="blog__articulo-cuerpo blog__articulo-cuerpo--cierre">
+        <p>Sofía y sus dos compañeras pasaron la última noche secando piezas con papel toalla, resellando conexiones y recalculando caudales entre risas nerviosas. Entregaron el proyecto con veinte minutos de margen. "Fue el momento exacto en que dejamos de ser compañeras de clase para ser un equipo", dice.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../js/funciones-compartidas.js" defer></script>
+  <script src="../js/pagina-07.js" defer></script>
 </body>
 </html>

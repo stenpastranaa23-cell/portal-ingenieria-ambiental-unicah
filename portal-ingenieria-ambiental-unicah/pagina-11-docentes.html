@@ -1,14 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Docentes</title>
-    <link rel="stylesheet" href="../css/styles.css">|
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <h1 class="docentes__titulo">Docentes</h1>
+    <div class="vida__carga" role="status" aria-live="polite">
+        <div class="vida__carga-contenido">
+            <svg class="vida__carga-flor" viewBox="-90 -20 180 260" width="120" height="160" aria-hidden="true" focusable="false">
+                <path class="vida__carga-tallo" pathLength="1" d="M0,230 C -8,190 8,150 0,110 C -6,90 6,75 0,60"></path>
+                <path class="vida__carga-hoja vida__carga-hoja--izquierda" pathLength="1" d="M0,150 C -22,142 -42,155 -50,175 C -36,163 -18,160 0,150 Z"></path>
+                <path class="vida__carga-hoja vida__carga-hoja--derecha" pathLength="1" d="M0,175 C 20,167 40,180 48,200 C 34,188 16,185 0,175 Z"></path>
+                <g transform="translate(0,60)">
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(0)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(60)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(120)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(180)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(240)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                    <path class="vida__carga-petalo" pathLength="1" transform="rotate(300)" d="M0,0 C -16,-22 -16,-52 0,-70 C 16,-52 16,-22 0,0 Z"></path>
+                </g>
+                <circle class="vida__carga-centro" cx="0" cy="60" r="13"></circle>
+            </svg>
+            <span class="vida__carga-texto">Docentes</span>
+        </div>
+    </div>
 
-    
+    <nav class="docentes__nav">
+        <a class="docentes__marca" href="index.html">
+            <img class="docentes__marca-logo" src="../media/logo-facultad.png" alt="Logo Facultad de Ingeniería Ambiental">
+            <span>Ingeniería Ambiental · UNICAH</span>
+        </a>
+        <button class="docentes__menu-btn" type="button" aria-label="Abrir menú" id="docentesMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="docentes__menu-desplegable" id="docentesMenuDesplegable">
+            <p class="docentes__menu-categoria">Sobre la carrera</p>
+            <a class="docentes__menu-link" href="index.html">Inicio</a>
+            <a class="docentes__menu-link" href="pagina-02-carrera.html">Sobre la Carrera</a>
+            <a class="docentes__menu-link" href="pagina-03-plan-estudio.html">Plan de Estudio</a>
+            <a class="docentes__menu-link" href="pagina-11-docentes.html">Docentes</a>
+
+            <p class="docentes__menu-categoria">Comunidad</p>
+            <a class="docentes__menu-link" href="pagina-05-vida-estudiantil.html">Únete / Vida Estudiantil</a>
+            <a class="docentes__menu-link" href="pagina-06-galeria.html">Galería</a>
+
+            <p class="docentes__menu-categoria">Recursos</p>
+            <a class="docentes__menu-link" href="pagina-07-blog.html">Blog</a>
+            <a class="docentes__menu-link" href="pagina-08-contacto.html">Contacto</a>
+            <a class="docentes__menu-link" href="pagina-09-sumate.html">Súmate</a>
+            <a class="docentes__menu-link" href="pagina-10-preguntas.html">Preguntas Frecuentes</a>
+        </div>
+    </nav>
+
+    <section class="docentes__equipo">
+        <p class="docentes__eyebrow">Nuestro equipo</p>
+        <h1 class="docentes__titulo">Toca a cada docente para conocer más</h1>
+
+        <ul class="docentes__lista">
+            <li class="docentes__item">
+                <button class="docentes__tarjeta" type="button" data-docente="osmer-ponce">
+                    <img class="docentes__foto docentes__foto--logo" src="../media/docentes/decano-perfil.jpeg" alt="Osmer Ponce, decano de la Facultad de Ingeniería Ambiental">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Decano</span>
+                        <span class="docentes__nombre">Osmer Ponce</span>
+                        <span class="docentes__bio-corta">
+                            Al frente de la facultad desde hace más de una década, defiende una ingeniería
+                            que se aprende tanto en el aula como en el campo. Llegó a la docencia después de
+                            años trabajando en gestión de cuencas para instituciones públicas, y desde
+                            entonces ha insistido en que ningún estudiante se gradúe sin haber pisado el
+                            territorio que estudia.
+                        </span>
+                    </span>
+                </button>
+            </li>
+
+            <li class="docentes__item">
+                <button class="docentes__tarjeta docentes__tarjeta--invertida" type="button" data-docente="carmen-izaguirre">
+                    <img class="docentes__foto" src="../media/docentes/ingCarmenI.png" alt="Zoología y ecosistemas de Honduras">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Catedrática de Zoología</span>
+                        <span class="docentes__nombre">Carmen Izaguirre</span>
+                        <span class="docentes__bio-corta">
+                            Imparte zoología, gestión de recursos naturales y calidad de aire y suelo,
+                            guiando a los estudiantes a identificar y proteger la fauna y los ecosistemas
+                            de Honduras.
+                        </span>
+                    </span>
+                </button>
+            </li>
+
+            <li class="docentes__item">
+                <button class="docentes__tarjeta" type="button" data-docente="miguel-montoya">
+                    <img class="docentes__foto" src="../media/docentes/ingMon.png" alt="Hidráulica y manejo del agua">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Catedrático de Hidráulica y Sanitaria</span>
+                        <span class="docentes__nombre">Miguel Montoya</span>
+                        <span class="docentes__bio-corta">
+                            Enseña hidráulica, ingeniería sanitaria I y II, desechos sólidos e
+                            hidrogeología — las bases técnicas para diseñar sistemas de agua, saneamiento
+                            y manejo de residuos.
+                        </span>
+                    </span>
+                </button>
+            </li>
+
+            <li class="docentes__item">
+                <button class="docentes__tarjeta docentes__tarjeta--invertida" type="button" data-docente="thelma-cabrera">
+                    <img class="docentes__foto" src="../media/galeria-10.jpeg" alt="Procesos industriales y manejo de contaminantes">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Catedrática de Manejo de Contaminantes</span>
+                        <span class="docentes__nombre">Thelma Cabrera</span>
+                        <span class="docentes__bio-corta">
+                            Imparte manejo de contaminantes, producción limpia, planeación de proyectos y
+                            formulación y evaluación de proyectos, formando a los estudiantes para prevenir
+                            la contaminación desde el diseño mismo de los procesos.
+                        </span>
+                    </span>
+                </button>
+            </li>
+
+            <li class="docentes__item">
+                <button class="docentes__tarjeta" type="button" data-docente="mirtha-ferrari">
+                    <img class="docentes__foto" src="../media/docentes/mirtha-ferrari.jpg" alt="Remediación ambiental y cuerpos de agua">
+                    <span class="docentes__info">
+                        <span class="docentes__cargo">Catedrática de Toxicología y Salud Ambiental</span>
+                        <span class="docentes__nombre">Mirtha Ferrari</span>
+                        <span class="docentes__bio-corta">
+                            Imparte toxicología y salud, además de remediación ambiental, formando a los
+                            estudiantes para entender el efecto de los contaminantes en la salud pública y
+                            cómo revertir el daño ya causado.
+                        </span>
+                    </span>
+                </button>
+            </li>
+        </ul>
+    </section>
+
+    <div class="docentes__overlay" id="docentesOverlay">
+        <div class="docentes__detalle">
+            <button class="docentes__cerrar" type="button" id="docentesCerrarBtn" aria-label="Cerrar">&times;</button>
+
+            <div class="docentes__detalle-cabecera">
+                <img class="docentes__detalle-foto" id="docentesDetalleFoto" src="" alt="">
+                <div class="docentes__detalle-bio">
+                    <p class="docentes__detalle-parrafo" id="docentesDetalleBio"></p>
+                </div>
+            </div>
+
+            <blockquote class="docentes__detalle-cita" id="docentesDetalleCita"></blockquote>
+
+            <p class="docentes__eyebrow">Lo que le apasiona</p>
+
+            <ul class="docentes__detalle-pasiones" id="docentesDetallePasiones"></ul>
+
+            <p class="docentes__cargo" id="docentesDetalleCargo"></p>
+            <p class="docentes__nombre" id="docentesDetalleNombre"></p>
+        </div>
+    </div>
+
+    <section class="docentes__testimonios">
+        <p class="docentes__eyebrow">Voces estudiantiles</p>
+        <h2 class="docentes__testimonios-titulo">Lo que dicen de ellos</h2>
+
+        <div class="docentes__lista-testimonios">
+            <div class="docentes__testimonio">
+                <p class="docentes__testimonio-texto">
+                    "El profesor Montoya nos hizo medir un río en persona antes de explicarnos la fórmula.
+                    Así se me quedó de verdad."
+                </p>
+                <div class="docentes__testimonio-autor">
+                    <span class="docentes__testimonio-avatar">KR</span>
+                    <span>
+                        <strong>Kevin R.</strong>
+                        <span class="docentes__testimonio-sobre">Sobre Miguel Montoya</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="docentes__testimonio">
+                <p class="docentes__testimonio-texto">
+                    "El Decano se aprende el nombre de todos los estudiantes de primer ingreso. Eso dice
+                    mucho de la carrera."
+                </p>
+                <div class="docentes__testimonio-autor">
+                    <span class="docentes__testimonio-avatar">FL</span>
+                    <span>
+                        <strong>Fátima L.</strong>
+                        <span class="docentes__testimonio-sobre">Sobre Osmer Ponce</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="docentes__testimonio">
+                <p class="docentes__testimonio-texto">
+                    "Con la profesora Elvir analizamos el costo real de un proyecto de energía solar en
+                    una aldea. Fue la clase más útil que he tenido."
+                </p>
+                <div class="docentes__testimonio-autor">
+                    <span class="docentes__testimonio-avatar">DM</span>
+                    <span>
+                        <strong>Diego M.</strong>
+                        <span class="docentes__testimonio-sobre">Sobre Carol Elvir</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="docentes__footer">
+        <div class="docentes__footer-redes">
+            <a href="https://wa.me/50495000315" target="_blank" rel="noopener" class="docentes__footer-red" aria-label="WhatsApp">
+                <img src="../media/docentes/Logo de Wha.png" alt="WhatsApp" class="docentes__footer-red-icono">
+            </a>
+            <a href="https://www.instagram.com/ambientalunicah" target="_blank" rel="noopener" class="docentes__footer-red" aria-label="Instagram">
+                <img src="../media/docentes/Instagram-Logo.png" alt="Instagram" class="docentes__footer-red-icono">
+            </a>
+            <a href="https://www.unicah.edu/" target="_blank" rel="noopener" class="docentes__footer-red" aria-label="Sitio de UNICAH">
+                <img src="../media/logo-unicah.svg" alt="UNICAH" class="docentes__footer-red-icono">
+            </a>
+        </div>
+    </footer>
+
+    <script src="../js/docentes.js"></script>
+    <script src="../js/funciones-compartidas.js"></script>
 </body>
 </html>

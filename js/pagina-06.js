@@ -38,7 +38,7 @@ function galeriaGenerarGrid() {
 
   galeriaFotos.forEach((archivo, indice) => {
     const img = document.createElement('img');
-    img.src = `Imagenes/Galeria/${archivo}`;
+    img.src = `../Imagenes/Galeria/${archivo}`;
     img.alt = '';
     img.classList.add('galeria__item');
 
