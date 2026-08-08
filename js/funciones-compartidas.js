@@ -22,10 +22,7 @@ function sitioIniciarMenu() {
     }
   });
 }
+
 document.addEventListener('DOMContentLoaded', () => {
-    inicioIniciarCarrusel();
-    sitioIniciarMenu();          // ← antes decía inicioIniciarMenu()
-    inicioIniciarCaminos();
-    inicioIniciarContador();
-    inicioIniciarInstagram();
+  sitioIniciarMenu();
 });
