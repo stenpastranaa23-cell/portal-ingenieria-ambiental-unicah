@@ -1406,6 +1406,298 @@
     }
 
 
+  /* ============ PÁGINA 2 - SOBRE LA CARRERA ============ */
+  /* Dueño: Fernando */
+  :root {
+    --carrera-verde-oscuro: #2a4a2a;
+    --carrera-verde-oscuro-2: #24391f;
+    --carrera-verde-oscuro-3: #2e4a2e;
+    --carrera-fondo-alterno: #e8ede3;
+    --carrera-dorado: #c98a4b;
+    --carrera-dorado-hover: #b5793e;
+    --carrera-resaltado: #8bc34a;
+    --carrera-tarjeta-fondo: #f4f1ea;
+    --carrera-tarjeta-borde: #d5dccb;
+    --carrera-texto-oscuro: #3a3a3a;
+    --carrera-texto-muted: #5c6355;
+    --carrera-fuente-texto: 'PT Serif', serif;
+    --carrera-fuente-titulo: 'Tangerine', cursive;
+  }
+
+  .carrera__hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    padding: 140px 40px 60px;
+    background: url('../img/Inicio/inicio-decano-fondo.jpeg') 40% 40% / cover no-repeat;
+  }
+
+  .carrera__hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(42, 74, 42, 0.85) 0%, rgba(42, 74, 42, 0.4) 40%, rgba(42, 74, 42, 0.1) 100%);
+    z-index: 0;
+  }
+
+  .carrera__hero-contenido {
+    position: relative;
+    z-index: 1;
+  }
+
+  .carrera__titulo {
+    font-family: var(--carrera-fuente-texto);
+    font-weight: 700;
+    font-size: 3rem;
+    color: #fff;
+    max-width: 760px;
+    margin-bottom: 16px;
+  }
+
+  .carrera__hero-texto {
+    font-family: var(--carrera-fuente-texto);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+    opacity: 0.9;
+    max-width: 620px;
+  }
+
+  .carrera__subtitulo {
+    display: block;
+    text-align: center;
+    font-family: var(--carrera-fuente-titulo);
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: var(--carrera-verde-oscuro);
+    margin-bottom: 24px;
+  }
+
+  .carrera__que-es {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .carrera__que-es-texto {
+    font-family: var(--carrera-fuente-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--carrera-texto-oscuro);
+    margin-bottom: 20px;
+  }
+
+  .carrera__perfil {
+    background: var(--carrera-fondo-alterno);
+    padding: 80px 40px;
+  }
+
+  .carrera__perfil-texto {
+    max-width: 700px;
+    margin: 0 auto 24px;
+    text-align: center;
+    font-family: var(--carrera-fuente-texto);
+    color: var(--carrera-texto-oscuro);
+  }
+
+  .carrera__lista-competencias {
+    max-width: 700px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .carrera__lista-competencias li {
+    font-family: var(--carrera-fuente-texto);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--carrera-texto-oscuro);
+    background: #fff;
+    border-left: 4px solid var(--carrera-dorado);
+    border-radius: 8px;
+    padding: 14px 18px;
+  }
+
+  .carrera__campo-laboral {
+    padding: 80px 40px;
+  }
+
+  .carrera__tarjetas {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .carrera__tarjeta {
+    background: var(--carrera-tarjeta-fondo);
+    border: 1px solid var(--carrera-tarjeta-borde);
+    border-radius: 12px;
+    padding: 28px 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .carrera__tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  }
+
+  .carrera__tarjeta-titulo {
+    font-family: var(--carrera-fuente-texto);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--carrera-verde-oscuro);
+    margin-bottom: 10px;
+  }
+
+  .carrera__tarjeta-texto {
+    font-family: var(--carrera-fuente-texto);
+    font-size: 0.9rem;
+    color: var(--carrera-texto-muted);
+    line-height: 1.5;
+  }
+
+  .carrera__duracion {
+    background: var(--carrera-fondo-alterno);
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .carrera__duracion-texto {
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: var(--carrera-fuente-texto);
+    color: var(--carrera-texto-oscuro);
+    line-height: 1.6;
+  }
+
+  .carrera__flujograma-aviso {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .carrera__flujograma-texto {
+    font-family: var(--carrera-fuente-texto);
+    color: var(--carrera-texto-oscuro);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .carrera__flujograma-texto a {
+    color: var(--carrera-dorado);
+    font-weight: 700;
+  }
+
+  .carrera__boton {
+    display: inline-block;
+    font-family: var(--carrera-fuente-texto);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    background: var(--carrera-dorado);
+    color: #1a1a1a;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .carrera__boton:hover {
+    background: var(--carrera-dorado-hover);
+  }
+
+  .carrera__boton--primario {
+    background: var(--carrera-dorado);
+    color: #1a1a1a;
+  }
+
+  .carrera__boton--primario:hover {
+    background: var(--carrera-dorado-hover);
+  }
+
+  .carrera__boton--secundario {
+    background: transparent;
+    color: var(--carrera-dorado);
+    border: 2px solid var(--carrera-dorado);
+  }
+
+  .carrera__boton--secundario:hover {
+    background: var(--carrera-dorado);
+    color: #1a1a1a;
+  }
+
+  .carrera__cta {
+    background: var(--carrera-verde-oscuro);
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .carrera__cta .carrera__subtitulo {
+    color: #fff;
+  }
+
+  .carrera__cta-botones {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .carrera__hero {
+      padding: 120px 24px 50px;
+      min-height: 400px;
+    }
+
+    .carrera__titulo {
+      font-size: 2.2rem;
+    }
+
+    .carrera__subtitulo {
+      font-size: 2.4rem;
+    }
+
+    .carrera__que-es,
+    .carrera__perfil,
+    .carrera__campo-laboral,
+    .carrera__duracion,
+    .carrera__flujograma-aviso,
+    .carrera__cta {
+      padding: 50px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carrera__titulo {
+      font-size: 1.8rem;
+    }
+
+    .carrera__hero-texto {
+      font-size: 0.85rem;
+    }
+
+    .carrera__subtitulo {
+      font-size: 2rem;
+    }
+
+    .carrera__tarjetas {
+      grid-template-columns: 1fr;
+    }
+
+    .carrera__boton {
+      width: 100%;
+      text-align: center;
+    }
+
+    .carrera__cta-botones {
+      flex-direction: column;
+      align-items: stretch;
+    }
     /* ============================================
       PÁGINA 07 - BLOG
       Dueño: Noel
