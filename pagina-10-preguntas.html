@@ -3,10 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>	Preguntas Frecuentes</title>
+    <title>	(FAQ) Preguntas Frecuentes </title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="js/pagina-10.js"></script>
+    <script src="js/funciones-compartidas.js"></script>
 </head>
 <body>
-    <h1 class="preguntas__titulo">Preguntas Frecuentes</h1>
+    <header class="header-sitio">
+        <div class="header-sitio__badge">
+            <img src="img/compartido/Logo Ambiental.png" alt="Logo Ingeniería Ambiental" class="header-sitio__badge-icon">
+            <span class="header-sitio__badge-text">INGENIERÍA AMBIENTAL · UNICAH</span>
+        </div>
+        <button class="header-sitio__menu-btn" id="btn-menu" aria-label="Abrir menú" aria-expanded="false"
+            aria-controls="menu-panel">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="menu-panel" id="menu-panel">
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">SOBRE LA CARRERA</span>
+                <a href="index.html" class="menu-panel__link">Inicio</a>
+                <a href="pagina-02-carrera.html" class="menu-panel__link">Sobre la Carrera</a>
+                <a href="pagina-03-plan-estudio.html" class="menu-panel__link">Plan de Estudio</a>
+                <a href="pagina-11-docentes.html" class="menu-panel__link">Docentes</a>
+            </div>
+
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">COMUNIDAD</span>
+                <a href="pagina-05-vida-estudiantil.html" class="menu-panel__link">Únete / Vida Estudiantil</a>
+                <a href="pagina-06-galeria.html" class="menu-panel__link">Galería</a>
+            </div>
+
+            <div class="menu-panel__grupo">
+                <span class="menu-panel__categoria">RECURSOS</span>
+                <a href="pagina-07-blog.html" class="menu-panel__link">Blog</a>
+                <a href="pagina-08-contacto.html" class="menu-panel__link">Contacto</a>
+                <a href="pagina-09-sumate.html" class="menu-panel__link">Súmate</a>
+                <a href="pagina-10-preguntas.html" class="menu-panel__link">Preguntas Frecuentes</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="faq-hero-panel">
+            <section class="hero-background">
+                <img src="media/faq-hero.jpg" 
+                alt="Preguntas Frecuentes (FAQ)"/>
+                <section class="hero-call-to-action">
+                    <h2>Preguntas Frecuentes</h2>
+                </section>
+            </section>
+        </section>
+
+        <section class="faq-content">
+            <h1>Todo lo que quieres saber</h2>
+
+            <section class="faq-section">
+                <h3 class="faq-question">
+                    ¿Cuánto dura la carrera?
+                    <span>+</span>
+                </h3>
+
+                <section class="faq-answer">
+                    <p>
+                        La Ingeniería Ambiental en UNICAH dura 4 años, distribuidos en 13 semestres, incluyendo la Práctica<br>
+                        Profesional Supervisada.
+                    </p>
+                </section>
+
+                <h3 class="faq-question">
+                    ¿Cuántas clases y créditos tiene el plan de Estudio?
+                    <span>+</span>
+                </h3>
+
+                <section class="faq-answer">
+                    <p>
+                        61 clases en total. Puedes ver el desglose completo, semestre por semestre, en la sección Plan de Estudio.
+                    </p>
+                </section>
+
+                <h3 class="faq-question">
+                    ¿Qué diferencia a esta carrera de otras ingenierías ambientales?
+                    <span>+</span>
+                </h3>
+
+                <section class="faq-answer">
+                    <p>
+                        La formación combina teoría con giras de campo, laboratorios reales y proyectos con comunidades hondureñas<br>
+                        desde los primeros semestres.
+                    </p>
+                </section>
+
+                <h3 class="faq-question">
+                    ¿Necesito experiencia previa en ciencias ambientales?
+                    <span>+</span>
+                </h3>
+
+                <section class="faq-answer">
+                    <p>
+                        No. La carrera empieza desde bases de química, biología y matemáticas  no se requiere experiencia previa, solo<br>
+                        interés genuino en el tema.
+                    </p>
+                </section>
+
+                <h3 class="faq-question">
+                    ¿Qué requisitos necesito para inscribirme?
+                    <span>+</span>
+                </h3>
+
+                <section class="faq-answer">
+                    <p>
+                        Título de bachiller, partida de nacimiento y completar el proceso de admisión general de UNICAH. Puede ver el<br>
+                        proceso completo en la sección Súmate.
+                    </p>
+                </section>
+
+                <h3 class="faq-question">
+                    ¿En qué puedo trabajar al graduarme?
+                    <span>+</span>
+                </h3>
+
+                <section class="faq-answer">
+                    <p>
+                        Egresados trabajan en gestión de cuencas, calidad de agua, evaluación de impacto ambiental, gestión municipal,<br>
+                        consultoría ambiental y organismos internacionales.
+                    </p>
+                </section>
+        
+                <h3 class="faq-question">
+                    ¿Hay electivas dentro del plan de estudio?
+                    <span>+</span>
+                </h3>
+
+                <section class="faq-answer">
+                    <p>
+                        Sí, el plan incluye tres electivas distribuidas entre el tercer y octavo semestre, que permiten profundizar en un<br>
+                        área de tu interés.
+                    </p>
+                </section>
+
+                <h3 class="faq-question">
+                    ¿Cómo funciona la práctica profesional supervisada?
+                    <span>+</span>
+                </h3>
+
+                <section class="faq-answer">
+                    <p>
+                        Es el último semestre de la carrera: aplicas todo lo aprendido en un proyecto real, generalmente de una<br>
+                        institución u organización ambiental
+                    </p>
+                </section>
+            </section>
+        </section>
+
+        <section class="faq-contact">
+            <h2>¿Tu pregunta no está aquí?</h2>
+
+            <a href="" class="faq-button">
+                ESCRÍBENOS POR WHATSAPP
+            </a>
+        </section>
+    </main>
+    <footer class="pie-sitio">
+        <div class="pie-sitio__redes">
+            <a href="https://wa.me/50495000315" target="_blank" rel="noopener" class="pie-sitio__red"
+                aria-label="WhatsApp">
+                <img src="img/compartido/Logo de Wha.png" alt="WhatsApp" class="pie-sitio__red-icono">
+            </a>
+            <a href="https://www.instagram.com/ambientalunicah?igsh=aWM5amVwNnY1a3dv" target="_blank" rel="noopener"
+                class="pie-sitio__red" aria-label="Instagram">
+                <img src="img/compartido/Instagram-Logo.png" alt="Instagram" class="pie-sitio__red-icono">
+            </a>
+            <a href="https://www.unicah.edu/" target="_blank" rel="noopener" class="pie-sitio__red"
+                aria-label="Sitio de UNICAH">
+               <img src="img/compartido/Logo Unicah.png" alt="UNICAH" class="pie-sitio__red-icono">
+            </a>
+        </div>
+    </footer>
 </body>
 </html> 

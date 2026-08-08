@@ -1,7 +1,10 @@
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
 document.addEventListener('DOMContentLoaded', () => {
+  if (!window.location.hash) window.scrollTo(0, 0);
   vidaIniciarCarga();
   vidaIniciarFormacionRevelado();
-  vidaIniciarRutaGiras();
+  vidaIniciarAcordeon();
   vidaIniciarHeroFijo();
   vidaIniciarEnredaderas();
   vidaIniciarIntroCabecera();
@@ -150,26 +153,34 @@ function vidaIniciarFormacionRevelado() {
   filas.forEach((fila) => observador.observe(fila));
 }
 
-function vidaIniciarRutaGiras() {
-  const sendero = document.querySelector('.vida__ruta-sendero');
-  const hitos = document.querySelectorAll('.vida__ruta-hito');
+function vidaIniciarAcordeon() {
+  const acordeon = document.querySelector('.vida__acordeon');
 
-  if (!sendero || !hitos.length) return;
+  if (!acordeon) return;
 
-  const observador = new IntersectionObserver((entradas) => {
-    entradas.forEach((entrada) => {
-      if (!entrada.isIntersecting) return;
-      sendero.classList.add('vida__ruta-sendero--visible');
-      hitos.forEach((hito, indice) => {
-        setTimeout(() => {
-          hito.classList.add('vida__ruta-hito--visible');
-        }, indice * 150);
-      });
-      observador.unobserve(entrada.target);
+  const paneles = Array.from(acordeon.querySelectorAll('.vida__panel'));
+
+  if (!paneles.length) return;
+
+  const puedeApuntar = window.matchMedia('(hover: hover)').matches;
+
+  const abrir = (elegido) => {
+    paneles.forEach((panel) => {
+      const activo = panel === elegido;
+      panel.classList.toggle('vida__panel--activo', activo);
+      const boton = panel.querySelector('.vida__panel-boton');
+      if (boton) boton.setAttribute('aria-expanded', String(activo));
     });
-  }, { threshold: 0, rootMargin: '-32% 0px -32% 0px' });
+  };
 
-  observador.observe(sendero);
+  paneles.forEach((panel) => {
+    const boton = panel.querySelector('.vida__panel-boton');
+    if (!boton) return;
+
+    boton.addEventListener('click', () => abrir(panel));
+    boton.addEventListener('focus', () => abrir(panel));
+    if (puedeApuntar) panel.addEventListener('mouseenter', () => abrir(panel));
+  });
 }
 
 function vidaIniciarEnredaderas() {

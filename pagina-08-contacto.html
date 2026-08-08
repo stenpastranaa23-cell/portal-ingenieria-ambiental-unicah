@@ -1,12 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <h1 class="contacto__titulo">Contacto</h1>  
+
+    <section class="contacto__hero" style="background-image: url('media/IMG_3054.JPG.jpg');">
+        <div class="contacto__hero-oscuro"></div>
+        <nav class="contacto__hero-nav">
+            <a class="contacto__hero-marca" href="index.html">
+                <img class="contacto__hero-marca-logo" src="media/logo-facultad.png" alt="Logo Facultad de Ingeniería Ambiental">
+                <span>Ingeniería Ambiental · UNICAH</span>
+            </a>
+            <button class="contacto__hero-menu" type="button" aria-label="Abrir menú" id="contactoMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <div class="contacto__menu-desplegable" id="contactoMenuDesplegable">
+            <p class="contacto__menu-categoria">Sobre la carrera</p>
+            <a class="contacto__menu-link" href="index.html">Inicio</a>
+            <a class="contacto__menu-link" href="pagina-02-carrera.html">Sobre la Carrera</a>
+            <a class="contacto__menu-link" href="pagina-03-plan-estudio.html">Plan de Estudio</a>
+            <a class="contacto__menu-link" href="pagina-11-docentes.html">Docentes</a>
+
+            <p class="contacto__menu-categoria">Comunidad</p>
+            <a class="contacto__menu-link" href="pagina-04-instalaciones.html">Instalaciones y Laboratorios</a>
+            <a class="contacto__menu-link" href="pagina-05-vida-estudiantil.html">Únete / Vida Estudiantil</a>
+            <a class="contacto__menu-link" href="pagina-06-galeria.html">Galería</a>
+
+            <p class="contacto__menu-categoria">Recursos</p>
+            <a class="contacto__menu-link" href="pagina-07-blog.html">Blog</a>
+            <a class="contacto__menu-link" href="pagina-08-contacto.html">Contacto</a>
+            <a class="contacto__menu-link" href="pagina-09-sumate.html">Súmate</a>
+            <a class="contacto__menu-link" href="pagina-10-preguntas.html">Preguntas Frecuentes</a>
+        </div>
+
+        <div class="contacto__hero-texto">
+            <h1 class="contacto__hero-titulo">Contacto</h1>
+            <p class="contacto__hero-subtitulo">Escríbenos, con gusto te respondemos.</p>
+        </div>
+    </section>
+
+    <section class="contacto__canales">
+      <div class="contacto__canales-inner">
+        <div class="contacto__canales-texto">
+            <p class="contacto__eyebrow">Contáctanos directo</p>
+            <h2 class="contacto__canales-titulo">Elige el canal que prefieras — te respondemos ahí mismo.</h2>
+
+            <ul class="contacto__lista-canales">
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link" href="https://wa.me/50495000315" target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--whatsapp">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.32-1.93 1.4-.49.08-1.11.11-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94s.73-2.09 1-2.37c.24-.26.53-.32.71-.32.18 0 .35 0 .5.01.16.01.38-.06.59.45.24.57.8 1.97.87 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.04.94 1.93 1.23 2.2 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.62-.14.26.1 1.63.77 1.91.91.28.14.47.21.53.33.07.12.07.68-.17 1.36z"/></svg>
+                        </span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">WhatsApp — Decanato</span>
+                            <span class="contacto__canal-valor">Escríbele directo al Decano</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link" href="https://www.instagram.com/ambientalunicah/" target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+                        </span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">Instagram</span>
+                            <span class="contacto__canal-valor">@ambientalunicah</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link" href="https://www.facebook.com/profile.php?id=100068132044734&locale=es_LA" target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.55c0-.86.24-1.44 1.47-1.44h1.57V4.46A21 21 0 0 0 14.2 4.3c-2.24 0-3.78 1.37-3.78 3.87v2.27H7.85v2.96h2.57V21h3.08z"/></svg>
+                        </span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">Facebook</span>
+                            <span class="contacto__canal-valor">Ingeniería Ambiental UNICAH</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=admisiones@unicah.edu"
+                        target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--correo">@</span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">Correo</span>
+                            <span class="contacto__canal-valor">admisiones@unicah.edu</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link" href="https://www.unicah.edu/" target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--admisiones">U</span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">Admisiones — UNICAH</span>
+                            <span class="contacto__canal-valor">Registro y matrícula general</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="contacto__canal">
+                    <a class="contacto__canal-link"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=admisionescj@unicah.edu"
+                        target="_blank" rel="noopener">
+                        <span class="contacto__canal-icono contacto__canal-icono--campus">R</span>
+                        <span class="contacto__canal-texto">
+                            <span class="contacto__canal-etiqueta">Admisiones — Campus Sagrado Corazón</span>
+                            <span class="contacto__canal-valor">admisionescj@unicah.edu</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contacto__galeria">
+            <button class="contacto__galeria-foto contacto__galeria-foto--1" type="button">
+                <img src="media/galeria/galeria-2.jpg" alt="Estudiantes de Ingeniería Ambiental leyendo en el campus">
+            </button>
+            <button class="contacto__galeria-foto contacto__galeria-foto--2" type="button">
+                <img src="media/galeria/galeria-1.jpg" alt="Grupo de estudiantes revisando material de estudio">
+            </button>
+            <button class="contacto__galeria-foto contacto__galeria-foto--3" type="button">
+                <img src="media/galeria/galeria-3.jpg" alt="Estudiantes con libros de la carrera en el campus">
+            </button>
+            <button class="contacto__galeria-foto contacto__galeria-foto--4" type="button">
+                <img src="media/galeria/galeria-4.jpg" alt="Grupo de estudiantes trabajando juntos en una laptop">
+            </button>
+            <a class="contacto__galeria-link" href="pagina-06-galeria.html">Ver galería completa &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacto__ubicacion">
+        <p class="contacto__eyebrow">Encuéntranos</p>
+        <h2 class="contacto__ubicacion-titulo">Campus Sagrado Corazón de Jesús</h2>
+
+        <div class="contacto__mapa" id="contactoMapa"></div>
+
+        <p class="contacto__ubicacion-direccion">Cl. Los Alcaldes, Comayagüela, Tegucigalpa, Honduras</p>
+
+        <div class="contacto__horario">
+            <span class="contacto__horario-icono">H</span>
+            <p class="contacto__horario-texto">Horario de atención: lunes a viernes, 8:00 a.m. — 4:00 p.m.</p>
+        </div>
+    </section>
+
+    <footer class="contacto__footer">
+        <span class="contacto__footer-logo" role="img" aria-label="Escudo UNICAH"></span>
+        <span class="contacto__footer-separador"></span>
+        <p class="contacto__footer-frase">Donde la ingeniería se convierte en territorio protegido.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/contacto-galeria.js"></script>
+    <script src="js/contacto-mapa.js"></script>
+    <script src="js/contacto-menu.js"></script>
 </body>
 </html>
