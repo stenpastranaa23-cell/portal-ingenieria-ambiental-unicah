@@ -2302,6 +2302,94 @@ html, body {
     font-style: italic;
   }
 
+  /* --- CTA --- */
+  .plan__cta {
+    background: #1a2e1a;
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .plan__cta-titulo {
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  .plan__cta-botones {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .plan__boton {
+    display: inline-block;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .plan__boton--primario {
+    background: #c98a4b;
+    color: #1a1a1a;
+  }
+
+  .plan__boton--primario:hover {
+    background: #b5793e;
+  }
+
+  .plan__boton--secundario {
+    background: transparent;
+    color: #c98a4b;
+    border: 2px solid #c98a4b;
+  }
+
+  .plan__boton--secundario:hover {
+    background: #c98a4b;
+    color: #1a1a1a;
+  }
+
+  /* --- FOOTER --- */
+  .pie {
+    background: #1a1206;
+    padding: 40px;
+  }
+
+  .pie__redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .pie__red {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .pie__red:hover {
+    transform: scale(1.1);
+  }
+
+  .pie__red-icono {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+
   /* --- RESPONSIVE --- */
   @media (max-width: 768px) {
     .header-sitio {
@@ -2388,6 +2476,33 @@ html, body {
 
     .plan__progreso-barra-contenedor {
       flex-wrap: wrap;
+    }
+
+    .plan__cta {
+      padding: 60px 20px;
+    }
+
+    .plan__cta-titulo {
+      font-size: 2.2rem;
+    }
+
+    .plan__boton {
+      width: 100%;
+      text-align: center;
+    }
+
+    .plan__cta-botones {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .pie {
+      padding: 30px 20px;
+    }
+
+    .pie__red {
+      width: 44px;
+      height: 44px;
     }
   }
 
