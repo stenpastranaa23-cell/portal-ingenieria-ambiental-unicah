@@ -419,40 +419,6 @@ html, body {
   font-weight: bold;
 }
 
-/* Dueño: Byron */
-.faq-footer{
-  background-color: #3a1d00;
-  padding: 2rem 0;
-}
-
-/* Dueño: Byron */
-.faq-footer .footer-content{
-  width: 70%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-/* Dueño: Byron */
-.faq-footer .footer-content img{
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-top: 1px solid rgba(255,255,255,.5);
-}
-
-/* Dueño: Byron */
-.footer-content p{
-  margin: 0;
-  padding-left: 1.5rem;
-  border-left: 2px solid rgba(255,255,255,.5);
-  color: white;
-  font-style: italic;
-  min-height: 21px;
-}
-
 /* ============ PÁGINA 11 - DOCENTES ============ */
 /* Dueño: Stefany */
 .docentes__titulo {
