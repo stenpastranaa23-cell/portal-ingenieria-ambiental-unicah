@@ -9,7 +9,30 @@ document.addEventListener('DOMContentLoaded', () => {
   vidaIniciarEnredaderas();
   vidaIniciarIntroCabecera();
   vidaIniciarRecorrido();
+  vidaEtiquetarEmbed();
 });
+
+function vidaEtiquetarEmbed() {
+  const contenedor = document.querySelector('.vida__semana-verde-media');
+
+  if (!contenedor) return;
+
+  const etiquetar = () => {
+    const marco = contenedor.querySelector('iframe');
+    if (!marco || marco.getAttribute('title')) return false;
+    marco.setAttribute('title', 'Reel de la Semana Verde en el Instagram de Ingeniería Ambiental UNICAH');
+    return true;
+  };
+
+  if (etiquetar()) return;
+
+  const observador = new MutationObserver(() => {
+    if (etiquetar()) observador.disconnect();
+  });
+
+  observador.observe(contenedor, { childList: true, subtree: true });
+  window.setTimeout(() => observador.disconnect(), 10000);
+}
 
 function vidaIniciarIntroCabecera() {
   const cabecera = document.querySelector('.vida__intro-cabecera');
