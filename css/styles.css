@@ -2184,7 +2184,7 @@ body.plan__page {
     display: flex;
     align-items: center;
     padding: 140px 40px 60px;
-    background: url('../img/Inicio/inicio-decano-fondo.jpeg') 40% 20% / cover no-repeat;
+    background: url('../img/Inicio/inicio-decano-fondo.jpeg') 40% 40% / cover no-repeat;
   }
 
   .carrera__hero::before {
