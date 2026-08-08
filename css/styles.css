@@ -8,8 +8,11 @@
     box-sizing: border-box;
   }
 
-/* ============ PÁGINA 2 - SOBRE LA CARRERA ============ */
-/* Dueño: Fernando */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'PT Serif', serif;
+  }
 
   /* ============================================
     COMPARTIDO · HEADER Y MENÚ DE NAVEGACIÓN
@@ -38,8 +41,12 @@
     color: #fff;
   }
 
-/* ============ PÁGINA 4 - INSTALACIONES Y LABORATORIOS ============ */
-/* Dueño: Eduin */
+  .header-sitio__badge-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
 
   .header-sitio__badge-text {
     font-family: 'PT Serif', serif;
@@ -50,8 +57,18 @@
     white-space: nowrap;
   }
 
-/* ============ PÁGINA 5 - VIDA ESTUDIANTIL ============ */
-/* Dueño: Fernando */
+  .header-sitio__menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
 
   .header-sitio__menu-btn span {
     width: 26px;
@@ -59,12 +76,1515 @@
     background: #fff;
   }
 
-/* ============ PÁGINA 6 - GALERÍA ============ */
-/* Dueño: Stefany */
+  .menu-panel {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 40px;
+    left: auto;
+    width: 320px;
+    box-sizing: border-box;
+    background: rgba(18, 26, 22, 0.75);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 28px 24px 28px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  }
+
+  .menu-panel--abierto {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .menu-panel__grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .menu-panel__categoria {
+    font-family: 'PT Serif', serif;
+    font-size: 0.70rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #c98a4b;
+    margin-bottom: 1px;
+  }
+
+  .menu-panel__link {
+    font-family: 'PT Serif', serif;
+    font-size: 1.09rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 2px 0;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+  }
+
+  .menu-panel__link:hover {
+    color: #8bc34a;
+    padding-left: 6px;
+  }
+
+  @media (max-width: 767px) {
+    .header-sitio {
+      padding: 16px 20px;
+    }
+
+    .menu-panel {
+      top: calc(100% + 8px);
+      right: 16px;
+      left: 16px;
+      width: auto;
+      max-height: calc(100vh - 100px);
+      max-height: calc(100dvh - 100px);
+      overflow-y: auto;
+      padding: 20px;
+      gap: 16px;
+    }
+
+    .menu-panel__grupo {
+      gap: 8px;
+    }
+  }
 
 
-/* ============ PÁGINA 7 - BLOG ============ */
-/* Dueño: Eduin */
+  /* ============================================
+    COMPARTIDO · PIE DE PÁGINA
+    ============================================ */
+  .pie-sitio {
+    background: #1a1206;
+    padding: 40px;
+  }
+
+  .pie-sitio__redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .pie-sitio__red {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .pie-sitio__red:hover {
+    transform: scale(1.1);
+  }
+
+  .pie-sitio__red-icono {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+
+  @media (max-width: 480px) {
+    .pie-sitio {
+      padding: 30px 20px;
+    }
+
+    .pie-sitio__red {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+
+  /* ============================================
+    PÁGINA 01 - INICIO
+    Dueño: Stefany
+    ============================================ */
+
+  .inicio__hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .inicio__carrusel {
+    position: absolute;
+    inset: 0;
+  }
+
+  .inicio__slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+  }
+
+  .inicio__slide--activo {
+    opacity: 1;
+  }
+
+  .inicio__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.15));
+    z-index: 1;
+  }
+
+  .inicio__contenido {
+    position: absolute;
+    bottom: 120px;
+    left: 40px;
+    right: 40px;
+    max-width: 700px;
+    z-index: 5;
+    color: #fff;
+  }
+
+  .inicio__titulo {
+    font-family: 'PT Serif', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color:green;
+  }
+
+  .inicio__subtitulo {
+    font-family: 'PT Serif', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .inicio__resaltado {
+    color: #8bc34a;
+  }
+
+  .inicio__descripcion {
+    font-family: 'PT Serif', serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    max-width: 560px;
+  }
+
+  .inicio__cta {
+    display: inline-block;
+    font-family: 'PT Serif', serif;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.6);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  .inicio__cta:hover {
+    background: rgba(255,255,255,0.25);
+  }
+
+  .inicio__controles {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .inicio__flecha {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .inicio__flecha:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.15);
+  }
+
+  .inicio__dots {
+    display: flex;
+    gap: 10px;
+  }
+
+  .inicio__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .inicio__dot:hover {
+    transform: scale(1.3);
+  }
+
+  .inicio__dot--activo {
+    background: #fff;
+    width: 28px;
+    border-radius: 999px;
+  }
+
+  /* ============================================
+    BLOQUE CAMINOS (Elige tu camino) - INICIO
+    ============================================ */
+
+  .caminos {
+    background: #e8ede3;
+    padding: 80px 40px 60px;
+  }
+
+  .caminos__encabezado {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .caminos__etiqueta {
+    display: block;
+    font-family: 'PT Serif', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #c98a4b;
+    margin-bottom: 10px;
+  }
+
+  .caminos__titulo {
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: #1a2e1a;
+  }
+
+  .caminos__wrapper {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .caminos__carrusel {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    flex: 1;
+  }
+
+  .caminos__tarjeta {
+    position: relative;
+    flex: 0 0 calc(25% - 15px);
+    min-width: 260px;
+    height: 480px;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    filter: brightness(1);
+    transform: scale(1);
+    transition: filter 0.4s ease, transform 0.4s ease;
+  }
+
+  .caminos__carrusel:hover .caminos__tarjeta {
+    filter: brightness(0.55);
+    transform: scale(0.96);
+  }
+
+  .caminos__carrusel:hover .caminos__tarjeta:hover {
+    filter: brightness(1);
+    transform: scale(1.04);
+  }
+
+  .caminos__imagen {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .caminos__tarjeta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1) 60%);
+  }
+
+  .caminos__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 24px 20px;
+    color: #fff;
+  }
+
+  .caminos__nombre {
+    font-family: 'PT Serif', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .caminos__descripcion {
+    font-family: 'PT Serif', serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    opacity: 0.9;
+  }
+
+  .caminos__link {
+    font-family: 'PT Serif', serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .caminos__flecha {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #1a2e1a;
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .caminos__flecha:hover {
+    background: #2e4a2e;
+    transform: scale(1.1);
+  }
+
+  .caminos__dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .caminos__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #c7cfc0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .caminos__dot--activo {
+    background: #c98a4b;
+  }
+
+  @media (max-width: 900px) {
+  .caminos__tarjeta {
+    flex: 0 0 calc(50% - 10px);
+    height: 400px;
+  }
+}
+
+
+  @media (max-width: 480px) {
+    .caminos {
+      padding: 50px 20px 40px;
+    }
+
+    .caminos__titulo {
+      font-size: 2.4rem;
+    }
+
+    .caminos__wrapper {
+      gap: 0;
+    }
+
+    .caminos__flecha {
+      display: none;
+    }
+
+    .caminos__carrusel {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 6px;
+    }
+
+    .caminos__carrusel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .caminos__tarjeta {
+      flex: 0 0 82%;
+      min-width: unset;
+      height: 380px;
+      scroll-snap-align: start;
+    }
+
+    .caminos__nombre {
+      font-size: 1.1rem;
+    }
+
+    .caminos__descripcion {
+      font-size: 0.8rem;
+    }
+  }
+
+
+
+  /* ============================================
+    BLOQUE DECANO (Cita destacada) - INICIO
+    ============================================ */
+
+  .decano {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+  }
+
+  .decano__fondo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .decano__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0) 55%);
+  }
+
+  .decano__tarjeta {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: rgba(20, 25, 20, 0.55);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 32px 36px;
+  }
+
+  .decano__perfil {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+  }
+
+  .decano__texto {
+    color: #fff;
+  }
+
+  .decano__cita {
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .decano__autor {
+    font-family: 'PT Serif', serif;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  .decano__autor strong {
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .decano {
+      height: 500px;
+    }
+
+    .decano__tarjeta {
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      padding: 24px 20px;
+    }
+
+    .decano__cita {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .decano {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .decano__fondo {
+      position: static;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .decano__overlay {
+      display: none;
+    }
+
+    .decano__tarjeta {
+      position: static;
+      background: #1a2e1a;
+      backdrop-filter: none;
+      border-radius: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      padding: 28px 20px;
+    }
+
+    .decano__perfil {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 16px;
+    }
+
+    .decano__cita {
+      font-size: 1rem;
+    }
+  }
+
+  /* ============================================
+    BLOQUE MAPA (Dónde hemos estado)
+    ============================================ */
+
+  .mapa {
+    padding: 80px 40px;
+    background: #e8ede3;
+  }
+
+  .mapa__encabezado {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
+
+  .mapa__etiqueta {
+    display: block;
+    font-family: 'PT Serif', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #c98a4b;
+    margin-bottom: 10px;
+  }
+
+  .mapa__titulo {
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: #1a2e1a;
+    margin-bottom: 16px;
+  }
+
+  .mapa__descripcion {
+    font-family: 'PT Serif', serif;
+    font-size: 1rem;
+    color: #3a3a3a;
+    line-height: 1.5;
+  }
+
+  .mapa__contenedor {
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    height: 550px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  .mapa__contenedor .leaflet-tile-pane {
+    filter: grayscale(55%) sepia(35%) hue-rotate(50deg) saturate(140%);
+  }
+
+  .hm-marcador {
+    position: relative;
+  }
+
+  .hm-marcador__punto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: #c98a4b;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .hm-marcador__anillo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(201, 138, 75, 0.6);
+    transform: translate(-50%, -50%);
+    animation: hm-pulse 1.8s ease-out infinite;
+    z-index: 1;
+  }
+
+  @keyframes hm-pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(3.5);
+      opacity: 0;
+    }
+  }
+
+  .hm-popup-wrapper .leaflet-popup-content-wrapper {
+    padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .hm-popup-wrapper .leaflet-popup-content {
+    margin: 0;
+    width: 260px !important;
+  }
+
+  .hm-popup-wrapper .leaflet-popup-tip {
+    background: #1a2e1a;
+  }
+
+  .hm-popup-wrapper .leaflet-popup-close-button {
+    z-index: 3;
+    color: #fff !important;
+    font-size: 1.2rem !important;
+    padding: 6px 8px 0 0 !important;
+  }
+
+  .hm-popup {
+    position: relative;
+    width: 100%;
+    height: 220px;
+  }
+
+  .hm-popup__foto {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hm-popup__degradado-arriba {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0) 100%);
+  }
+
+  .hm-popup__degradado-abajo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55%;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0) 100%);
+  }
+
+  .hm-popup__encabezado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 14px 16px;
+    color: #fff;
+  }
+
+  .hm-popup__nombre {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+  }
+
+  .hm-popup__departamento {
+    font-family: 'PT Serif', serif;
+    font-size: 0.7rem;
+    color: #c98a4b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .hm-popup__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 14px 16px;
+    color: #fff;
+  }
+
+  .hm-popup__descripcion {
+    font-family: 'PT Serif', serif;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .mapa {
+      padding: 50px 20px;
+    }
+
+    .mapa__titulo {
+      font-size: 2.4rem;
+    }
+
+    .mapa__contenedor {
+      height: 420px;
+    }
+  }
+
+  /* ============================================
+    BLOQUE DESCARGAS (Descarga y comparte) - INICIO
+    ============================================ */
+
+  .descargas {
+    padding: 80px 40px;
+    background: #e8ede3;
+  }
+
+  .descargas__encabezado {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .descargas__etiqueta {
+    display: block;
+    font-family: 'PT Serif', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #c98a4b;
+    margin-bottom: 10px;
+  }
+
+  .descargas__titulo {
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: #1a2e1a;
+  }
+
+  .descargas__grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .descargas__tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f4f1ea;
+    border: 1px solid #d5dccb;
+    border-radius: 12px;
+    padding: 28px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .descargas__tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  }
+
+  .descargas__icono {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    background: #d7ddc9;
+    color: #4a5a3f;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .descargas__nombre {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1a2e1a;
+    margin-bottom: 6px;
+  }
+
+  .descargas__descripcion {
+    font-family: 'PT Serif', serif;
+    font-size: 0.85rem;
+    color: #5c6355;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .descargas__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ============================================
+    BLOQUE CIFRAS (Un referente en Honduras) - INICIO
+    ============================================ */
+
+  .cifras {
+    padding: 90px 40px;
+    background: #e8ede3;
+    text-align: center;
+  }
+
+  .cifras__etiqueta {
+    display: block;
+    font-family: 'PT Serif', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #c98a4b;
+    margin-bottom: 10px;
+  }
+
+  .cifras__titulo {
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: #1a2e1a;
+    margin-bottom: 60px;
+  }
+
+  .cifras__grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .cifras__numero {
+    display: block;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: #c98a4b;
+    margin-bottom: 14px;
+  }
+
+  .cifras__texto {
+    font-family: 'PT Serif', serif;
+    font-size: 1rem;
+    color: #3a3a3a;
+    line-height: 1.4;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .cifras__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .cifras__titulo {
+      font-size: 2.4rem;
+    }
+
+    .cifras__numero {
+      font-size: 2.8rem;
+    }
+  }
+
+  /* ============================================
+    BLOQUE ALIADOS (Con quiénes trabajamos) - INICIO
+    Dueño: Noel
+    ============================================ */
+
+  .aliados {
+    padding: 80px 40px;
+    background: #e8ede3;
+  }
+
+  .aliados__encabezado {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .aliados__etiqueta {
+    display: block;
+    font-family: 'PT Serif', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #c98a4b;
+    margin-bottom: 10px;
+  }
+
+  .aliados__titulo {
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: #1a2e1a;
+  }
+
+  .aliados__grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+  }
+
+  .aliados__tarjeta {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 130px;
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .aliados__tarjeta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  }
+
+  .aliados__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .aliados__nota {
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 0.9rem;
+    color: #5c6355;
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 900px) {
+    .aliados__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .aliados {
+      padding: 50px 20px;
+    }
+
+    .aliados__titulo {
+      font-size: 2.4rem;
+    }
+
+    .aliados__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .aliados__tarjeta {
+      height: 90px;
+    }
+
+    .aliados__nota {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* ============================================
+    BLOQUE INSTAGRAM (Coverflow) - INICIO
+    Dueño: Noel
+    ============================================ */
+
+  .instagram {
+    padding: 80px 40px;
+    background: #e8ede3;
+    overflow: hidden;
+  }
+
+  .instagram__encabezado {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .instagram__etiqueta {
+    display: block;
+    font-family: 'PT Serif', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #c98a4b;
+    margin-bottom: 10px;
+  }
+
+  .instagram__titulo {
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: #1a2e1a;
+  }
+
+  .instagram__escenario {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    height: 560px;
+    perspective: 1400px;
+  }
+
+  .instagram__tarjeta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 340px;
+    height: 560px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+  }
+
+  .instagram__tarjeta iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+  }
+
+  .instagram__tarjeta--activa {
+    transform: translate(-50%, -50%) translateX(0) rotateY(0deg) scale(1);
+    z-index: 5;
+    opacity: 1;
+    filter: brightness(1);
+    pointer-events: auto;
+  }
+
+  .instagram__tarjeta--izq1 {
+    transform: translate(-50%, -50%) translateX(-290px) rotateY(35deg) scale(0.8);
+    z-index: 4;
+    opacity: 0.8;
+    filter: brightness(0.55);
+    pointer-events: none;
+  }
+
+  .instagram__tarjeta--izq2 {
+    transform: translate(-50%, -50%) translateX(-480px) rotateY(35deg) scale(0.62);
+    z-index: 3;
+    opacity: 0.5;
+    filter: brightness(0.45);
+    pointer-events: none;
+  }
+
+  .instagram__tarjeta--der1 {
+    transform: translate(-50%, -50%) translateX(290px) rotateY(-35deg) scale(0.8);
+    z-index: 4;
+    opacity: 0.8;
+    filter: brightness(0.55);
+    pointer-events: none;
+  }
+
+  .instagram__tarjeta--der2 {
+    transform: translate(-50%, -50%) translateX(480px) rotateY(-35deg) scale(0.62);
+    z-index: 3;
+    opacity: 0.5;
+    filter: brightness(0.45);
+    pointer-events: none;
+  }
+
+  .instagram__tarjeta--oculta {
+    transform: translate(-50%, -50%) translateX(0) scale(0.5);
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .instagram__controles {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .instagram__flecha {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #1a2e1a;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .instagram__flecha:hover {
+    background: #2e4a2e;
+    transform: scale(1.1);
+  }
+
+  .instagram__cta-wrapper {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .instagram__cta {
+    display: inline-block;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #1a2e1a;
+    text-decoration: none;
+    border-bottom: 2px solid #c98a4b;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+
+  .instagram__cta:hover {
+    color: #c98a4b;
+  }
+
+  @media (max-width: 900px) {
+    .instagram__escenario {
+      height: 460px;
+    }
+
+    .instagram__tarjeta {
+      width: 260px;
+      height: 460px;
+    }
+
+    .instagram__tarjeta--izq1 { transform: translate(-50%, -50%) translateX(-220px) rotateY(35deg) scale(0.78); }
+    .instagram__tarjeta--izq2 { transform: translate(-50%, -50%) translateX(-360px) rotateY(35deg) scale(0.58); }
+    .instagram__tarjeta--der1 { transform: translate(-50%, -50%) translateX(220px) rotateY(-35deg) scale(0.78); }
+    .instagram__tarjeta--der2 { transform: translate(-50%, -50%) translateX(360px) rotateY(-35deg) scale(0.58); }
+  }
+
+  @media (max-width: 480px) {
+    .instagram {
+      padding: 50px 20px;
+    }
+
+    .instagram__titulo {
+      font-size: 2.4rem;
+    }
+
+    .instagram__escenario {
+      height: 360px;
+    }
+
+    .instagram__tarjeta {
+      width: 180px;
+      height: 360px;
+    }
+
+    .instagram__tarjeta--izq1 { transform: translate(-50%, -50%) translateX(-130px) rotateY(35deg) scale(0.75); }
+    .instagram__tarjeta--izq2 { display: none; }
+    .instagram__tarjeta--der1 { transform: translate(-50%, -50%) translateX(130px) rotateY(-35deg) scale(0.75); }
+    .instagram__tarjeta--der2 { display: none; }
+  }
+
+
+    /* ============ PÁGINA 2 - SOBRE LA CARRERA ============ */
+    /* Dueño: Fernando */
+    .carrera__titulo {
+    font-size: 2.5rem;
+      color:green;
+    }
+
+
+    /* ============ PÁGINA 3 - PLAN DE ESTUDIO ============ */
+    /* Dueño: Kevin */
+    .plan__titulo {
+      font-size: 2.5rem;
+      color:green;
+    }
+
+
+    /* ============ PÁGINA 4 - INSTALACIONES Y LABORATORIOS ============ */
+    /* Dueño: Eduin */
+    .instalaciones__titulo {
+      font-size: 2.5rem;
+      color:green;
+    }
+
+
+    /* ============ PÁGINA 5 - VIDA ESTUDIANTIL ============ */
+    /* Dueño: Fernando */
+    .vida__titulo {
+    font-size: 2.5rem;
+      color:green;
+    }
+
+
+    /* ============ PÁGINA 6 - GALERÍA ============ */
+    /* Dueño: Stefany */
+    .galeria__titulo {
+      font-size: 2.5rem;
+      color:green;
+    }
+
+
+    /* ============================================
+      PÁGINA 07 - BLOG
+      Dueño: Noel
+      ============================================ */
+  .blog__etiqueta-base {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: 'PT Serif', serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .blog__etiqueta--egresados {
+    background: #c98a4b;
+    color: #1a1a1a;
+  }
+
+  .blog__etiqueta--expediciones {
+    background: #d9c9a8;
+    color: #1a1a1a;
+  }
+
+  /* ---- Bloque 1a: Portada ---- */
+
+  .blog__portada {
+    position: relative;
+    min-height: 560px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    background-color: #1a2e22;
+    margin-bottom: 56px;
+  }
+
+  .blog__portada-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .blog__portada-degradado {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(31, 43, 31, 0.05) 0%, rgba(31, 43, 31, 0.35) 45%, rgba(20, 26, 18, 0.92) 100%);
+    pointer-events: none;
+  }
+
+  .blog__portada-contenido {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: #fff;
+    padding: 44px 5vw 40px 5vw;
+    max-width: 760px;
+  }
+
+  .blog__portada-cita {
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    font-size: clamp(1.4rem, 3.2vw, 2rem);
+    line-height: 1.28;
+    margin: 0;
+  }
+
+  .blog__portada-autor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .blog__portada-autor-foto {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 2px solid #a3792f;
+    padding: 3px;
+    background-color: #cba135;
+    object-fit: cover;
+  }
+
+  .blog__portada-autor-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog__portada-autor-nombre {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .blog__portada-autor-rol {
+    color: #cba135;
+    font-size: 0.8rem;
+  }
+
+  /* ---- Bloque 1b: Destacadas (carrusel) ---- */
+
+  .blog__etiqueta--vivencias {
+    background: #cba135;
+    color: #1a1a1a;
+  }
+
+  .blog__destacadas {
+    position: relative;
+    min-height: 340px;
+    overflow: hidden;
+  }
+
+  .blog__destacada-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-color: #1a2e22;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.1s ease;
+    cursor: pointer;
+    pointer-events: none;
+  }
+
+  .blog__destacada-slide--activa {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 1;
+  }
+
+  .blog__destacada-degradado {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(20, 26, 18, 0.82) 0%, rgba(20, 26, 18, 0.35) 55%, rgba(20, 26, 18, 0.15) 100%);
+    pointer-events: none;
+  }
+
+  .blog__destacada-texto {
+    position: absolute;
+    left: 5vw;
+    bottom: 38px;
+    z-index: 1;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: #fff;
+  }
+
+  .blog__destacada-titulo {
+    font-family: 'PT Serif', serif;
+    font-weight: 600;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  /* ============ PÁGINA 11 - DOCENTES ============ */
+  /* Dueño: Stefany */
+  .docentes__titulo {
+  font-size: 2.5rem;
+    color:green;
+  }
+  .blog__destacada-dots {
+    position: absolute;
+    right: 5vw;
+    bottom: 40px;
+    z-index: 2;
+    display: flex;
+    gap: 9px;
+  }
 
   .blog__destacada-dot {
     width: 9px;
@@ -76,13 +1596,17 @@
     cursor: pointer;
   }
 
-/* ============ PÁGINA 8 - CONTACTO ============ */
-/* Dueño: Diego */
+  .blog__destacada-dot--activo {
+    background: #cba135;
+  }
 
   /* ---- Bloque 2: Historias Recientes ---- */
 
-/* ============ PÁGINA 9 - SÚMATE ============ */
-/* Dueño: Byron */
+  .blog__recientes {
+    max-width: 1400px;
+    margin: 50px auto 0 auto;
+    padding: 0 5vw;
+  }
 
   .blog__recientes-titulo {
     font-family: 'PT Serif', serif;
@@ -362,10 +1886,6 @@
       color:green;
     }
 
-.pagina-docentes .header-sitio__menu-btn span {
-  background: #1a2e1a;
-  height: 3px;
-}
 
 
     /* ============ PÁGINA 11 - DOCENTES ============ */
